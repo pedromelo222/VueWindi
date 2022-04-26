@@ -4,21 +4,33 @@
     "env.d.ts",
      "src/**/*", 
      "src/**/*.vue",
-    "typings.d.ts"],
+    "src/types/index.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "isolatedModules": true
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types",
+    "isolatedModules": true,
+    "skipLibCheck": true,
   },
 
   "references": [
     {
       "path": "./tsconfig.vite-config.json"
     }
-  ],
-  "outDir": "dist",
-  "declaration": true
+  ]
   
 }

@@ -1,12 +1,18 @@
 
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import  { WIconLoading }  from '../icons'
 
 export default defineComponent({
     name: "WButton",
     props: {
+        tag: {
+            type: String,
+            default: "button",
+            required: false
+
+        },
         color: {
             type: String,
             default: "primary",
@@ -114,7 +120,8 @@ export default defineComponent({
 })
 </script>
 <template>
-  <button 
+  <component
+  :is="tag" 
    :disabled="disabled" 
    :class="`${defaultBtnClass}
   ${wVariant[variant]} 
@@ -123,5 +130,5 @@ export default defineComponent({
   ${pills ? 'rounded-full' : 'rounded-lg'}`">
     <WIconLoading v-show="loading"></WIconLoading>
     <slot ></slot>
-  </button>
+  </component>
 </template>

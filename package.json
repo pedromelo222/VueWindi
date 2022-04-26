@@ -1,9 +1,13 @@
 {
   "name": "vue-windi",
-  "version": "0.0.1",
+  "version": "0.0.4",
+  "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "src/assets",
+    "types/*.d.ts"
   ],
+  "types": "./dist/types/index.d.ts",
   "main": "./dist/vue-windi.umd.js",
   "module": "./dist/vue-windi.es.js",
   "exports": {
@@ -12,15 +16,15 @@
       "require": "./dist/vue-windi.umd.js"
     }
   },
-  "types": "./dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "rimraf dist && vite build && vue-tsc",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue-windi": "vue-windi-0.0.4.tgz"
   },
   "devDependencies": {
     "@types/node": "^16.11.27",

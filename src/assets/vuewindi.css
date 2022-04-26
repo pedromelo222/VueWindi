@@ -1,4 +1,3 @@
-/* global.css */
 :root {
   /* Colors */
   --color-primary-50: theme("colors.teal.50");
@@ -11,7 +10,6 @@
   --color-primary-700: theme("colors.teal.700");
   --color-primary-800: theme("colors.teal.800");
   --color-primary-900: theme("colors.teal.900");
-
   --vuewindi-bg: theme("colors.light.100");
   --vuewindi-bc: theme("colors.gray.200");
   --vuewindi-text: theme("colors.gray.800");
@@ -19,11 +17,9 @@
 
 
 .dark {
-
   --vuewindi-bg: theme("colors.dark.800");
   --vuewindi-bc: theme("colors.dark.300");
   --vuewindi-text: theme("colors.gray.100");
-
   /* change color of scrollbar */
   color-scheme: dark;
 }
@@ -56,9 +52,7 @@
   --color-primary-800: theme("colors.rose.800");
   --color-primary-900: theme("colors.rose.900");
   --color-primaryGrandientMatch: theme("colors.violet.900");
-
 }
-
 .color-violet {
   /* Colors */
   --color-primary-50: theme("colors.violet.50");
@@ -73,7 +67,6 @@
   --color-primary-900: theme("colors.violet.900");
   --color-primaryGrandientMatch: theme("colors.rose.900");
 }
-
 .color-orange {
   /* Colors */
   --color-primary-50: theme("colors.orange.50");

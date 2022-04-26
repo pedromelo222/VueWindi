@@ -1,3 +1,6 @@
-export { default as WButton } from './WButton'
-export { default as WInput } from './WInput'
+
+import  WButton from './WButton'
+import  WInput  from './WInput'
+
+export { WButton, WInput }
 

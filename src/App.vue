@@ -99,6 +99,8 @@
           <WButton color="success">Success </WButton>
           <WButton color="danger">Danger </WButton>
           <WButton color="warning">Warning </WButton>
+          
+          
         </div>
 
 
@@ -111,10 +113,10 @@
 
   </div>
 </template>
-<script setup lang="ts">
-import { ref, watch } from "vue"
-import { WButton } from "./index";
 
+<script setup lang="ts">
+import {  ref, watch } from "vue"
+import { WButton } from "./index"
 const dark = ref(false);
 
 
@@ -137,5 +139,6 @@ watch(dark, () => {
 <script lang="ts">
 export default {
   name: "App",
-};
+
+}
 </script>
