@@ -126,7 +126,7 @@ export default defineComponent({
    :class="`${defaultBtnClass}
   ${wVariant[variant]} 
   ${wSize[size]} 
-  ${disabled ? 'cursor-not-allowed' : ''}
+  ${disabled ? 'cursor-not-allowed bg-opacity-50 hover:none' : ''}
   ${pills ? 'rounded-full' : 'rounded-lg'}`">
     <WIconLoading v-show="loading"></WIconLoading>
     <slot ></slot>

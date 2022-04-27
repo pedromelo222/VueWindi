@@ -75,7 +75,7 @@
         </div>
         <h2 class="font-semibold text-xl mt-10 mb-4">Outline</h2>
         <div class="flex flex-wrap gap-3 mt-8">
-          <WButton color="primary" variant="outline">Primary </WButton>
+          <WButton color="primary" variant="outline" >Primary </WButton>
           <WButton color="secondary" variant="outline">Secondary </WButton>
           <WButton color="success" variant="outline">Success </WButton>
           <WButton color="danger" variant="outline">Danger </WButton>
@@ -118,12 +118,7 @@
 import {  ref, watch } from "vue"
 import { WButton } from "./index"
 const dark = ref(false);
-
-
 // watch dark mode ref
-
-
-
 watch(dark, () => {
   if (dark.value) {
     document.documentElement.classList.remove('light')

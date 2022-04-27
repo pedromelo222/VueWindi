@@ -1,6 +1,6 @@
 {
   "name": "vue-windi",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "sideEffects": false,
   "files": [
     "dist",
@@ -23,8 +23,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "vue": "^3.2.33",
-    "vue-windi": "vue-windi-0.0.4.tgz"
+    "vue": "^3.2.33"
   },
   "devDependencies": {
     "@types/node": "^16.11.27",
@@ -34,7 +33,6 @@
     "vite": "^2.9.5",
     "vite-plugin-windicss": "^1.8.4",
     "vue-tsc": "^0.34.9",
-    "windicss": "^3.5.1",
-    "windicss-analysis": "^0.3.5"
+    "windicss": "^3.5.1"
   }
 }

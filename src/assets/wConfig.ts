@@ -1,4 +1,5 @@
 import colors from "windicss/colors";
+import { varToRgba } from "../helper/index";
 
 export default {
   preflight: {
@@ -7,21 +8,21 @@ export default {
   theme: {
     colors: {
       primary: {
-        50: "var(--color-primary-50)",
-        100: "var(--color-primary-100)",
-        200: "var(--color-primary-200)",
-        300: "var(--color-primary-300)",
-        400: "var(--color-primary-400)",
-        500: "var(--color-primary-500)",
-        600: "var(--color-primary-600)",
-        700: "var(--color-primary-700)",
-        800: "var(--color-primary-800)",
-        900: "var(--color-primary-900)",
+        50: varToRgba("--color-primary-50"),
+        100: varToRgba("--color-primary-100"),
+        200: varToRgba("--color-primary-200"),
+        300: varToRgba("--color-primary-300"),
+        400: varToRgba("--color-primary-400"),
+        500: varToRgba("--color-primary-500"),
+        600: varToRgba("--color-primary-600"),
+        700: varToRgba("--color-primary-700"),
+        800: varToRgba("--color-primary-800"),
+        900: varToRgba("--color-primary-900"),
       },
       vuewindi: {
-        bg: "var(--vuewindi-bg)",
-        bc: "var(--vuewindi-bc)",
-        text: "var(--vuewindi-text)",
+        bg: varToRgba("--vuewindi-bg"),
+        bc: varToRgba("--vuewindi-bc"),
+        text: varToRgba("--vuewindi-text"),
       },
     },
     extend: {
