@@ -8,6 +8,10 @@ interface wSize {
     [key: string]: string;
 }
 
+interface wCircle {
+    [key: string]: string;
+}
+
 interface wVariant {
     [key: string]: {
         [key: string]: string
@@ -68,18 +72,32 @@ export default defineComponent({
             default: false,
             required: false
         },
+        circle: {
+            type: Boolean,
+            default: false,
+            required: false
+        }
     },
     setup(props) {
 
         const defaultBtnClass = "inline-flex items-center justify-center transition duration-200 ease-in-out";
 
         const wSize: wSize = {
-            "xs": "h-6 px-1 text-xs font-medium",
-            "sm": "h-8 px-3 text-sm font-medium",
-            "md": "h-11 px-4 text-sm font-semibold",
-            "lg": "h-16 px-5 text-sm font-semibold",
-            "xl": "h-20 px-6 text-md font-semibold",
+            xs: "h-6 px-1 text-xs font-medium",
+            sm: "h-8 px-3 text-sm font-medium",
+            md: "h-12 px-4 text-sm font-semibold",
+            lg: "h-16 px-5 text-md font-semibold",
+            xl: "h-20 px-6 text-lg font-semibold",
         };
+
+        const wCircle: wCircle = {
+            xs: "w-6 !p-0",
+            sm: "w-8 !p-0",
+            md: "w-12 !p-0",
+            lg: "w-16 !p-0",
+            xl: "w-20 !p-0",
+        }
+        
         const wVariant: wVariant = {
             default: {
                 primary: "bg-primary-600 text-white hover:bg-primary-700 shadow",
@@ -111,21 +129,22 @@ export default defineComponent({
             },
         };
 
-        return { defaultBtnClass, wSize, wVariant };
+        return { defaultBtnClass, wSize, wCircle, wVariant };
     },
     components: { WIconLoading }
 })
 </script>
 <template>
-    <component :class="[
+    <component
+    :class="[
         defaultBtnClass,
         wSize[size],
         wVariant[variant][color],
-        pills ? 'rounded-full' : 'rounded-lg',
+        pills || circle ? 'rounded-full' : 'rounded-lg',
         disabled ? 'cursor-not-allowed pointer-events-none bg-opacity-70 border-opacity-50 text-opacity-50' : '',
-        loading ? 'pointer-events-none' : ''
-    
-    ]" :is="tag" :disabled="disabled" :type="type">
+        loading ? 'pointer-events-none' : '',
+        circle? wCircle[size] : ''       
+    ]" :is="tag" :disabled="disabled" :type="type" >
         <WIconLoading v-show="loading"></WIconLoading>
         <slot></slot>
     </component>

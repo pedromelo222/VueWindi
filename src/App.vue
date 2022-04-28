@@ -13,9 +13,9 @@
           </svg>
           <span class="self-center text-lg  font-semibold whitespace-nowrap">VueWindi</span>
         </div>
-        <div class="flex gap-">
+        <div class="flex ">
 
-          <WButton  variant="transparent" color="secondary" class=" stroke-vuewindi-text"> <svg class="w-6 h-6"
+          <WButton  variant="transparent" color="secondary" class=" stroke-vuewindi-text"> <svg class="h-5 "
               fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
@@ -25,7 +25,7 @@
 
           <WButton variant="transparent" color="secondary" @click="dark = !dark" class="fill-vuewindi-text ">
 
-            <svg v-show="!dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6">
+            <svg v-show="!dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 ">
               <path
                 d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z">
               </path>
@@ -46,12 +46,13 @@
                 d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z">
               </path>
             </svg>
-            <svg v-show="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6">
+            <svg v-show="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 ">
               <path
                 d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z">
               </path>
             </svg>
           </WButton>
+            
         </div>
 
 
@@ -60,17 +61,33 @@
     <div class="container max-w-6xl m-auto mt-10 p-4 md:p-0">
       <div class="">
         <h2 class="font-semibold text-xl mb-4">Button component</h2>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap items-center gap-3">
           <WButton variant="default" color="primary">Primary </WButton>
-          <WButton loading> Button </WButton>
-          <WButton pills> Button </WButton>
+          <WButton loading > Button </WButton>
+          <WButton pills> Button pills </WButton>
           <WButton disabled> Disabled </WButton>
-          <WButton><svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"
+          <WButton><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
               </path>
             </svg> Buy now</WButton>
+              <WButton color="primary">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+              </path>
+            </svg></WButton>
+
+                     <WButton circle variant="outline">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+              </path>
+            </svg></WButton>
+
 
         </div>
         <h2 class="font-semibold text-xl mt-10 mb-4">Outline</h2>
