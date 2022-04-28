@@ -5,6 +5,7 @@
   "files": [
     "dist",
     "src/assets",
+    "src/helper",
     "types/*.d.ts"
   ],
   "types": "./dist/types/index.d.ts",

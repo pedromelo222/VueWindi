@@ -3,7 +3,7 @@ import { varToRgba } from "../helper/index";
 
 export default {
   preflight: {
-    safelist: "button",
+    safelist: "button a",
   },
   theme: {
     colors: {
