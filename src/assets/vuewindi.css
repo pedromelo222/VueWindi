@@ -11,9 +11,9 @@
   --color-primary-800: 17, 94, 89; 
   --color-primary-900: 19, 78, 74; 
   
-  --vuewindi-bg: 252 252 252;
-  --vuewindi-bc: 229 231 235;
-  --vuewindi-text: 31 41 55;
+  --vuewindi-bg: 252, 252, 252;
+  --vuewindi-bc: 229, 231, 235;
+  --vuewindi-text: 31, 41, 55;
 } 
 .dark {
   --vuewindi-bg: 24, 24, 24;
