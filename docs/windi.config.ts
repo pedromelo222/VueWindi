@@ -1,5 +1,5 @@
 import { defineConfig } from 'windicss/helpers'
-import {wConfig} from '../src/assets'
+import {wConfig} from '../src/assets/'
 
 export default defineConfig({
   darkMode: 'class',
