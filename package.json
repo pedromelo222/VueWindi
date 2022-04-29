@@ -21,9 +21,13 @@
     "dev": "vite",
     "build": "rimraf dist && vite build && vue-tsc",
     "preview": "vite preview --port 5050",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
+    "vitepress": "^0.22.3",
     "vue": "^3.2.33"
   },
   "devDependencies": {
