@@ -145,7 +145,7 @@ export default defineComponent({
         loading ? 'pointer-events-none' : '',
         circle? wCircle[size] : ''       
     ]" :is="tag" :disabled="disabled" :type="type" >
-        <WIconLoading v-show="loading"></WIconLoading>
+        <WIconLoading v-show="loading" class="-ml-1 mr-2"></WIconLoading>
         <slot></slot>
     </component>
 </template>
