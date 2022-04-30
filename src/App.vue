@@ -15,15 +15,15 @@
         </div>
         <div class="flex ">
 
-          <TButton variant="transparent" color="secondary" class=" stroke-vuewindi-text"> <svg class="h-5 " fill="none"
+          <WButton variant="transparent" color="secondary" class=" stroke-vuewindi-text"> <svg class="h-5 " fill="none"
               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
               </path>
-            </svg> </TButton>
+            </svg> </WButton>
 
 
-          <TButton variant="transparent" color="secondary" @click="dark = !dark" class="fill-vuewindi-text ">
+          <WButton variant="transparent" color="secondary" @click="dark = !dark" class="fill-vuewindi-text ">
 
             <svg v-show="!dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 ">
               <path
@@ -51,7 +51,7 @@
                 d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z">
               </path>
             </svg>
-          </TButton>
+          </WButton>
 
         </div>
 
@@ -62,92 +62,92 @@
       <div class="">
         <h2 class="font-semibold text-xl mb-4">Button component</h2>
         <div class="flex flex-wrap items-center gap-3">
-          <TButton variant="default" color="primary">Primary </TButton>
-          <TButton loading> Button </TButton>
-          <TButton pills> Button pills </TButton>
-          <TButton disabled> Disabled </TButton>
-          <TButton><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <WButton variant="default" color="primary">Primary </WButton>
+          <WButton loading> Button </WButton>
+          <WButton pills> Button pills </WButton>
+          <WButton disabled> Disabled </WButton>
+          <WButton><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
               </path>
-            </svg> Buy now</TButton>
-          <TButton color="primary">
+            </svg> Buy now</WButton>
+          <WButton color="primary">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
               </path>
             </svg>
-          </TButton>
+          </WButton>
 
-          <TButton circle variant="outline" >
+          <WButton circle variant="outline">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
               </path>
             </svg>
-          </TButton>
+          </WButton>
 
 
         </div>
         <h2 class="font-semibold text-xl mt-10 mb-4">Outline</h2>
         <div class="flex flex-wrap gap-3 mt-8">
-          <TButton color="primary" variant="outline">Primary </TButton>
-          <TButton color="secondary" variant="outline">Secondary </TButton>
-          <TButton color="success" variant="outline">Success </TButton>
-          <TButton color="danger" variant="outline">Danger </TButton>
-          <TButton color="warning" variant="outline">Warning </TButton>
+          <WButton color="primary" variant="outline">Primary </WButton>
+          <WButton color="secondary" variant="outline">Secondary </WButton>
+          <WButton color="success" variant="outline">Success </WButton>
+          <WButton color="danger" variant="outline">Danger </WButton>
+          <WButton color="warning" variant="outline">Warning </WButton>
         </div>
 
         <h2 class="font-semibold text-xl mt-10 mb-4">Transparent</h2>
         <div class="flex flex-wrap gap-3 mt-8">
-          <TButton variant="transparent">Primary </TButton>
-          <TButton color="secondary" variant="transparent">Secondary </TButton>
-          <TButton color="success" variant="transparent">Success </TButton>
-          <TButton color="danger" variant="transparent">Danger </TButton>
-          <TButton color="warning" variant="transparent">Warning </TButton>
+          <WButton variant="transparent">Primary </WButton>
+          <WButton color="secondary" variant="transparent">Secondary </WButton>
+          <WButton color="success" variant="transparent">Success </WButton>
+          <WButton color="danger" variant="transparent">Danger </WButton>
+          <WButton color="warning" variant="transparent">Warning </WButton>
 
         </div>
 
         <h2 class="font-semibold text-xl mt-10 mb-4">Colors</h2>
         <div class="flex flex-wrap  gap-3 mt-8">
-          <TButton color="primary">Primary </TButton>
-          <TButton color="secondary">Secondary </TButton>
-          <TButton color="success">Success </TButton>
-          <TButton color="danger">Danger </TButton>
-          <TButton color="warning">Warning </TButton>
+          <WButton color="primary">Primary </WButton>
+          <WButton color="secondary">Secondary </WButton>
+          <WButton color="success">Success </WButton>
+          <WButton color="danger">Danger </WButton>
+          <WButton color="warning">Warning </WButton>
 
 
         </div>
 
         <h2 class="font-semibold text-xl mt-10 mb-4">Sizes</h2>
         <div class="flex flex-wrap items-center gap-3 mt-8">
-          <TButton size="xs">Extra-small </TButton>
-          <TButton size="sm">Small </TButton>
-          <TButton>normal </TButton>
-          <TButton size="lg">Large </TButton>
-          <TButton size="xl">Extra-large </TButton>
+          <WButton size="xs">Extra-small </WButton>
+          <WButton size="sm">Small </WButton>
+          <WButton>normal </WButton>
+          <WButton size="lg">Large </WButton>
+          <WButton size="xl">Extra-large </WButton>
 
         </div>
         <h2 class="font-semibold text-xl mt-10 mb-4">Link</h2>
         <div class="flex flex-wrap items-center gap-3 mt-8">
-          <TButton color="primary" variant="link">Primary </TButton>
-          <TButton color="secondary" variant="link">Secondary </TButton>
-          <TButton color="success" variant="link">Success </TButton>
-          <TButton color="danger" variant="link">Danger </TButton>
-          <TButton color="warning" variant="link">Warning </TButton>
+          <WButton color="primary" variant="link">Primary </WButton>
+          <WButton color="secondary" variant="link">Secondary </WButton>
+          <WButton color="success" variant="link">Success </WButton>
+          <WButton color="danger" variant="link">Danger </WButton>
+          <WButton color="warning" variant="link">Warning </WButton>
         </div>
         <h2 class="font-semibold text-xl mt-10 mb-4">Teste</h2>
         <div class="flex flex-wrap items-center gap-3 mt-8">
 
-<TButton  size="xs">Teste</TButton>
-           <TButton  size="sm">Teste</TButton> 
-          <TButton  >Teste</TButton> 
-          <TButton size="lg" >Teste</TButton> 
-            <TButton size="xl"  >Teste</TButton>
-               <TButton color="success">Teste</TButton>  
-          <TButton color="secondary" variant="outline"  >Teste</TButton> 
-           <TButton  color="danger" variant="transparent" >Teste</TButton> 
-           <TButton variant="link" >Teste</TButton> 
+<WButton  size="xs">Teste</WButton>
+           <WButton  size="sm">Teste</WButton> 
+          <WButton  >Teste</WButton> 
+          <WButton size="lg" >Teste</WButton> 
+            <WButton size="xl"  >Teste</WButton>
+               <WButton color="success">Teste</WButton>  
+          <WButton color="secondary" variant="outline"  >Teste</WButton> 
+           <WButton  color="danger" variant="transparent" >Teste</WButton> 
+           <WButton variant="link" >Teste</WButton> 
         </div>
       </div>
     </div>
@@ -159,7 +159,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 import { WButton } from "./index"
-import  TButton  from "./components/WButton/TButton.vue"
 const dark = ref(false);
 // watch dark mode ref
 watch(dark, () => {
