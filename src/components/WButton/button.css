@@ -1,0 +1,129 @@
+._btn {
+  @apply font-semibold rounded-lg inline-flex items-center justify-center select-none transition duration-200 transform active:(animate-none hover:scale-95 focus:scale-95) outline-offset-2;
+   /* animation does not take effect in @apply and is not being scanned/extracted */
+  animation: btnpop 0.25s ease-out; 
+  &._primary {
+    &._default {
+      @apply bg-primary-700 text-white hover:bg-primary-800 shadow-sm;
+    }
+    &._outline {
+      @apply text-primary-700 hover:(bg-primary-700 text-white) border-2 border-primary-700;
+    }
+    &._transparent {
+      @apply text-primary-700 hover:(bg-primary-700/10);
+    }
+    &._link {
+      @apply text-primary-700 hover:underline;
+    }
+  }
+  &._secondary {
+    &._default {
+      @apply bg-gray-700 text-white hover:bg-gray-800 shadow-sm;
+    }
+    &._outline {
+      @apply text-gray-700 hover:(bg-gray-700 text-white) border-2 border-gray-700;
+    }
+    &._transparent {
+      @apply text-gray-700 hover:(bg-gray-700/10);
+    }
+    &._link {
+      @apply text-gray-700 hover:underline;
+    }
+  }
+  &._success {
+    &._default {
+      @apply bg-green-700 text-white hover:bg-green-800 shadow-sm;
+    }
+    &._outline {
+      @apply text-green-700 hover:(bg-green-700 text-white) border-2 border-green-700;
+    }
+    &._transparent {
+      @apply text-green-700 hover:(bg-green-700/10);
+    }
+    &._link {
+      @apply text-green-700 hover:underline;
+    }
+  }
+  &._danger {
+    &._default {
+      @apply bg-red-700 text-white hover:bg-red-800 shadow-sm;
+    }
+    &._outline {
+      @apply text-red-700 hover:(bg-red-700 text-white) border-2 border-red-700;
+    }
+    &._transparent {
+      @apply text-red-700 hover:(bg-red-700/10);
+    }
+    &._link {
+      @apply text-red-700 hover:underline;
+    }
+  }
+  &._warning {
+    &._default {
+      @apply bg-yellow-700 text-white hover:bg-yellow-800 shadow-sm;
+    }
+    &._outline {
+      @apply text-yellow-700 hover:(bg-yellow-700 text-white) border-2 border-yellow-700;
+    }
+    &._transparent {
+      @apply text-yellow-700 hover:(bg-yellow-700/10);
+    }
+    &._link {
+      @apply text-yellow-700 hover:underline;
+    }
+  }
+  &._disabled {
+    @apply cursor-not-allowed pointer-events-none !bg-opacity-70 border-opacity-50 text-opacity-80;
+  }
+  &._loading {
+    @apply pointer-events-none;
+  }
+
+  &._pills {
+    @apply rounded-full;
+  }
+
+  &._xs {
+    @apply h-8  px-2 text-xs;
+    &._circle {
+      @apply rounded-full w-8 !p-0;
+    }
+  }
+  &._sm {
+    @apply h-10  px-3 text-sm;
+    &._circle {
+      @apply rounded-full w-10 !p-0;
+    }
+  }
+  &._md {
+    @apply h-12 px-4 text-sm;
+
+    &._circle {
+      @apply rounded-full w-12 !p-0;
+    }
+  }
+  &._lg {
+    @apply h-14 px-5 text-md;
+    &._circle {
+      @apply rounded-full w-14 !p-0;
+    }
+  }
+  &._xl {
+    @apply h-16 px-6 text-xl;
+    &._circle {
+      @apply rounded-full w-16 !p-0;
+    }
+  }
+}
+
+@keyframes btnpop{
+    0% {
+      transform: scale(0.95);
+    }
+    40% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue'
 import { WIconLoading } from '../icons'
+import './button.css'
 export default defineComponent({
   name: "WButton",
   props: {
@@ -66,14 +67,14 @@ export default defineComponent({
 </script>
 <template>
   <component :is="tag" :disabled="disabled" :type="type" :class="[
-  'wbtn',
-  `w${color}`,
-  `w${variant}`,
-  `w${size}`,
-  pills ? 'wpills' : '',
-  disabled ? 'wdisabled' : '',
-  loading ? 'wloading' : '',
-  circle ? 'wcircle' : '',]">
+  '_btn',
+  `_${color}`,
+  `_${variant}`,
+  `_${size}`,
+  pills ? '_pills' : '',
+  disabled ? '_disabled' : '',
+  loading ? '_loading' : '',
+  circle ? '_circle' : '',]">
     <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>
     <slot></slot>
   </component>
