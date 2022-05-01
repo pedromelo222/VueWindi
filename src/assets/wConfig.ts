@@ -46,7 +46,7 @@ export default {
   shortcuts: {  
     'wbtn': {
       '@apply':
-        'font-semibold rounded-lg inline-flex items-center justify-center',
+        'font-semibold rounded-lg inline-flex items-center justify-center select-none',
 
       '&.wprimary': {
         '&.wdefault': {

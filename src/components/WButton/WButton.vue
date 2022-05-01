@@ -74,7 +74,7 @@ export default defineComponent({
   disabled ? 'wdisabled' : '',
   loading ? 'wloading' : '',
   circle ? 'wcircle' : '',]">
-    <WIconLoading v-show="loading" class="-ml-1 mr-2"></WIconLoading>
+    <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>
     <slot></slot>
   </component>
 </template>
