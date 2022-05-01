@@ -15,8 +15,8 @@
         </div>
         <div class="flex ">
 
-          <WButton variant="transparent" color="secondary" class=" stroke-vuewindi-text"> <svg class="h-5 " fill="none"
-              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <WButton @click="changeColor()" variant="transparent" color="secondary" class=" stroke-vuewindi-text"> <svg
+              class="h-5 " fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
               </path>
@@ -139,15 +139,15 @@
         <h2 class="font-semibold text-xl mt-10 mb-4">Teste</h2>
         <div class="flex flex-wrap items-center gap-3 mt-8">
 
-<WButton  size="xs">Teste</WButton>
-           <WButton  size="sm">Teste</WButton> 
-          <WButton  >Teste</WButton> 
-          <WButton size="lg" >Teste</WButton> 
-            <WButton size="xl"  >Teste</WButton>
-               <WButton color="success">Teste</WButton>  
-          <WButton color="secondary" variant="outline"  >Teste</WButton> 
-           <WButton  color="danger" variant="transparent" >Teste</WButton> 
-           <WButton variant="link" >Teste</WButton> 
+          <WButton size="xs">Teste</WButton>
+          <WButton size="sm">Teste</WButton>
+          <WButton>Teste</WButton>
+          <WButton size="lg">Teste</WButton>
+          <WButton size="xl">Teste</WButton>
+          <WButton color="success">Teste</WButton>
+          <WButton color="secondary" variant="outline">Teste</WButton>
+          <WButton color="danger" variant="transparent">Teste</WButton>
+          <WButton variant="link">Teste</WButton>
         </div>
       </div>
     </div>
@@ -159,7 +159,28 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 import { WButton } from "./index"
-const dark = ref(false);
+const dark = ref(false)
+const color = ref('default')
+const colorSelected = ref(0)
+const themeColors: { [keyof: number]: string } = {
+  0: 'color-default',
+  1: 'color-blue',
+  2: 'color-rose',
+  3: 'color-violet',
+  4: 'color-orange'
+}
+
+function changeColor() {
+  document.documentElement.classList.remove(themeColors[colorSelected.value])
+
+  if (colorSelected.value == 4)
+    colorSelected.value = -1;
+
+  colorSelected.value++;
+  document.documentElement.classList.add(themeColors[colorSelected.value])
+  console.log(themeColors[colorSelected.value])
+
+}
 // watch dark mode ref
 watch(dark, () => {
   if (dark.value) {
@@ -170,6 +191,8 @@ watch(dark, () => {
     document.documentElement.classList.add('light')
   }
 })
+
+
 
 </script>
 <script lang="ts">
