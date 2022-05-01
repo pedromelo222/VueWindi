@@ -103,7 +103,7 @@
     }
   }
   &._lg {
-    @apply h-14 px-5 text-md;
+    @apply h-14 px-5 text-base;
     &._circle {
       @apply rounded-full w-14 !p-0;
     }
