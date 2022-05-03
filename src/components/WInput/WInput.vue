@@ -8,7 +8,6 @@ export default defineComponent ({
 
 </script>
 <template>
-    <div>
-      Input mothafucker!
+    <div>     
     </div>
 </template>
