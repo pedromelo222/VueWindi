@@ -9,7 +9,7 @@ export default defineConfig({
   test: {
       // enable jest-like global test APIs
       globals: true,
-      environment: 'happy-dom'
+      environment: 'jsdom'
   },
   plugins: [
     vue(),  
