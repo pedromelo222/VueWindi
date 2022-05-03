@@ -67,14 +67,14 @@ export default defineComponent({
 </script>
 <template>
   <component :is="tag" :disabled="disabled || loading" :type="type" :class="[
-  '_btn',
-  `_${color}`,
-  `_${variant}`,
-  `_${size}`,
-  pills ? '_pills' : '',
-  disabled ? '_disabled' : '',
-  loading ? '_loading' : '',
-  circle ? '_circle' : '',]">
+  'w-btn',
+  `w-btn-${color}`,
+  `w-btn-${variant}`,
+  `w-btn-${size}`,
+  pills ? 'w-btn-pills' : '',
+  disabled ? 'w-btn-disabled' : '',
+  loading ? 'w-btn-loading' : '',
+  circle ? 'w-btn-circle' : '',]">
     <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>
     <slot></slot>
   </component>

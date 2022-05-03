@@ -1,116 +1,116 @@
-._btn {
+.w-btn {
   @apply font-semibold rounded-lg inline-flex items-center justify-center select-none transition duration-200 transform active:(animate-none hover:scale-95 focus:scale-95) outline-offset-2;
    /* animation does not take effect in @apply and is not being scanned/extracted */
   animation: btnpop 0.25s ease-out; 
-  &._primary {
-    &._default {
+  &.w-btn-primary {
+    &.w-btn-default {
       @apply bg-primary-700 text-white hover:bg-primary-800 shadow-sm;
     }
-    &._outline {
+    &.w-btn-outline {
       @apply text-primary-700 hover:(bg-primary-700 text-white) border-2 border-primary-700;
     }
-    &._transparent {
+    &.w-btn-transparent {
       @apply text-primary-700 hover:(bg-primary-700/10);
     }
-    &._link {
+    &.w-btn-link {
       @apply text-primary-700 hover:underline;
     }
   }
-  &._secondary {
-    &._default {
+  &.w-btn-secondary {
+    &.w-btn-default {
       @apply bg-gray-700 text-white hover:bg-gray-800 shadow-sm;
     }
-    &._outline {
+    &.w-btn-outline {
       @apply text-gray-700 hover:(bg-gray-700 text-white) border-2 border-gray-700;
     }
-    &._transparent {
+    &.w-btn-transparent {
       @apply text-gray-700 hover:(bg-gray-700/10);
     }
-    &._link {
+    &.w-btn-link {
       @apply text-gray-700 hover:underline;
     }
   }
-  &._success {
-    &._default {
+  &.w-btn-success {
+    &.w-btn-default {
       @apply bg-green-700 text-white hover:bg-green-800 shadow-sm;
     }
-    &._outline {
+    &.w-btn-outline {
       @apply text-green-700 hover:(bg-green-700 text-white) border-2 border-green-700;
     }
-    &._transparent {
+    &.w-btn-transparent {
       @apply text-green-700 hover:(bg-green-700/10);
     }
-    &._link {
+    &.w-btn-link {
       @apply text-green-700 hover:underline;
     }
   }
-  &._danger {
-    &._default {
+  &.w-btn-danger {
+    &.w-btn-default {
       @apply bg-red-700 text-white hover:bg-red-800 shadow-sm;
     }
-    &._outline {
+    &.w-btn-outline {
       @apply text-red-700 hover:(bg-red-700 text-white) border-2 border-red-700;
     }
-    &._transparent {
+    &.w-btn-transparent {
       @apply text-red-700 hover:(bg-red-700/10);
     }
-    &._link {
+    &.w-btn-link {
       @apply text-red-700 hover:underline;
     }
   }
-  &._warning {
-    &._default {
+  &.w-btn-warning {
+    &.w-btn-default {
       @apply bg-yellow-700 text-white hover:bg-yellow-800 shadow-sm;
     }
-    &._outline {
+    &.w-btn-outline {
       @apply text-yellow-700 hover:(bg-yellow-700 text-white) border-2 border-yellow-700;
     }
-    &._transparent {
+    &.w-btn-transparent {
       @apply text-yellow-700 hover:(bg-yellow-700/10);
     }
-    &._link {
+    &.w-btn-link {
       @apply text-yellow-700 hover:underline;
     }
   }
-  &._disabled {
+  &.w-btn-disabled {
     @apply cursor-not-allowed pointer-events-none !bg-opacity-70 border-opacity-50 text-opacity-80;
   }
-  &._loading {
+  &.w-btn-loading {
     @apply pointer-events-none;
   }
 
-  &._pills {
+  &.w-btn-pills {
     @apply rounded-full;
   }
 
-  &._xs {
+  &.w-btn-xs {
     @apply h-8  px-2 text-xs;
-    &._circle {
+    &.w-btn-circle {
       @apply rounded-full w-8 !p-0;
     }
   }
-  &._sm {
+  &.w-btn-sm {
     @apply h-10  px-3 text-sm;
-    &._circle {
+    &.w-btn-circle {
       @apply rounded-full w-10 !p-0;
     }
   }
-  &._md {
+  &.w-btn-md {
     @apply h-12 px-4 text-sm;
 
-    &._circle {
+    &.w-btn-circle {
       @apply rounded-full w-12 !p-0;
     }
   }
-  &._lg {
+  &.w-btn-lg {
     @apply h-14 px-5 text-base;
-    &._circle {
+    &.w-btn-circle {
       @apply rounded-full w-14 !p-0;
     }
   }
-  &._xl {
+  &.w-btn-xl {
     @apply h-16 px-6 text-xl;
-    &._circle {
+    &.w-btn-circle {
       @apply rounded-full w-16 !p-0;
     }
   }

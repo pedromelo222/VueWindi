@@ -67,12 +67,12 @@ describe("WButton", () => {
     wrapper.unmount();
   });
 
-  it('should work with color prop', async () => {
+  it('should work with `color` prop', async () => {
     ;(['primary', 'info', 'success', 'warning', 'error'] as const).forEach(
       (color) => {
         const wrapper = mount(WButton, { props: { color: color } })
         expect(wrapper.find('button').classes()).toContain(
-          `_${color}`
+          `w-btn-${color}`
         )
         wrapper.unmount()
       }
