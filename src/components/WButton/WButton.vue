@@ -66,7 +66,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <component :is="tag" :disabled="disabled" :type="type" :class="[
+  <component :is="tag" :disabled="disabled || loading" :type="type" :class="[
   '_btn',
   `_${color}`,
   `_${variant}`,
