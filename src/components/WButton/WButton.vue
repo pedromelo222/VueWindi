@@ -60,6 +60,11 @@ export default defineComponent({
       type: Boolean,
       default: false,
       required: false
+    },
+    active: {
+      type: Boolean,
+      default: false,
+      required: false
     }
   },
   components: { WIconLoading }
@@ -74,7 +79,8 @@ export default defineComponent({
   pills ? 'w-btn-pills' : '',
   disabled ? 'w-btn-disabled' : '',
   loading ? 'w-btn-loading' : '',
-  circle ? 'w-btn-circle' : '',]">
+  circle ? 'w-btn-circle' : '',
+  active ? 'w-btn-active': '' ]">
     <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>
     <slot></slot>
   </component>

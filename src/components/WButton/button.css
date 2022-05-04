@@ -15,6 +15,9 @@
     &.w-btn-link {
       @apply text-primary-700 hover:underline;
     }
+    &.w-btn-active {
+      @apply bg-primary-800;
+    }
   }
   &.w-btn-secondary {
     &.w-btn-default {
@@ -28,6 +31,9 @@
     }
     &.w-btn-link {
       @apply text-gray-700 hover:underline;
+    }
+    &.w-btn-active {
+      @apply bg-gray-800;
     }
   }
   &.w-btn-success {
@@ -43,6 +49,9 @@
     &.w-btn-link {
       @apply text-green-700 hover:underline;
     }
+    &.w-btn-active {
+      @apply bg-green-800;
+    }
   }
   &.w-btn-danger {
     &.w-btn-default {
@@ -56,6 +65,9 @@
     }
     &.w-btn-link {
       @apply text-red-700 hover:underline;
+    }
+    &.w-btn-active {
+      @apply bg-red-800;
     }
   }
   &.w-btn-warning {
@@ -71,6 +83,9 @@
     &.w-btn-link {
       @apply text-yellow-700 hover:underline;
     }
+    &.w-btn-active {
+      @apply bg-yellow-800;
+    }
   }
   &.w-btn-disabled {
     @apply cursor-not-allowed pointer-events-none !bg-opacity-70 border-opacity-50 text-opacity-80;
@@ -78,11 +93,9 @@
   &.w-btn-loading {
     @apply pointer-events-none;
   }
-
   &.w-btn-pills {
     @apply rounded-full;
   }
-
   &.w-btn-xs {
     @apply h-8  px-2 text-xs;
     &.w-btn-circle {
