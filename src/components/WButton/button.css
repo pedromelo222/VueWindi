@@ -1,7 +1,8 @@
-.w-btn {
+.w-btn:not(.w-btn-clean) {
   @apply font-semibold rounded-lg inline-flex items-center justify-center select-none transition duration-200 transform active:(animate-none hover:scale-95 focus:scale-95) outline-offset-2;
    /* animation does not take effect in @apply and is not being scanned/extracted */
   animation: btnpop 0.25s ease-out; 
+
   &.w-btn-primary {
     &.w-btn-default {
       @apply bg-primary-700 text-white hover:bg-primary-800 shadow-sm;

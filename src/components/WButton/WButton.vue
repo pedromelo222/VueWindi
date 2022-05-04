@@ -65,13 +65,18 @@ export default defineComponent({
       type: Boolean,
       default: false,
       required: false
+    },
+    clean: {
+      type: Boolean,
+      default: false,
+      required: false
     }
   },
   components: { WIconLoading }
 })
 </script>
 <template>
-  <component :is="tag" :disabled="disabled || loading" :type="type" :class="[
+  <component :is="tag" :disabled="disabled || loading" :type="type" :class="[ 
   'w-btn',
   `w-btn-${color}`,
   `w-btn-${variant}`,
@@ -80,7 +85,8 @@ export default defineComponent({
   disabled ? 'w-btn-disabled' : '',
   loading ? 'w-btn-loading' : '',
   circle ? 'w-btn-circle' : '',
-  active ? 'w-btn-active': '' ]">
+  active ? 'w-btn-active': '',
+  clean ? 'w-btn-clean': '']">
     <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>
     <slot></slot>
   </component>
