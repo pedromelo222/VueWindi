@@ -5,87 +5,135 @@
   &.w-btn-primary {
     &.w-btn-default {
       @apply bg-primary-700 text-white hover:bg-primary-800 shadow-sm;
+      &.w-btn-active {
+        @apply bg-primary-800;
+      }
     }
     &.w-btn-outline {
       @apply text-primary-700 hover:(bg-primary-700 text-white) border-2 border-primary-700;
+      &.w-btn-active {
+        @apply bg-primary-700 text-white;
+      }
     }
     &.w-btn-transparent {
       @apply text-primary-700 hover:(bg-primary-700/10);
+      &.w-btn-active {
+        @apply bg-primary-700/10;
+      }
     }
     &.w-btn-link {
       @apply text-primary-700 hover:underline;
-    }
-    &.w-btn-active {
-      @apply bg-primary-800;
+      &.w-btn-active {
+        @apply underline;
+      }
     }
   }
   &.w-btn-secondary {
     &.w-btn-default {
       @apply bg-gray-700 text-white hover:bg-gray-800 shadow-sm;
+      &.w-btn-active {
+        @apply bg-gray-800;
+      }
     }
     &.w-btn-outline {
       @apply text-gray-700 hover:(bg-gray-700 text-white) border-2 border-gray-700;
+      &.w-btn-active {
+        @apply bg-gray-700 text-white;
+      }
     }
     &.w-btn-transparent {
       @apply text-gray-700 hover:(bg-gray-700/10);
+      &.w-btn-active {
+        @apply bg-gray-700/10;
+      }
     }
     &.w-btn-link {
       @apply text-gray-700 hover:underline;
+      &.w-btn-active {
+        @apply underline;
+      }
     }
-    &.w-btn-active {
-      @apply bg-gray-800;
-    }
+    
   }
   &.w-btn-success {
     &.w-btn-default {
       @apply bg-green-700 text-white hover:bg-green-800 shadow-sm;
+      &.w-btn-active {
+        @apply bg-green-800;
+      }
     }
     &.w-btn-outline {
       @apply text-green-700 hover:(bg-green-700 text-white) border-2 border-green-700;
+      &.w-btn-active {
+        @apply bg-green-700 text-white;
+      }
     }
     &.w-btn-transparent {
       @apply text-green-700 hover:(bg-green-700/10);
+      &.w-btn-active {
+        @apply bg-green-700/10;
+      }
     }
     &.w-btn-link {
       @apply text-green-700 hover:underline;
+      &.w-btn-active {
+        @apply underline;
+      }
     }
-    &.w-btn-active {
-      @apply bg-green-800;
-    }
+   
   }
   &.w-btn-danger {
     &.w-btn-default {
       @apply bg-red-700 text-white hover:bg-red-800 shadow-sm;
+      &.w-btn-active {
+        @apply bg-red-800;
+      }
     }
     &.w-btn-outline {
       @apply text-red-700 hover:(bg-red-700 text-white) border-2 border-red-700;
+      &.w-btn-active {
+        @apply bg-red-700 text-white;
+      }
     }
     &.w-btn-transparent {
       @apply text-red-700 hover:(bg-red-700/10);
+      &.w-btn-active {
+        @apply bg-red-700/10;
+      }
     }
     &.w-btn-link {
       @apply text-red-700 hover:underline;
-    }
-    &.w-btn-active {
-      @apply bg-red-800;
+      &.w-btn-active {
+        @apply underline;
+      }
     }
   }
   &.w-btn-warning {
     &.w-btn-default {
-      @apply bg-yellow-700 text-white hover:bg-yellow-800 shadow-sm;
+      @apply bg-yellow-700 text-white hover:bg-yellow-800 shadow-sm;      
+      &.w-btn-active {
+        @apply bg-yellow-800;
+      }
     }
     &.w-btn-outline {
       @apply text-yellow-700 hover:(bg-yellow-700 text-white) border-2 border-yellow-700;
+      &.w-btn-active {
+        @apply bg-yellow-700 text-white;
+      }
     }
     &.w-btn-transparent {
       @apply text-yellow-700 hover:(bg-yellow-700/10);
+      &.w-btn-active {
+        @apply bg-yellow-700/10;
+      }
     }
     &.w-btn-link {
       @apply text-yellow-700 hover:underline;
+      &.w-btn-active {
+        @apply underline;
+      }
     }
-    &.w-btn-active {
-      @apply bg-yellow-800;
-    }
+   
   }
   &.w-btn-disabled {
     @apply cursor-not-allowed pointer-events-none !bg-opacity-70 border-opacity-50 text-opacity-80;
