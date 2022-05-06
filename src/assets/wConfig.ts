@@ -4,7 +4,7 @@ import plugin from 'windicss/plugin'
 
 export default {
   preflight: {
-    safelist: "button a",
+    safelist: "button a ul li",
   },
   theme: {
     colors: {
