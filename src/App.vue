@@ -52,16 +52,166 @@
               </path>
             </svg>
           </WButton>
-
         </div>
-
-
       </div>
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
-        <h2 class="font-semibold text-xl mb-4">Button component</h2>
-        <div class="flex flex-wrap items-center gap-3">
+        <h2 class="font-semibold text-sm mt-10">Menu component</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+
+          <!-- default -->
+          <WMenu>
+            <WButton clean>Item 1</WButton>
+            <WButton clean>Item 2</WButton>
+            <WButton clean>Item 3</WButton>
+
+          </WMenu>
+
+           <!-- hover-border -->
+          <WMenu hover-border rounded>
+            <WButton clean>Item 1</WButton>
+            <WButton clean>Item 2</WButton>
+            <WButton clean>Item 3</WButton>
+
+          </WMenu>
+          <!-- rounded padding -->
+          <WMenu rounded padding>
+            <WButton clean>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Item 1
+            </WButton>
+            <WButton clean>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Item 2
+            </WButton>
+            <WButton clean>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Item 3
+            </WButton>
+          </WMenu>
+          <!-- compact -->
+          <WMenu compact rounded>
+            <WButton clean>Item 1</WButton>
+            <WButton clean>Item 2</WButton>
+            <WButton clean>Item 3</WButton>
+          </WMenu>
+          <!-- compact responsive: sm | md | lg | xl -->
+          <WMenu compact="lg" rounded padding>
+            <WButton clean>Responsive 1</WButton>
+            <WButton clean>Responsive 2</WButton>
+            <WButton clean>Responsive 3</WButton>
+          </WMenu>
+               <!-- compact responsive: sm | md | lg | xl -->
+          <WMenu compact rounded  >
+            <WButton clean tag="a" href="/">Link 1</WButton>
+            <WButton clean tag="a" href="/">Link 2</WButton>
+            <WButton clean tag="a" href="/">Link 3</WButton>
+          </WMenu>
+             <!-- disabled -->
+          <WMenu rounded padding>
+            <WButton clean class="disabled">Disabled 1</WButton>
+            <WButton clean class="disabled">Disabled 2</WButton>
+            <WButton clean class="disabled">Disabled 3</WButton>
+
+          </WMenu>
+          <!-- horizontal + width auto -->
+          <WMenu horizontal rounded class="w-auto">
+            <WButton clean>Item 1</WButton>
+            <WButton clean>Item 2</WButton>
+            <WButton clean>Item 3</WButton>
+          </WMenu>
+          <!-- horizontal responsive: sm | md | lg | xl -->
+          <WMenu horizontal="sm" rounded class="w-auto">
+            <WButton clean>
+              Responsive 1</WButton>
+            <WButton clean>Responsive 2</WButton>
+            <WButton clean>Responsive 3</WButton>
+          </WMenu>
+
+          <!-- only icons (horizontal) padding -->
+          <WMenu rounded padding class="w-auto">
+            <WButton clean>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </WButton>
+            <WButton clean>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </WButton>
+            <WButton clean>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </WButton>
+          </WMenu>
+
+        </div>
+
+        <h2 class="font-semibold text-sm mt-10">Dropdown component</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+          <WDropdown hover>
+            <template #trigger="{ active }">
+              <WButton :active="active">Hover</WButton>
+            </template>
+            <WMenu rounded padding>
+              <WButton clean>Item 1</WButton>
+              <WButton clean>Item 2</WButton>
+              <WButton clean>Item 3</WButton>
+            </WMenu>
+          </WDropdown>
+          <WDropdown placement="bottom-start">
+            <template #trigger="{ active }">
+              <WButton :active="active">Bottom-start</WButton>
+            </template>
+            <WMenu rounded padding>
+              <WButton clean>Item 1</WButton>
+              <WButton clean>Item 2</WButton>
+              <WButton clean>Item 3</WButton>
+            </WMenu>
+          </WDropdown>
+          <WDropdown placement="bottom-end">
+            <template #trigger="{ active }">
+              <WButton :active="active">Bottom-end</WButton>
+            </template>
+            test
+          </WDropdown>
+          <WDropdown placement="top-start">
+            <template #trigger="{ active }">
+              <WButton :active="active">Top-start</WButton>
+            </template>
+            test
+          </WDropdown>
+          <WDropdown placement="top-end">
+            <template #trigger="{ active }">
+              <WButton :active="active">Top-end</WButton>
+            </template>
+            test
+          </WDropdown>
+        </div>
+
+        <h2 class="font-semibold text-sm mt-10 ">Button component</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
           <WButton variant="default" color="primary">Primary </WButton>
           <WButton loading> Button </WButton>
           <WButton pills> Button pills </WButton>
@@ -89,38 +239,78 @@
 
 
         </div>
-        <h2 class="font-semibold text-xl mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap gap-3 mt-8">
+        <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
           <WButton color="primary" variant="outline">Primary </WButton>
           <WButton color="secondary" variant="outline">Secondary </WButton>
           <WButton color="success" variant="outline">Success </WButton>
           <WButton color="danger" variant="outline">Danger </WButton>
           <WButton color="warning" variant="outline">Warning </WButton>
         </div>
+        <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+          <WButton color="primary" variant="outline" active>Primary </WButton>
+          <WButton color="secondary" variant="outline" active>Secondary </WButton>
+          <WButton color="success" variant="outline" active>Success </WButton>
+          <WButton color="danger" variant="outline" active>Danger </WButton>
+          <WButton color="warning" variant="outline" active>Warning </WButton>
+        </div>
 
-        <h2 class="font-semibold text-xl mt-10 mb-4">Transparent</h2>
-        <div class="flex flex-wrap gap-3 mt-8">
+        <h2 class="font-semibold text-sm mt-10 mb-4">Transparent</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
           <WButton variant="transparent">Primary </WButton>
           <WButton color="secondary" variant="transparent">Secondary </WButton>
           <WButton color="success" variant="transparent">Success </WButton>
           <WButton color="danger" variant="transparent">Danger </WButton>
           <WButton color="warning" variant="transparent">Warning </WButton>
-
         </div>
 
-        <h2 class="font-semibold text-xl mt-10 mb-4">Colors</h2>
-        <div class="flex flex-wrap  gap-3 mt-8">
+        <h2 class="font-semibold text-sm mt-10 mb-4">Transparent active</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+          <WButton variant="transparent" active>Primary </WButton>
+          <WButton color="secondary" variant="transparent" active>Secondary </WButton>
+          <WButton color="success" variant="transparent" active>Success </WButton>
+          <WButton color="danger" variant="transparent" active>Danger </WButton>
+          <WButton color="warning" variant="transparent" active>Warning </WButton>
+        </div>
+
+        <h2 class="font-semibold text-sm mt-10 mb-4">Colors</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
           <WButton color="primary">Primary </WButton>
           <WButton color="secondary">Secondary </WButton>
           <WButton color="success">Success </WButton>
           <WButton color="danger">Danger </WButton>
           <WButton color="warning">Warning </WButton>
+        </div>
+        <h2 class="font-semibold text-sm mt-10 mb-4">Colors active</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+          <WButton color="primary" active>Primary </WButton>
+          <WButton color="secondary" active>Secondary </WButton>
+          <WButton color="success" active>Success </WButton>
+          <WButton color="danger" active>Danger </WButton>
+          <WButton color="warning" active>Warning </WButton>
 
 
         </div>
 
-        <h2 class="font-semibold text-xl mt-10 mb-4">Sizes</h2>
-        <div class="flex flex-wrap items-center gap-3 mt-8">
+        <h2 class="font-semibold text-sm mt-10 mb-4">Link</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+          <WButton color="primary" variant="link">Primary </WButton>
+          <WButton color="secondary" variant="link">Secondary </WButton>
+          <WButton color="success" variant="link">Success </WButton>
+          <WButton color="danger" variant="link">Danger </WButton>
+          <WButton color="warning" variant="link">Warning </WButton>
+        </div>
+        <h2 class="font-semibold text-sm mt-10 mb-4">Link active</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+          <WButton color="primary" variant="link" active>Primary </WButton>
+          <WButton color="secondary" variant="link" active>Secondary </WButton>
+          <WButton color="success" variant="link" active>Success </WButton>
+          <WButton color="danger" variant="link" active>Danger </WButton>
+          <WButton color="warning" variant="link" active>Warning </WButton>
+        </div>
+        <h2 class="font-semibold text-sm mt-10 mb-4">Sizes</h2>
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
           <WButton size="xs">Extra-small </WButton>
           <WButton size="sm">Small </WButton>
           <WButton>normal </WButton>
@@ -128,27 +318,8 @@
           <WButton size="xl">Extra-large </WButton>
 
         </div>
-        <h2 class="font-semibold text-xl mt-10 mb-4">Link</h2>
-        <div class="flex flex-wrap items-center gap-3 mt-8">
-          <WButton color="primary" variant="link">Primary </WButton>
-          <WButton color="secondary" variant="link">Secondary </WButton>
-          <WButton color="success" variant="link">Success </WButton>
-          <WButton color="danger" variant="link">Danger </WButton>
-          <WButton color="warning" variant="link">Warning </WButton>
-        </div>
-        <h2 class="font-semibold text-xl mt-10 mb-4">Teste</h2>
-        <div class="flex flex-wrap items-center gap-3 mt-8">
 
-          <WButton size="xs">Teste</WButton>
-          <WButton size="sm">Teste</WButton>
-          <WButton>Teste</WButton>
-          <WButton size="lg">Teste</WButton>
-          <WButton size="xl">Teste</WButton>
-          <WButton color="success">Teste</WButton>
-          <WButton color="secondary" variant="outline">Teste</WButton>
-          <WButton color="danger" variant="transparent">Teste</WButton>
-          <WButton variant="link">Teste</WButton>
-        </div>
+
       </div>
     </div>
     <div>
@@ -158,7 +329,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue"
-import { WButton } from "./index"
+import { WButton, WDropdown, WMenu } from "./index"
 const dark = ref(false)
 const color = ref('default')
 const colorSelected = ref(0)
@@ -191,8 +362,6 @@ watch(dark, () => {
     document.documentElement.classList.add('light')
   }
 })
-
-
 
 </script>
 <script lang="ts">
