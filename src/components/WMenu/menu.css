@@ -1,0 +1,186 @@
+.w-menu {
+    @apply bg-vuewindi-bg w-56 shadow shadow-md select-none;
+  
+    &.w-rounded {
+      @apply rounded-xl;
+    }
+  
+    &.w-padding {
+      @apply p-2;
+    }
+  
+    li .disabled {
+      @apply cursor-not-allowed pointer-events-none text-vuewindi-text text-opacity-20 hover: bg-white/0;
+  
+    }
+  
+    &.w-hover-border li>* {
+      @apply border-l-4 border-white/0 hover: (border-primary-700);
+    }
+  
+    li > *:not(.disabled) {
+      @apply flex items-center gap-3 hover:bg-black/7 dark:hover:bg-white/7 w-full text-left transition duration-200 ease-in-out text-vuewindi-text;
+  
+      &:active {
+        @apply  !bg-primary-700 text-white;
+      }
+    }
+  
+    >:where(li:first-child) {
+      @apply border-tl-inherit border-tr-inherit border-bl-unset border-br-unset;
+    }
+  
+    > :where(li:first-child)> :where(:not(ul)) {
+      @apply border-tl-inherit border-tr-inherit border-bl-unset border-br-unset;
+    }
+  
+    > :where(li:last-child) {
+      @apply border-tl-unset border-tr-unset border-bl-inherit border-br-inherit;
+    }
+  
+    > :where(li:last-child)> :where(:not(ul)) {
+      @apply border-tl-unset border-tr-unset border-bl-inherit border-br-inherit;
+    }
+  
+    > :where(li) > :where(ul) {
+        @apply border-tl-inherit border-tr-inherit border-bl-inherit border-br-inherit;
+  }
+  
+    &.w-padding li > * {
+      @apply rounded-lg;
+    }
+  
+    &:not(.w-compact) li > * {
+      @apply text-base p-4 py-3;
+    }
+  
+    /* Static compact */
+    &.w-compact li > * {
+      @apply text-sm p-2 pl-4;
+    }
+  
+    /* Responsive compact  */
+    &.w-compact-sm li > * {
+      @apply <sm: (text-sm p-2 pl-4);
+    }
+  
+    &.w-compact-md li > * {
+      @apply <md: (text-sm p-2 pl-4);
+    }
+  
+    &.w-compact-lg li > * {
+      @apply <lg: (text-sm p-2 pl-4);
+    }
+  
+    &.w-compact-xl li > * {
+      @apply <xl: (text-sm p-2 pl-4);
+    }
+  
+    .w-menu:not(.w-horizontal) {
+      @apply flex flex-col;
+    }
+  
+    /* Static horizontal */
+    &.w-horizontal {
+      @apply inline-flex flex-row;
+    }
+  
+    /* Responsive horizontal  */
+    &.w-horizontal-sm {
+      @apply sm: (inline-flex flex-row);
+    }
+  
+    &.w-horizontal-md {
+      @apply md: (inline-flex flex-row);
+    }
+  
+    &.w-horizontal-lg {
+      @apply lg: (inline-flex flex-row);
+    }
+  
+    &.w-horizontal-xl {
+      @apply xl: (inline-flex flex-row);
+    }
+  
+  
+    &.w-horizontal>:where(li:first-child) {
+      @apply border-tl-inherit border-tr-unset border-br-unset border-bl-inherit;
+    }
+  
+    &.w-horizontal>:where(li:first-child)>:where(*:not(ul)) {
+      @apply border-tl-inherit border-tr-unset border-br-unset border-bl-inherit;
+    }
+  
+    &.w-horizontal>:where(li:last-child) {
+      @apply border-tl-unset border-tr-inherit border-br-inherit border-bl-unset;
+    }
+  
+    &.w-horizontal>:where(li:last-child)>:where(*:not(ul)) {
+      @apply border-tl-unset border-tr-inherit border-br-inherit border-bl-unset;
+  
+    }
+  
+    &.w-horizontal-sm>:where(li:first-child) {
+      @apply sm: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-sm>:where(li:first-child)>:where(*:not(ul)) {
+      @apply sm: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-sm>:where(li:last-child) {
+      @apply sm: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-sm>:where(li:last-child)>:where(*:not(ul)) {
+      @apply sm: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-md>:where(li:first-child) {
+      @apply md: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-md>:where(li:first-child)>:where(*:not(ul)) {
+      @apply md: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-md>:where(li:last-child) {
+      @apply md: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-md>:where(li:last-child)>:where(*:not(ul)) {
+      @apply md: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-lg>:where(li:first-child) {
+      @apply lg: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-lg>:where(li:first-child)>:where(*:not(ul)) {
+      @apply lg: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-lg>:where(li:last-child) {
+      @apply lg: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-lg>:where(li:last-child)>:where(*:not(ul)) {
+      @apply lg: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-xl>:where(li:first-child) {
+      @apply xl: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-xl>:where(li:first-child)>:where(*:not(ul)) {
+      @apply xl: (border-tl-inherit border-tr-unset border-br-unset border-bl-inherit);
+    }
+  
+    &.w-horizontal-xl>:where(li:last-child) {
+      @apply xl: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  
+    &.w-horizontal-xl>:where(li:last-child)>:where(*:not(ul)) {
+      @apply xl: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+  }
