@@ -56,24 +56,24 @@
   
     /* Static compact */
     &.w-compact li > * {
-      @apply text-sm p-2 pl-4;
+      @apply text-sm py-2 px-4;
     }
   
     /* Responsive compact  */
     &.w-compact-sm li > * {
-      @apply <sm: (text-sm p-2 pl-4);
+      @apply <sm: (text-sm py-2 px-4);
     }
   
     &.w-compact-md li > * {
-      @apply <md: (text-sm p-2 pl-4);
+      @apply <md: (text-sm py-2 px-4);
     }
   
     &.w-compact-lg li > * {
-      @apply <lg: (text-sm p-2 pl-4);
+      @apply <lg: (text-sm py-2 px-4);
     }
   
     &.w-compact-xl li > * {
-      @apply <xl: (text-sm p-2 pl-4);
+      @apply <xl: (text-sm py-2 px-4);
     }
   
     .w-menu:not(.w-horizontal) {
