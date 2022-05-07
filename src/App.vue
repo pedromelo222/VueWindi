@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="antialiased text-vuewindi-text pb-10">
     <nav class="flex sticky top-0 z-40 flex-none py-3 mx-auto w-full border-b border-vuewindi-bc bg-vuewindi-bg">
@@ -15,16 +13,35 @@
         </div>
         <div class="flex ">
 
-          <WButton @click="changeColor()" variant="transparent" color="primary" class=" stroke-primary-600"> <svg
-              class="h-5.5 " fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          <WButton tag="a" href="https://github.com/drope222/VueWindi" target="_blank" variant="transparent" color="secondary" class="stroke-vuewindi-text"> 
+          <svg class="h-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21" 
+          fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </WButton>
+
+            <WDropdown placement="bottom-end" >
+                <template #trigger="{ active }">
+                  <WButton variant="transparent" color="secondary" class="stroke-vuewindi-text">
+                    <svg class="h-5.4 " fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"
                 d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
               </path>
             </svg> </WButton>
+            </template>
+         
+
+              <WMenu  rounded horizontal="md"   class="w-auto">
+                <WButton clean @click="changeColor('color-default')"><span class="rounded-full bg-teal-700 h-7 w-7"></span></WButton>
+                <WButton clean @click="changeColor('color-blue')"><span class="rounded-full bg-blue-700 h-7 w-7"></span></WButton>
+                <WButton clean @click="changeColor('color-rose')"><span class="rounded-full bg-rose-700 h-7 w-7"></span></WButton>
+                <WButton clean @click="changeColor('color-violet')"><span class="rounded-full bg-violet-700 h-7 w-7"></span></WButton>
+                <WButton clean @click="changeColor('color-orange')"><span class="rounded-full bg-orange-700 h-7 w-7"></span></WButton>
+                
+
+              </WMenu>
+            </WDropdown>
 
 
-          <WButton variant="transparent" color="secondary" @click="dark = !dark" class="fill-vuewindi-text ">
-
+          <WButton variant="transparent" color="secondary" @click="dark = !dark" class="fill-vuewindi-text">
             <svg v-show="!dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 ">
               <path
                 d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z">
@@ -58,7 +75,7 @@
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
         <h2 class="font-semibold text-sm mt-10">Menu component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
 
           <!-- default -->
           <WMenu>
@@ -169,7 +186,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10">Dropdown component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WDropdown hover>
             <template #trigger="{ active }">
               <WButton :active="active">Hover</WButton>
@@ -211,7 +228,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 ">Button component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton variant="default" color="primary">Primary </WButton>
           <WButton loading> Button </WButton>
           <WButton pills> Button pills </WButton>
@@ -240,7 +257,7 @@
 
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton color="primary" variant="outline">Primary </WButton>
           <WButton color="secondary" variant="outline">Secondary </WButton>
           <WButton color="success" variant="outline">Success </WButton>
@@ -248,7 +265,7 @@
           <WButton color="warning" variant="outline">Warning </WButton>
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton color="primary" variant="outline" active>Primary </WButton>
           <WButton color="secondary" variant="outline" active>Secondary </WButton>
           <WButton color="success" variant="outline" active>Success </WButton>
@@ -257,7 +274,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 mb-4">Transparent</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton variant="transparent">Primary </WButton>
           <WButton color="secondary" variant="transparent">Secondary </WButton>
           <WButton color="success" variant="transparent">Success </WButton>
@@ -266,7 +283,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 mb-4">Transparent active</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton variant="transparent" active>Primary </WButton>
           <WButton color="secondary" variant="transparent" active>Secondary </WButton>
           <WButton color="success" variant="transparent" active>Success </WButton>
@@ -275,7 +292,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 mb-4">Colors</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton color="primary">Primary </WButton>
           <WButton color="secondary">Secondary </WButton>
           <WButton color="success">Success </WButton>
@@ -283,7 +300,7 @@
           <WButton color="warning">Warning </WButton>
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Colors active</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton color="primary" active>Primary </WButton>
           <WButton color="secondary" active>Secondary </WButton>
           <WButton color="success" active>Success </WButton>
@@ -294,7 +311,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 mb-4">Link</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton color="primary" variant="link">Primary </WButton>
           <WButton color="secondary" variant="link">Secondary </WButton>
           <WButton color="success" variant="link">Success </WButton>
@@ -302,7 +319,7 @@
           <WButton color="warning" variant="link">Warning </WButton>
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Link active</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton color="primary" variant="link" active>Primary </WButton>
           <WButton color="secondary" variant="link" active>Secondary </WButton>
           <WButton color="success" variant="link" active>Success </WButton>
@@ -310,7 +327,7 @@
           <WButton color="warning" variant="link" active>Warning </WButton>
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Sizes</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
           <WButton size="xs">Extra-small </WButton>
           <WButton size="sm">Small </WButton>
           <WButton>normal </WButton>
@@ -331,26 +348,14 @@
 import { ref, watch } from "vue"
 import { WButton, WDropdown, WMenu } from "./index"
 const dark = ref(false)
-const color = ref('default')
-const colorSelected = ref(0)
-const themeColors: { [keyof: number]: string } = {
-  0: 'color-default',
-  1: 'color-blue',
-  2: 'color-rose',
-  3: 'color-violet',
-  4: 'color-orange'
-}
+const selectedColor = ref('color-default');
 
-function changeColor() {
-  document.documentElement.classList.remove(themeColors[colorSelected.value])
 
-  if (colorSelected.value == 4)
-    colorSelected.value = -1;
-
-  colorSelected.value++;
-  document.documentElement.classList.add(themeColors[colorSelected.value])
-  console.log(themeColors[colorSelected.value])
-
+function changeColor(color: string) {
+  document.documentElement.classList.remove(selectedColor.value)
+  selectedColor.value = color;
+  document.documentElement.classList.add(color);
+    
 }
 // watch dark mode ref
 watch(dark, () => {
