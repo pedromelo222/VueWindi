@@ -24,24 +24,34 @@ export default defineComponent({
         const isActive = ref(false)
 
         function toggle() {
-            isActive.value = !isActive.value;
-        }
-
-        function onHover() {
-            if (props.hover) {
+            if(!props.hover)
                 isActive.value = !isActive.value;
-            }
+        }
+        
+        function onHover() {
+            if (props.hover) 
+                isActive.value = !isActive.value;
+            
+        }
+        function onFocus() {
+            // if(!props.hover)
+            //     toggle()            
         }
 
-        onClickOutside(dropdownRef, () => isActive.value = false)
-
-        return { isActive, dropdownRef, toggle, onHover }
+        onClickOutside(dropdownRef, () => {
+            
+             isActive.value = false
+             
+         })
+        return { isActive, dropdownRef, toggle, onHover, onFocus }
     }
 })
 </script>
 <template>
-    <div @mouseleave="onHover" ref="dropdownRef" class="w-dropdown">
-        <div class="p-1" @click="toggle" @mouseenter="onHover" @focus.capture="onHover">
+    <div @mouseleave="onHover" @mouseenter="onHover" ref="dropdownRef" class="w-dropdown">
+        <div class="p-1" 
+        @click="toggle"         
+        @focus.capture="onFocus">
             <slot name="trigger" :active="isActive"></slot>
         </div>
         <transition enter-active-class="transition duration-150 ease-out"
@@ -52,10 +62,8 @@ export default defineComponent({
                 'w-dropdown-menu',
                 `w-dropdown-${placement}`
             ]" v-show="isActive">
-
                 <slot></slot>
             </div>
         </transition>
-
     </div>
 </template>
