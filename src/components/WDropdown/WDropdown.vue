@@ -49,7 +49,7 @@ export default defineComponent({
 </script>
 <template>
     <div @mouseleave="onHover" @mouseenter="onHover" ref="dropdownRef" class="w-dropdown">
-        <div class="p-1" 
+        <div 
         @click="toggle"         
         @focus.capture="onFocus">
             <slot name="trigger" :active="isActive"></slot>
@@ -59,7 +59,7 @@ export default defineComponent({
             leave-active-class="transition duration-75 ease-in" leave-from-class="transform scale-100 opacity-100"
             leave-to-class="transform scale-95 opacity-0">
             <div :class="[
-                'w-dropdown-menu',
+                'w-dropdown-menu p-1',
                 `w-dropdown-${placement}`
             ]" v-show="isActive">
                 <slot></slot>
