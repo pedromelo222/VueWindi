@@ -80,10 +80,6 @@
 }
 
 /* Change button tap default color on mobile*/
-input,
-textarea,
-button,
-select,
-a {
+html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
