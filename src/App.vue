@@ -1,6 +1,6 @@
 <template>
   <div class="antialiased text-vuewindi-text pb-10">
-    <nav class="flex sticky top-0 z-40 flex-none py-3 mx-auto w-full border-b border-vuewindi-bc bg-vuewindi-bg">
+    <nav class="flex sticky top-0 z-40 flex-none py-3 mx-auto w-full border-b  bg-base-100">
       <div class="flex justify-between items-center px-3 mx-auto w-full max-w-7xl lg:px-4 ">
         <div class="flex">
           <svg viewBox="0.587 0.608 126.313 123.526" class="h-7 mr-3 fill-primary-600"
@@ -86,7 +86,7 @@
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
         <h2 class="font-semibold text-sm mt-10">Menu component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
 
           <!-- default -->
           <WMenu>
@@ -197,7 +197,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10">Dropdown component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WDropdown hover>
             <template #trigger="{ active }">
               <WButton :active="active">Hover</WButton>
@@ -239,7 +239,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 ">Button component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WButton variant="default" color="primary">Primary </WButton>
           <WButton loading> Button </WButton>
           <WButton pills> Button pills </WButton>
@@ -268,77 +268,39 @@
 
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WButton color="primary" variant="outline">Primary </WButton>
           <WButton color="secondary" variant="outline">Secondary </WButton>
           <WButton color="success" variant="outline">Success </WButton>
           <WButton color="danger" variant="outline">Danger </WButton>
           <WButton color="warning" variant="outline">Warning </WButton>
-        </div>
-        <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
-          <WButton color="primary" variant="outline" active>Primary </WButton>
-          <WButton color="secondary" variant="outline" active>Secondary </WButton>
-          <WButton color="success" variant="outline" active>Success </WButton>
-          <WButton color="danger" variant="outline" active>Danger </WButton>
-          <WButton color="warning" variant="outline" active>Warning </WButton>
-        </div>
-
+        </div>   
         <h2 class="font-semibold text-sm mt-10 mb-4">Transparent</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WButton variant="transparent">Primary </WButton>
           <WButton color="secondary" variant="transparent">Secondary </WButton>
           <WButton color="success" variant="transparent">Success </WButton>
           <WButton color="danger" variant="transparent">Danger </WButton>
           <WButton color="warning" variant="transparent">Warning </WButton>
         </div>
-
-        <h2 class="font-semibold text-sm mt-10 mb-4">Transparent active</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
-          <WButton variant="transparent" active>Primary </WButton>
-          <WButton color="secondary" variant="transparent" active>Secondary </WButton>
-          <WButton color="success" variant="transparent" active>Success </WButton>
-          <WButton color="danger" variant="transparent" active>Danger </WButton>
-          <WButton color="warning" variant="transparent" active>Warning </WButton>
-        </div>
-
         <h2 class="font-semibold text-sm mt-10 mb-4">Colors</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WButton color="primary">Primary </WButton>
           <WButton color="secondary">Secondary </WButton>
           <WButton color="success">Success </WButton>
           <WButton color="danger">Danger </WButton>
           <WButton color="warning">Warning </WButton>
-        </div>
-        <h2 class="font-semibold text-sm mt-10 mb-4">Colors active</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
-          <WButton color="primary" active>Primary </WButton>
-          <WButton color="secondary" active>Secondary </WButton>
-          <WButton color="success" active>Success </WButton>
-          <WButton color="danger" active>Danger </WButton>
-          <WButton color="warning" active>Warning </WButton>
-
-
-        </div>
-
+        </div>    
         <h2 class="font-semibold text-sm mt-10 mb-4">Link</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WButton color="primary" variant="link">Primary </WButton>
           <WButton color="secondary" variant="link">Secondary </WButton>
           <WButton color="success" variant="link">Success </WButton>
           <WButton color="danger" variant="link">Danger </WButton>
           <WButton color="warning" variant="link">Warning </WButton>
-        </div>
-        <h2 class="font-semibold text-sm mt-10 mb-4">Link active</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
-          <WButton color="primary" variant="link" active>Primary </WButton>
-          <WButton color="secondary" variant="link" active>Secondary </WButton>
-          <WButton color="success" variant="link" active>Success </WButton>
-          <WButton color="danger" variant="link" active>Danger </WButton>
-          <WButton color="warning" variant="link" active>Warning </WButton>
-        </div>
+        </div>   
         <h2 class="font-semibold text-sm mt-10 mb-4">Sizes</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1 border-vuewindi-bc ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
           <WButton size="xs">Extra-small </WButton>
           <WButton size="sm">Small </WButton>
           <WButton>normal </WButton>

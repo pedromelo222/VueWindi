@@ -1,5 +1,5 @@
 .w-menu {
-    @apply bg-vuewindi-bg w-56 shadow shadow-md select-none;
+    @apply bg-base-100 w-56 shadow shadow-md select-none;
   
     &.w-rounded {
       @apply rounded-xl;

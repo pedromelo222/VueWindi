@@ -1,79 +1,88 @@
+import { hexToRgb } from "../functions"
+
 export default {
     ":root": {
-      "--color-primary-50": "240, 253, 250",
-      "--color-primary-100": "204, 251, 241",
-      "--color-primary-200": "153, 246, 228",
-      "--color-primary-300": "94, 234, 212",
-      "--color-primary-400": "45, 212, 191",
-      "--color-primary-500": "20, 184, 166",
-      "--color-primary-600": "13, 148, 136",
-      "--color-primary-700": "15, 118, 110",
-      "--color-primary-800": "17, 94, 89",
-      "--color-primary-900": "19, 78, 74",
-      "--vuewindi-bg": "252, 252, 252",
-      "--vuewindi-bc": "229, 231, 235",
-      "--vuewindi-text": "31, 41, 55"
-    },
-    ".dark": {
-      "--vuewindi-bg": "24, 24, 24",
-      "--vuewindi-bc": "45, 45, 45",
-      "--vuewindi-text": "243, 244, 246",
-      "color-scheme": "dark"
+      "--primary-50":  hexToRgb("#f0fdfa"),
+      "--primary-100": hexToRgb("#ccfbf1"),
+      "--primary-200": hexToRgb("#99f6e4"),
+      "--primary-300": hexToRgb("#5eead4"),
+      "--primary-400": hexToRgb("#2dd4bf"),
+      "--primary-500": hexToRgb("#14b8a6"),
+      "--primary-600": hexToRgb("#0d9488"),
+      "--primary-700": hexToRgb("#0f766e"),
+      "--primary-800": hexToRgb("#115e59"),
+      "--primary-900": hexToRgb("#134e4a"),
+      "--base-100": hexToRgb("#fcfcfc"),
+      "--base-200": hexToRgb("#fafafa"),
+      "--base-300": hexToRgb("#f8f9fa"),
+      "--vuewindi-text": "31, 41, 55",
     },
     ".color-blue": {
-      "--color-primary-50": "240 249 255",
-      "--color-primary-100": "224, 242, 254",
-      "--color-primary-200": "186, 230, 253",
-      "--color-primary-300": "125, 211, 252",
-      "--color-primary-400": "56, 189, 248",
-      "--color-primary-500": "14, 165, 233",
-      "--color-primary-600": "2, 132, 199",
-      "--color-primary-700": "3, 105, 161",
-      "--color-primary-800": "7, 89, 133",
-      "--color-primary-900": "12, 74, 110",
-      "--color-primaryGrandientMatch": "76, 29, 149"
+      "--primary-50":  hexToRgb("#eff6ff"),
+      "--primary-100": hexToRgb("#dbeafe"),
+      "--primary-200": hexToRgb("#bfdbfe"),
+      "--primary-300": hexToRgb("#93c5fd"),
+      "--primary-400": hexToRgb("#60a5fa"),
+      "--primary-500": hexToRgb("#3b82f6"),
+      "--primary-600": hexToRgb("#2563eb"),
+      "--primary-700": hexToRgb("#1d4ed8"),
+      "--primary-800": hexToRgb("#1e40af"),
+      "--primary-900": hexToRgb("#1e3a8a"),
     },
     ".color-rose": {
-      "--color-primary-50": "255, 242, 243",
-      "--color-primary-100": "255, 228, 230",
-      "--color-primary-200": "254, 205, 211",
-      "--color-primary-300": "253, 164, 175",
-      "--color-primary-400": "251, 113, 133",
-      "--color-primary-500": "244, 63, 94",
-      "--color-primary-600": "225, 29, 72",
-      "--color-primary-700": "190, 18, 60",
-      "--color-primary-800": "159, 18, 57",
-      "--color-primary-900": "136, 19, 55",
-      "--color-primaryGrandientMatch": "76, 29, 149"
+      "--primary-50":  hexToRgb("#fff1f2"),
+      "--primary-100": hexToRgb("#ffe4e6"),
+      "--primary-200": hexToRgb("#fecdd3"),
+      "--primary-300": hexToRgb("#fda4af"),
+      "--primary-400": hexToRgb("#fb7185"),
+      "--primary-500": hexToRgb("#f43f5e"),
+      "--primary-600": hexToRgb("#e11d48"),
+      "--primary-700": hexToRgb("#be123c"),
+      "--primary-800": hexToRgb("#9f1239"),
+      "--primary-900": hexToRgb("#881337"),
     },
     ".color-violet": {
-      "--color-primary-50": "245, 243, 255",
-      "--color-primary-100": "237, 233, 254",
-      "--color-primary-200": "221, 214, 254",
-      "--color-primary-300": "196, 181, 253",
-      "--color-primary-400": "167, 139, 250",
-      "--color-primary-500": "139, 92, 246",
-      "--color-primary-600": "124, 58, 237",
-      "--color-primary-700": "109, 40, 217",
-      "--color-primary-800": "91, 33, 182",
-      "--color-primary-900": "76, 29, 149",
-      "--color-primaryGrandientMatch": "136, 19, 55"
+      "--primary-50":  hexToRgb("#f5f3ff"),
+      "--primary-100": hexToRgb("#ede9fe"),
+      "--primary-200": hexToRgb("#ddd6fe"),
+      "--primary-300": hexToRgb("#c4b5fd"),
+      "--primary-400": hexToRgb("#a78bfa"),
+      "--primary-500": hexToRgb("#8b5cf6"),
+      "--primary-600": hexToRgb("#7c3aed"),
+      "--primary-700": hexToRgb("#6d28d9"),
+      "--primary-800": hexToRgb("#5b21b6"),
+      "--primary-900": hexToRgb("#4c1d95"),
     },
     ".color-orange": {
-      "--color-primary-50": "255, 247, 237",
-      "--color-primary-100": "255, 237, 213",
-      "--color-primary-200": "254, 215, 170",
-      "--color-primary-300": "253, 186, 116",
-      "--color-primary-400": "251, 146, 60",
-      "--color-primary-500": "249, 115, 22",
-      "--color-primary-600": "234, 88, 12",
-      "--color-primary-700": "194, 65, 12",
-      "--color-primary-800": "154, 52, 18",
-      "--color-primary-900": "124, 45, 18",
-      "--color-primaryGrandientMatch": "136, 19, 55"
+      "--primary-50":  hexToRgb("#fff7ed"),
+      "--primary-100": hexToRgb("#ffedd5"),
+      "--primary-200": hexToRgb("#fed7aa"),
+      "--primary-300": hexToRgb("#fdba74"),
+      "--primary-400": hexToRgb("#fb923c"),
+      "--primary-500": hexToRgb("#f97316"),
+      "--primary-600": hexToRgb("#ea580c"),
+      "--primary-700": hexToRgb("#c2410c"),
+      "--primary-800": hexToRgb("#9a3412"),
+      "--primary-900": hexToRgb("#7c2d12"),
+    },
+    ".dark": {
+      "--base-100": hexToRgb("#181818"),
+      "--base-200": hexToRgb("#151414"),
+      "--base-300": hexToRgb("#0f0f0f"),
+      "--vuewindi-text": "243, 244, 246",   
+      "color-scheme": "dark"
     },
     "html": {
-     "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)"
+      "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)"
+     },
+     
+    //border color (light and dark)
+    "*, ::before, ::after ": {
+        "border-color": `rgb(${hexToRgb("#e5e7eb")})`
+    },
+    ".dark *, ::before, ::after ": {
+      "border-color":  `rgb(${hexToRgb("#2d2d2d")})` 
     }
+    
   }
   
