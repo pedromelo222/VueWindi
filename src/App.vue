@@ -37,15 +37,13 @@
               <WButton clean @click="changeColor('theme-default')"><span
                   class="rounded-full bg-blue-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('theme-teal')"><span
-                  class="rounded-full bg-teal-700 h-7 w-7"></span>
+              <WButton clean @click="changeColor('theme-teal')"><span class="rounded-full bg-teal-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('theme-rose')"><span 
-                class="rounded-full bg-rose-700 h-7 w-7"></span>
+              <WButton clean @click="changeColor('theme-rose')"><span class="rounded-full bg-rose-700 h-7 w-7"></span>
               </WButton>
               <WButton clean @click="changeColor('theme-violet')"><span
                   class="rounded-full bg-violet-700 h-7 w-7"></span>
-                  </WButton>
+              </WButton>
               <WButton clean @click="changeColor('theme-orange')"><span
                   class="rounded-full bg-orange-700 h-7 w-7"></span>
               </WButton>
@@ -85,8 +83,69 @@
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
+        <h2 class="font-semibold text-sm mt-10">Modal component</h2>
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+          <WButton @click="modal.small = true">Modal sm</WButton>
+          <WButton @click="modal.medium = true">Modal md</WButton>
+          <WButton @click="modal.large = true">Modal lg</WButton>
+          <WButton @click="modal.noBackdrop = true">No backdrop</WButton>
+          <WButton @click="modal.noOutside = true">No outside</WButton>
+          <WButton @click="modal.headless = true">Headless</WButton>
+           <WButton @click="modal.backdropBlur = true">Backdrop blur</WButton>
+           
+          <WModal v-model:active="modal.small" >
+            <template #header> The important modal header </template>
+            <template #body> The modal body </template>
+            <template #footer="footerProps">
+              <WButton @click="modal.small = false">Dismiss!</WButton>
+            </template>
+          </WModal>
+             <WModal v-model:active="modal.medium" size="md">             
+             <template #header> The important modal header </template>
+            <template #body> The modal body </template>
+            <template #footer="footerProps">
+              <WButton @click="modal.medium = false">Dismiss!</WButton>
+            </template> 
+          </WModal>
+             <WModal v-model:active="modal.large" size="lg">
+            <template #header> The important modal header </template>
+            <template #body> The modal body </template>
+            <template #footer="footerProps">
+              <WButton @click="modal.large = false">Dismiss!</WButton>
+            </template>
+          </WModal>
+           <WModal v-model:active="modal.noBackdrop" :outside="false" :backdrop="false">
+            <template #header> The important modal header </template>
+            <template #body> The noBackdrop modal body </template>
+            <template #footer="footerProps">
+              <WButton @click="modal.noBackdrop = false">Dismiss!</WButton>
+            </template>
+          </WModal>
+              <WModal v-model:active="modal.noOutside" :outside="false">
+            <template #header> The important modal header </template>
+            <template #body> The noOutside modal body </template>
+            <template #footer="footerProps">
+              <WButton @click="modal.noOutside = false">Dismiss!</WButton>
+            </template>
+          </WModal>
+            <WModal v-model:active="modal.headless">
+              <div class="bg-primary-200 p-6">
+                <h1 class="text-2xl font-bold text-white">My own modal</h1>
+              </div>
+          </WModal>
+             <WModal v-model:active="modal.backdropBlur" backdrop-class="backdrop-brightness-60 backdrop-blur-1">
+              <template #header> The important modal header </template>
+            <template #body> The backdrop blur modal body </template>
+            <template #footer="footerProps">
+              <WButton @click="modal.backdropBlur = false">Dismiss!</WButton>
+            </template>
+          </WModal>
+        </div>
+
         <h2 class="font-semibold text-sm mt-10">Menu component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
 
           <!-- default -->
           <WMenu>
@@ -197,7 +256,8 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10">Dropdown component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WDropdown hover>
             <template #trigger="{ active }">
               <WButton :active="active">Hover</WButton>
@@ -239,7 +299,8 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 ">Button component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton variant="default" color="primary">Primary </WButton>
           <WButton loading> Button </WButton>
           <WButton pills> Button pills </WButton>
@@ -268,15 +329,17 @@
 
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton color="primary" variant="outline">Primary </WButton>
           <WButton color="secondary" variant="outline">Secondary </WButton>
           <WButton color="success" variant="outline">Success </WButton>
           <WButton color="danger" variant="outline">Danger </WButton>
           <WButton color="warning" variant="outline">Warning </WButton>
-        </div>   
+        </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Transparent</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton variant="transparent">Primary </WButton>
           <WButton color="secondary" variant="transparent">Secondary </WButton>
           <WButton color="success" variant="transparent">Success </WButton>
@@ -284,23 +347,26 @@
           <WButton color="warning" variant="transparent">Warning </WButton>
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Colors</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton color="primary">Primary </WButton>
           <WButton color="secondary">Secondary </WButton>
           <WButton color="success">Success </WButton>
           <WButton color="danger">Danger </WButton>
           <WButton color="warning">Warning </WButton>
-        </div>    
+        </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Link</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton color="primary" variant="link">Primary </WButton>
           <WButton color="secondary" variant="link">Secondary </WButton>
           <WButton color="success" variant="link">Success </WButton>
           <WButton color="danger" variant="link">Danger </WButton>
           <WButton color="warning" variant="link">Warning </WButton>
-        </div>   
+        </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Sizes</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton size="xs">Extra-small </WButton>
           <WButton size="sm">Small </WButton>
           <WButton>normal </WButton>
@@ -319,10 +385,18 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue"
-import { WButton, WDropdown, WMenu } from "./index"
+import { WButton, WDropdown, WMenu, WModal } from "./index"
 const dark = ref(false)
 const selectedColor = ref('theme-default');
-
+const modal = ref({
+    small: false,
+    medium: false,
+    large: false,
+    noBackdrop: false,
+    noOutside : false,
+    headless: false,
+    backdropBlur: false
+});
 
 function changeColor(color: string) {
   document.documentElement.classList.remove(selectedColor.value)

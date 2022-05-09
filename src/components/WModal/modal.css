@@ -1,0 +1,46 @@
+
+.w-modal-box.w-modal-sm,
+.w-modal-inner-box.w-modal-sm {
+    max-width: 32rem;
+    max-height: 20rem;
+}
+
+.w-modal-box.w-modal-md,
+.w-modal-inner-box.w-modal-md {
+    max-width: 37rem;
+    max-height: 25rem;
+}
+
+.w-modal-box.w-modal-lg,
+.w-modal-inner-box.w-modal-lg {
+    max-width: 42rem;
+    max-height: 30rem;
+}
+
+.w-modal-bounce-enter-active {
+    animation: w-modal-bounce-in 0.15s ease-in-out;
+}
+
+.w-modal-bounce-leave-active {
+    animation: w-modal-bounce-in 0.15s reverse;
+}
+
+@keyframes w-modal-bounce-in {
+    0% {
+        transform: scale(0.90);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.w-modal-fade-enter-active,
+.w-modal-fade-leave-active {
+    transition: opacity 0.25s ease;
+}
+
+.w-modal-fade-enter-from,
+.w-modal-fade-leave-to {
+    opacity: 0;
+}
