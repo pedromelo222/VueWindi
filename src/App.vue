@@ -3,7 +3,7 @@
     <nav class="flex sticky top-0 z-40 flex-none py-3 mx-auto w-full border-b  bg-base-100">
       <div class="flex justify-between items-center px-3 mx-auto w-full max-w-7xl lg:px-4 ">
         <div class="flex">
-          <svg viewBox="0.587 0.608 126.313 123.526" class="h-7 mr-3 fill-primary-600"
+          <svg viewBox="0.587 0.608 126.313 123.526" class="h-7 mr-3 fill-primary-100"
             xmlns="http://www.w3.org/2000/svg">
             <rect class="" x="0.587" y="0.608" width="96.933" height="93.502" rx="10" ry="10"></rect>
             <rect x="29.967" y="30.632" width="96.933" height="93.502" rx="10" ry="10"
@@ -33,20 +33,20 @@
                 </svg>
               </WButton>
             </template>
-            <WMenu compact rounded horizontal="md" class="w-auto">
-              <WButton clean @click="changeColor('color-default')"><span
-                  class="rounded-full bg-teal-700 h-7 w-7"></span>
-              </WButton>
-              <WButton clean @click="changeColor('color-blue')"><span
+            <WMenu compact rounded horizontal="md" class="w-auto !bg-base-200">
+              <WButton clean @click="changeColor('theme-default')"><span
                   class="rounded-full bg-blue-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('color-rose')"><span 
+              <WButton clean @click="changeColor('theme-teal')"><span
+                  class="rounded-full bg-teal-700 h-7 w-7"></span>
+              </WButton>
+              <WButton clean @click="changeColor('theme-rose')"><span 
                 class="rounded-full bg-rose-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('color-violet')"><span
+              <WButton clean @click="changeColor('theme-violet')"><span
                   class="rounded-full bg-violet-700 h-7 w-7"></span>
                   </WButton>
-              <WButton clean @click="changeColor('color-orange')"><span
+              <WButton clean @click="changeColor('theme-orange')"><span
                   class="rounded-full bg-orange-700 h-7 w-7"></span>
               </WButton>
             </WMenu>
@@ -86,7 +86,7 @@
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
         <h2 class="font-semibold text-sm mt-10">Menu component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
 
           <!-- default -->
           <WMenu>
@@ -197,7 +197,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10">Dropdown component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WDropdown hover>
             <template #trigger="{ active }">
               <WButton :active="active">Hover</WButton>
@@ -239,7 +239,7 @@
         </div>
 
         <h2 class="font-semibold text-sm mt-10 ">Button component</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton variant="default" color="primary">Primary </WButton>
           <WButton loading> Button </WButton>
           <WButton pills> Button pills </WButton>
@@ -268,7 +268,7 @@
 
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Outline</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton color="primary" variant="outline">Primary </WButton>
           <WButton color="secondary" variant="outline">Secondary </WButton>
           <WButton color="success" variant="outline">Success </WButton>
@@ -276,7 +276,7 @@
           <WButton color="warning" variant="outline">Warning </WButton>
         </div>   
         <h2 class="font-semibold text-sm mt-10 mb-4">Transparent</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton variant="transparent">Primary </WButton>
           <WButton color="secondary" variant="transparent">Secondary </WButton>
           <WButton color="success" variant="transparent">Success </WButton>
@@ -284,7 +284,7 @@
           <WButton color="warning" variant="transparent">Warning </WButton>
         </div>
         <h2 class="font-semibold text-sm mt-10 mb-4">Colors</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton color="primary">Primary </WButton>
           <WButton color="secondary">Secondary </WButton>
           <WButton color="success">Success </WButton>
@@ -292,7 +292,7 @@
           <WButton color="warning">Warning </WButton>
         </div>    
         <h2 class="font-semibold text-sm mt-10 mb-4">Link</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton color="primary" variant="link">Primary </WButton>
           <WButton color="secondary" variant="link">Secondary </WButton>
           <WButton color="success" variant="link">Success </WButton>
@@ -300,7 +300,7 @@
           <WButton color="warning" variant="link">Warning </WButton>
         </div>   
         <h2 class="font-semibold text-sm mt-10 mb-4">Sizes</h2>
-        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-xl mt-2 border-1  ">
+        <div class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1  ">
           <WButton size="xs">Extra-small </WButton>
           <WButton size="sm">Small </WButton>
           <WButton>normal </WButton>
@@ -321,7 +321,7 @@
 import { ref, watch } from "vue"
 import { WButton, WDropdown, WMenu } from "./index"
 const dark = ref(false)
-const selectedColor = ref('color-default');
+const selectedColor = ref('theme-default');
 
 
 function changeColor(color: string) {

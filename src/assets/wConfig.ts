@@ -1,7 +1,7 @@
 import colors from "windicss/colors";
 import plugin from 'windicss/plugin'
-import base from '../styles/base'
-import theme from '../styles/theme'
+import theme from '../styles/base'
+import configColors from '../styles/config'
 import utilities from '../styles/utilities'
 
 export default {
@@ -10,7 +10,7 @@ export default {
   },
   theme: {
     colors: {
-      ...theme
+      ...configColors
     },    
     extend: {
       colors: {
@@ -33,7 +33,7 @@ export default {
   
   plugins: [
     plugin(({ addUtilities, addComponents }) => {
-      addComponents([base])
+      addComponents([theme])
       addUtilities(utilities)
     }),
   ]
