@@ -35,6 +35,12 @@ export default defineComponent({
             type: String,
             default: 'backdrop-brightness-60',
             required: false
+        },
+        //btn for close modal
+        closeBtn: {
+            type: Boolean,
+            default: false,
+            required: false
         }
     },
     setup(props, { emit }) {
@@ -94,23 +100,25 @@ export default defineComponent({
 </script>
 <template>
     <transition name="w-modal-fade" appear>
-        <div v-show="isShow && backdrop" class="fixed inset-0 z-40 flex  place-content-center h-screen 
-                backdrop-filter" :class="backdropClass">
+        <div v-show="isShow && backdrop" class="w-backdrop" :class="backdropClass">
         </div>
     </transition>
     <transition name="w-modal-bounce" appear>
-        <div v-if="isShow" @click.self="clickOutside" class=" fixed inset-0  z-50 flex place-content-center h-full"
+        <div v-if="isShow" @click.self="clickOutside" class="w-modal-background"
             :class="[outside ? '' : 'pointer-events-none']">
-            <div class="pointer-events-auto w-modal-box bg-base-100  m-auto  w-full mx-4 border-radius rounded-$rounded-box shadow-xl overflow-hidden"
+            <div  class="w-modal-box"
                 :class="[`w-modal-${size}`]">
-                <div class="overflow-auto w-modal-inner-box block" :class="[`w-modal-${size}`]">
-                    <h2 v-show="$slots.header" class="font-semibold text-lg px-6 pt-6">
+                <button v-if="closeBtn" @click="dismiss" class="w-modal-btn-close w-btn">
+                    <svg class="h-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path d="M289.94 256l95-95A24 24 0 0 0 351 127l-95 95l-95-95a24 24 0 0 0-34 34l95 95l-95 95a24 24 0 1 0 34 34l95-95l95 95a24 24 0 0 0 34-34z" fill="currentColor"></path></svg>
+                </button>
+                <div class="w-modal-inner-box" :class="[`w-modal-${size}`]">
+                    <h2 v-show="$slots.header" class="w-modal-header">
                         <slot name="header"></slot>
                     </h2>
-                    <div v-show="$slots.body" class="px-6 py-4">
+                    <div v-show="$slots.body" class="w-modal-body">
                         <slot name="body"></slot>
                     </div>
-                    <div v-show="$slots.footer" class="px-6 pb-6 flex justify-end mt-1.5">
+                    <div v-show="$slots.footer" class="w-modal-footer">
                         <slot name="footer" :dismiss="dismiss"></slot>
                     </div>
                     <slot></slot>

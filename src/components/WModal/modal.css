@@ -1,4 +1,38 @@
 
+.w-backdrop {
+    @apply fixed inset-0 z-40 flex place-content-center h-screen backdrop-filter;
+}
+/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .w-backdrop {
+         @apply bg-black/35
+    }
+}
+
+.w-modal-background {
+    @apply fixed inset-0  z-50 flex place-content-center h-full;
+}
+
+.w-modal-box {
+    @apply relative pointer-events-auto bg-base-100 m-auto w-full mx-4 rounded-$rounded-box shadow-xl overflow-hidden;
+}
+
+.w-modal-inner-box {
+    @apply overflow-auto block;
+}
+
+.w-modal-header {
+    @apply font-semibold text-lg px-6 pt-6;
+}
+
+.w-modal-body {
+    @apply px-6 py-4;
+}
+
+.w-modal-footer {
+    @apply px-6 pb-6 flex justify-end mt-1.5;
+}
+
 .w-modal-box.w-modal-sm,
 .w-modal-inner-box.w-modal-sm {
     max-width: 32rem;
@@ -43,4 +77,8 @@
 .w-modal-fade-enter-from,
 .w-modal-fade-leave-to {
     opacity: 0;
+}
+
+.w-modal-btn-close {
+    @apply rounded-$rounded-btn h-8 w-8 flex items-center justify-center absolute bg-gray-500 bg-opacity-20 top-2 right-2;
 }

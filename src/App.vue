@@ -89,10 +89,11 @@
           <WButton @click="modal.small = true">Modal sm</WButton>
           <WButton @click="modal.medium = true">Modal md</WButton>
           <WButton @click="modal.large = true">Modal lg</WButton>
+          <WButton @click="modal.closeBtn = true">Close btn</WButton>
           <WButton @click="modal.noBackdrop = true">No backdrop</WButton>
           <WButton @click="modal.noOutside = true">No outside</WButton>
           <WButton @click="modal.headless = true">Headless</WButton>
-           <WButton @click="modal.backdropBlur = true">Backdrop blur</WButton>
+          <WButton @click="modal.backdropBlur = true">Backdrop blur</WButton>
            
           <WModal v-model:active="modal.small" >
             <template #header> The important modal header </template>
@@ -108,11 +109,18 @@
               <WButton @click="modal.medium = false">Dismiss!</WButton>
             </template> 
           </WModal>
-             <WModal v-model:active="modal.large" size="lg">
+             <WModal v-model:active="modal.large" size="lg" >
+            <template #header> The important modal header </template>
+            <template #body > The modal body</template>
+            <template #footer="footerProps">
+              <WButton @click="modal.large = false">Dismiss!</WButton>
+            </template>
+          </WModal>
+           <WModal v-model:active="modal.closeBtn" close-btn >
             <template #header> The important modal header </template>
             <template #body> The modal body </template>
             <template #footer="footerProps">
-              <WButton @click="modal.large = false">Dismiss!</WButton>
+              <WButton @click="modal.closeBtn = false">Dismiss!</WButton>
             </template>
           </WModal>
            <WModal v-model:active="modal.noBackdrop" :outside="false" :backdrop="false">
@@ -130,7 +138,7 @@
             </template>
           </WModal>
             <WModal v-model:active="modal.headless">
-              <div class="bg-primary-200 p-6">
+              <div class="bg-primary-200 px-6 py-14 text-center">
                 <h1 class="text-2xl font-bold text-white">My own modal</h1>
               </div>
           </WModal>
@@ -392,6 +400,7 @@ const modal = ref({
     small: false,
     medium: false,
     large: false,
+    closeBtn: false,
     noBackdrop: false,
     noOutside : false,
     headless: false,
