@@ -80,5 +80,5 @@
 }
 
 .w-modal-btn-close {
-    @apply rounded-$rounded-btn h-8 w-8 flex items-center justify-center absolute bg-gray-500 bg-opacity-20 top-2 right-2;
+    @apply rounded-$rounded-btn h-8 w-8 flex items-center justify-center absolute bg-gray-500 hover:bg-opacity-30 bg-opacity-20 top-2 right-2;
 }
