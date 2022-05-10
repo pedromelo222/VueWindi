@@ -1,39 +1,45 @@
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
-import { WIconLoading } from '../icons'
-import './button.css'
+import { defineComponent, type PropType, computed } from "vue";
+import { WIconLoading } from "../icons";
+import "./button.css";
 export default defineComponent({
   name: "WButton",
   props: {
     tag: {
       type: String,
       default: "button",
-      required: false
+      required: false,
     },
     color: {
       type: String,
       default: "primary",
       validator: (value: string) => {
-        return ["primary", "secondary", "success", "danger", "warning"].includes(value);
-      }
+        return [
+          "primary",
+          "secondary",
+          "success",
+          "danger",
+          "warning",
+        ].includes(value);
+      },
     },
     type: {
-      type: String as PropType<'button' | 'submit' | 'reset'>,
+      type: String as PropType<"button" | "submit" | "reset">,
       default: "button",
       required: false,
       validator: (value: string) => {
-        return ['button', 'submit', 'reset'].includes(value)
-      }
+        return ["button", "submit", "reset"].includes(value);
+      },
     },
     loading: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     disabled: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     size: {
       type: String,
@@ -54,39 +60,55 @@ export default defineComponent({
     pills: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     circle: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     active: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     clean: {
       type: Boolean,
       default: false,
-      required: false
-    }
+      required: false,
+    },
   },
-  components: { WIconLoading }
-})
+  setup(props) {
+    const computedType = computed(() => {
+      if (props.tag === "input" || props.tag === "button") {
+        return props.type;
+      }
+      return null;
+    });
+
+    return { computedType };
+  },
+  components: { WIconLoading },
+});
 </script>
 <template>
-  <component :is="tag" :disabled="disabled || loading" :type="type" :class="[ 
-  'w-btn',
-  `w-btn-${color}`,
-  `w-btn-${variant}`,
-  `w-btn-${size}`,
-  pills ? 'w-btn-pills' : '',
-  disabled ? 'w-btn-disabled' : '',
-  loading ? 'w-btn-loading' : '',
-  circle ? 'w-btn-circle' : '',
-  active ? 'w-btn-active': '',
-  clean ? 'w-btn-clean': '']">
+  <component
+    :is="tag"
+    :disabled="disabled || loading"
+    :type="computedType"
+    :class="[
+      'w-btn',
+      `w-btn-${color}`,
+      `w-btn-${variant}`,
+      `w-btn-${size}`,
+      pills ? 'w-btn-pills' : '',
+      disabled ? 'w-btn-disabled' : '',
+      loading ? 'w-btn-loading' : '',
+      circle ? 'w-btn-circle' : '',
+      active ? 'w-btn-active' : '',
+      clean ? 'w-btn-clean' : '',
+    ]"
+  >
     <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>
     <slot></slot>
   </component>

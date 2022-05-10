@@ -66,9 +66,9 @@ describe("WButton", () => {
     ).toBe("icon-loading");
     wrapper.unmount();
   });
-
+  
   it('should work with `color` prop', async () => {
-    ;(['primary', 'info', 'success', 'warning', 'error'] as const).forEach(
+    ;(['primary', 'secondary', 'success', 'warning', 'danger'] as const).forEach(
       (color) => {
         const wrapper = mount(WButton, { props: { color: color } })
         expect(wrapper.find('button').classes()).toContain(
@@ -77,6 +77,22 @@ describe("WButton", () => {
         wrapper.unmount()
       }
     )
+  })
+
+  it('default and button tag should have `button` type', async () => {
+    const wrapper = mount(WButton);
+    expect(wrapper.vm.computedType).toBe('button')  
+    await wrapper.setProps({ tag: `button` })
+    expect(wrapper.vm.computedType).toBe('button')  
+    wrapper.unmount();
+  })
+
+  it('tag `a` should have `null` type', async () => {
+    const wrapper = mount(WButton, { 
+      props: { tag: 'a' }
+    });
+    expect(wrapper.vm.computedType).toBe(null)  
+    wrapper.unmount();
   })
 
 });
