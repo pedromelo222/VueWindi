@@ -19,18 +19,5 @@
 
     &.w-dropdown-top-end {
         @apply bottom-full right-0 ;
-    }
-    /* 
-        Cant apply animation with 
-        w-dropdown-bottom
-        w-dropdown-top
-    */
-    /* &.w-dropdown-bottom {
-        @apply left-1/2 right-1/2 ;
-        transform: translate(-50%);
-    } */
-    /* &.w-dropdown-top {
-        @apply bottom-full left-1/2 right-1/2 mx-auto ;
-        transform: translate(-50%);
-    } */
+    }    
 }
