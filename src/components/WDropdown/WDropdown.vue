@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, nextTick } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import './dropdown.css'
 export default defineComponent({
@@ -27,41 +27,42 @@ export default defineComponent({
             if(!props.hover)
                 isActive.value = !isActive.value;
         }
-        
-        function onHover() {
-            if (props.hover) 
-                isActive.value = !isActive.value;
-            
+        function mouseEnter(){          
+              if (props.hover) 
+                isActive.value = true;     
         }
-        function onFocus() {
-            // if(!props.hover)
-            //     toggle()            
-        }
-
-        onClickOutside(dropdownRef, () => {
-            
-             isActive.value = false
-             
+        function mouseLeave(){
+             if (props.hover) 
+                isActive.value = false;   
+        }   
+        onClickOutside(dropdownRef, () => { 
+            if(isActive.value)
+                   isActive.value = false   
          })
-        return { isActive, dropdownRef, toggle, onHover, onFocus }
+        return { isActive, dropdownRef, toggle, mouseEnter, mouseLeave }
     }
 })
 </script>
 <template>
-    <div @mouseleave="onHover" @mouseenter="onHover" ref="dropdownRef" class="w-dropdown">
+    <div 
+    @mouseenter="mouseEnter" 
+    @mouseleave="mouseLeave" 
+    @pointerenter="mouseEnter"    
+    ref="dropdownRef" class="w-dropdown">
         <div 
-        @click="toggle"         
-        @focus.capture="onFocus">
+        @click="toggle" >
             <slot name="trigger" :active="isActive"></slot>
         </div>
         <transition enter-active-class="transition duration-150 ease-out"
             enter-from-class="transform scale-95 opacity-0" enter-to-class="transform scale-100 opacity-100"
             leave-active-class="transition duration-75 ease-in" leave-from-class="transform scale-100 opacity-100"
             leave-to-class="transform scale-95 opacity-0">
-            <div :class="[
+            <div 
+             v-show="isActive"
+             :class="[
                 'w-dropdown-menu p-1',
                 `w-dropdown-${placement}`
-            ]" v-show="isActive">
+            ]">
                 <slot></slot>
             </div>
         </transition>
