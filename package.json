@@ -1,6 +1,6 @@
 {
   "name": "vue-windi",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "sideEffects": false,
   "files": [
     "dist",
@@ -28,7 +28,8 @@
     "docs:serve": "vitepress serve docs",
     "test": "vitest",
     "coverage": "vitest --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "windicss": "windicss src/components/WMenu/menu.css -o windi.css --style"
   },
   "dependencies": {
     "@vueuse/core": "^8.4.1",
@@ -48,6 +49,6 @@
     "vite-plugin-windicss": "^1.8.4",
     "vitest": "^0.10.0",
     "vue-tsc": "^0.34.9",
-    "windicss": "^3.5.2"
+    "windicss": "^3.5.3"
   }
 }
