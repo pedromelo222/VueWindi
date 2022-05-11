@@ -1,7 +1,7 @@
 
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import './menu.css'
 export default defineComponent({
   name: "WMenu",
@@ -38,6 +38,9 @@ export default defineComponent({
       required: false,
     },
   },
+  setup(props, { slots }){    
+   return {slots}    
+  }
 })
 </script>
 <template>
@@ -49,7 +52,8 @@ export default defineComponent({
     padding ? 'w-padding' : '',
     hoverBorder ? 'w-hover-border' : '',
   ]">
-    <li v-for="slot in $slots.default()">
+ 
+    <li v-for="slot in slots">
       <component :is="slot" />
     </li>
   </ul>
