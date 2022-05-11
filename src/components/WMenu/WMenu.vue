@@ -6,6 +6,7 @@ import './menu.css'
 export default defineComponent({
   name: "WMenu",
   props: {
+    //Menu compact if set true or responsive
     compact: {
       type: [Boolean, String],
       default: false,
@@ -14,6 +15,7 @@ export default defineComponent({
         return ["sm", "md", "lg", "xl", true, false].includes(value);
       },
     },
+    //Menu horizontal if set true or responsive
     horizontal: {
       type: [Boolean, String],
       default: false,
@@ -22,16 +24,19 @@ export default defineComponent({
         return ["sm", "md", "lg", "xl", true, false].includes(value);
       },
     },
+    //Menu with rounded borders
     rounded: {
       type: Boolean,
       default: false,
       required: false,
     },
+    //Menu with padding and list with rounded border
     padding: {
       type: Boolean,
       default: false,
       required: false,
     },
+    //List with left border colored on hover
     hoverBorder: {
       type: Boolean,
       default: false,
@@ -51,9 +56,8 @@ export default defineComponent({
     rounded ? 'w-rounded' : '',
     padding ? 'w-padding' : '',
     hoverBorder ? 'w-hover-border' : '',
-  ]">
- 
-    <li v-for="slot in slots.default()">
+  ]"> 
+    <li v-if="slots.default" v-for="slot in slots.default()" class="w-menu-item">
       <component :is="slot" />
     </li>
   </ul>
