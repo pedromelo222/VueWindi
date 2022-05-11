@@ -72,11 +72,19 @@ export default defineComponent({
       default: false,
       required: false,
     },
+    //remove all styles from button
     clean: {
       type: Boolean,
       default: false,
       required: false,
     },
+    //remove all styles from button
+    menuItem: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+    
   },
   setup(props) {
     const computedType = computed(() => {
@@ -106,7 +114,7 @@ export default defineComponent({
       loading ? 'w-btn-loading' : '',
       circle ? 'w-btn-circle' : '',
       active ? 'w-btn-active' : '',
-      clean ? 'w-btn-clean' : '',
+      menuItem || clean ? 'w-btn-clean' : '',
     ]"
   >
     <WIconLoading v-if="loading" class="-ml-1 mr-2"></WIconLoading>

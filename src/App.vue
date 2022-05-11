@@ -34,17 +34,17 @@
               </WButton>
             </template>
             <WMenu compact rounded horizontal="md" class="w-auto !bg-base-200">
-              <WButton clean @click="changeColor('theme-default')"><span
+              <WButton menu-item @click="changeColor('theme-default')"><span
                   class="rounded-full bg-blue-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('theme-teal')"><span class="rounded-full bg-teal-700 h-7 w-7"></span>
+              <WButton menu-item @click="changeColor('theme-teal')"><span class="rounded-full bg-teal-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('theme-rose')"><span class="rounded-full bg-rose-700 h-7 w-7"></span>
+              <WButton menu-item @click="changeColor('theme-rose')"><span class="rounded-full bg-rose-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('theme-violet')"><span
+              <WButton menu-item @click="changeColor('theme-violet')"><span
                   class="rounded-full bg-violet-700 h-7 w-7"></span>
               </WButton>
-              <WButton clean @click="changeColor('theme-orange')"><span
+              <WButton menu-item @click="changeColor('theme-orange')"><span
                   class="rounded-full bg-orange-700 h-7 w-7"></span>
               </WButton>
             </WMenu>
@@ -157,22 +157,22 @@
 
           <!-- default -->
           <WMenu>
-            <WButton clean>Item 1</WButton>
-            <WButton clean>Item 2</WButton>
-            <WButton clean>Item 3</WButton>
+            <WButton menu-item>Item 1</WButton>
+            <WButton menu-item>Item 2</WButton>
+            <WButton menu-item>Item 3</WButton>
 
           </WMenu>
 
           <!-- hover-border -->
           <WMenu hover-border rounded>
-            <WButton clean>Item 1</WButton>
-            <WButton clean>Item 2</WButton>
-            <WButton clean>Item 3</WButton>
+            <WButton menu-item>Item 1</WButton>
+            <WButton menu-item>Item 2</WButton>
+            <WButton menu-item>Item 3</WButton>
 
           </WMenu>
           <!-- rounded padding -->
           <WMenu rounded padding>
-            <WButton clean>
+            <WButton menu-item>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -180,7 +180,7 @@
               </svg>
               Item 1
             </WButton>
-            <WButton clean>
+            <WButton menu-item>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -188,7 +188,7 @@
               </svg>
               Item 2
             </WButton>
-            <WButton clean>
+            <WButton menu-item>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -199,60 +199,60 @@
           </WMenu>
           <!-- compact -->
           <WMenu compact rounded padding>
-            <WButton clean>Item 1</WButton>
-            <WButton clean>Item 2</WButton>
-            <WButton clean>Item 3</WButton>
+            <WButton menu-item>Item 1</WButton>
+            <WButton menu-item>Item 2</WButton>
+            <WButton menu-item>Item 3</WButton>
           </WMenu>
           <!-- compact responsive: sm | md | lg | xl -->
           <WMenu compact="lg" rounded padding>
-            <WButton clean>Responsive 1</WButton>
-            <WButton clean>Responsive 2</WButton>
-            <WButton clean>Responsive 3</WButton>
+            <WButton menu-item>Responsive 1</WButton>
+            <WButton menu-item>Responsive 2</WButton>
+            <WButton menu-item>Responsive 3</WButton>
           </WMenu>
           <!-- compact responsive: sm | md | lg | xl -->
           <WMenu compact rounded>
-            <WButton clean tag="a" href="/">Link 1</WButton>
-            <WButton clean tag="a" href="/">Link 2</WButton>
-            <WButton clean tag="a" href="/">Link 3</WButton>
+            <WButton menu-item tag="a" href="/">Link 1</WButton>
+            <WButton menu-item tag="a" href="/">Link 2</WButton>
+            <WButton menu-item tag="a" href="/">Link 3</WButton>
           </WMenu>
           <!-- disabled -->
           <WMenu rounded padding>
-            <WButton clean class="disabled">Disabled 1</WButton>
-            <WButton clean class="disabled">Disabled 2</WButton>
-            <WButton clean class="disabled">Disabled 3</WButton>
+            <WButton menu-item class="disabled">Disabled 1</WButton>
+            <WButton menu-item class="disabled">Disabled 2</WButton>
+            <WButton menu-item class="disabled">Disabled 3</WButton>
 
           </WMenu>
           <!-- horizontal + width auto -->
           <WMenu horizontal rounded class="w-auto">
-            <WButton clean>Item 1</WButton>
-            <WButton clean>Item 2</WButton>
-            <WButton clean>Item 3</WButton>
+            <WButton menu-item>Item 1</WButton>
+            <WButton menu-item>Item 2</WButton>
+            <WButton menu-item>Item 3</WButton>
           </WMenu>
           <!-- horizontal responsive: sm | md | lg | xl -->
           <WMenu horizontal="sm" rounded class="w-auto">
-            <WButton clean>
+            <WButton menu-item>
               Responsive 1</WButton>
-            <WButton clean>Responsive 2</WButton>
-            <WButton clean>Responsive 3</WButton>
+            <WButton menu-item>Responsive 2</WButton>
+            <WButton menu-item>Responsive 3</WButton>
           </WMenu>
 
           <!-- only icons (horizontal) padding -->
           <WMenu rounded padding class="w-auto">
-            <WButton clean>
+            <WButton menu-item>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </WButton>
-            <WButton clean>
+            <WButton menu-item>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </WButton>
-            <WButton clean>
+            <WButton menu-item>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -271,9 +271,9 @@
               <WButton :active="active">Hover</WButton>
             </template>
             <WMenu rounded padding>
-              <WButton clean>Item 1</WButton>
-              <WButton clean>Item 2</WButton>
-              <WButton clean>Item 3</WButton>
+              <WButton menu-item>Item 1</WButton>
+              <WButton menu-item>Item 2</WButton>
+              <WButton menu-item>Item 3</WButton>
             </WMenu>
           </WDropdown>
           <WDropdown placement="bottom-start">
@@ -281,9 +281,9 @@
               <WButton :active="active">Bottom-start</WButton>
             </template>
             <WMenu rounded padding>
-              <WButton clean>Item 1</WButton>
-              <WButton clean>Item 2</WButton>
-              <WButton clean>Item 3</WButton>
+              <WButton menu-item>Item 1</WButton>
+              <WButton menu-item>Item 2</WButton>
+              <WButton menu-item>Item 3</WButton>
             </WMenu>
           </WDropdown>
           <WDropdown placement="bottom-end">
