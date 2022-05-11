@@ -53,7 +53,7 @@ export default defineComponent({
     hoverBorder ? 'w-hover-border' : '',
   ]">
  
-    <li v-for="slot in slots">
+    <li v-for="slot in slots.default()">
       <component :is="slot" />
     </li>
   </ul>
