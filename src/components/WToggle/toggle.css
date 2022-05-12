@@ -78,6 +78,6 @@
     }
 
     &:disabled {
-        @apply cursor-not-allowed;
+        @apply cursor-not-allowed  border-white/0 !bg-gray-400 bg-opacity-20;
     }
   }
