@@ -49,7 +49,7 @@ export default defineComponent({
     @mouseleave="mouseLeave" 
     @pointerenter="mouseEnter"    
     ref="dropdownRef" class="w-dropdown">
-        <div 
+        <div class="w-dropdown-trigger" 
         @click="toggle" >
             <slot name="trigger" :active="isActive"></slot>
         </div>
