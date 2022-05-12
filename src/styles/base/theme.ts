@@ -34,6 +34,9 @@ export default {
     "--primary-100": hexToRgb("#0d9488"),
     "--primary-200": hexToRgb("#0f766e"),
     "--primary-300": hexToRgb("#115e59"),
+    "--rounded-box": "0rem",
+    "--rounded-btn": "0.15rem",
+    "--rounded-badge": "0rem"
   },
   ".theme-rose": {
     "--primary-100": hexToRgb("#e11d48"),
@@ -47,6 +50,9 @@ export default {
     "--primary-100": hexToRgb("#7c3aed"),
     "--primary-200": hexToRgb("#6d28d9"),
     "--primary-300": hexToRgb("#5b21b6"),
+    "--rounded-box": "1.5rem",
+    "--rounded-btn": "1.15rem",
+    "--rounded-badge": "1rem"
   },
   ".theme-orange": {
     "--primary-100": hexToRgb("#ea580c"),

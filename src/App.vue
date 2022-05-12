@@ -157,6 +157,22 @@
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
+        <h2 class="font-semibold text-sm mt-10">Checkbox component</h2>
+        <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+        >
+          <WCheckbox checked />
+          <WCheckbox checked color="secondary" />
+          <WCheckbox checked color="success" />
+          <WCheckbox checked color="warning" />
+          <WCheckbox checked color="danger" />
+
+          <WCheckbox checked size="xs" />
+          <WCheckbox checked size="sm"  />
+          <WCheckbox checked size="md"  />
+          <WCheckbox checked size="lg"  />
+          <WCheckbox checked disabled size="lg" />
+        </div>
         <h2 class="font-semibold text-sm mt-10">Toggle component</h2>
         <div
           class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
@@ -172,7 +188,8 @@
           <WToggle checked />
           <WToggle checked size="lg" />
 
-         <WToggle disabled />
+          <WToggle disabled />
+           <WToggle disabled checked />
           <div class="flex flex-col w-32">
             <label
               class="cursor-pointer flex select-none content-center py-2 px-1 justify-between"
@@ -568,7 +585,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { WButton, WDropdown, WMenu, WModal, WToggle } from "./index";
+import { WButton, WDropdown, WMenu, WModal, WToggle, WCheckbox } from "./index";
 const dark = ref(false);
 const selectedColor = ref("theme-default");
 const modal = ref({
