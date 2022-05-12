@@ -28,6 +28,7 @@ export default {
     "--vuewindi-text": "31, 41, 55",
     "--rounded-box": "1rem",
     "--rounded-btn": "0.5rem",
+    "--rounded-badge": "1.9rem"
   },
   ".theme-teal": {
     "--primary-100": hexToRgb("#0d9488"),
@@ -40,6 +41,7 @@ export default {
     "--primary-300": hexToRgb("#9f1239"),
     "--rounded-box": "0.5rem",
     "--rounded-btn": "0.25rem",
+    "--rounded-badge": "0.25rem"
   },
   ".theme-violet": {
     "--primary-100": hexToRgb("#7c3aed"),

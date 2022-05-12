@@ -1,3 +1,5 @@
-import wmenu from './wmenu'
+import menu from './menu'
+import toggle from './toggle'
 
-export default wmenu 
+
+export default {...menu, ...toggle}

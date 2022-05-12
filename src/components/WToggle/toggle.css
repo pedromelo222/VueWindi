@@ -1,0 +1,79 @@
+
+.w-toggle {
+    --handleoffset: 1.5rem;  
+    @apply appearance-none cursor-pointer border border-gray-300 bg-gray-400/60 rounded-$rounded-badge duration-300 ease-in-out;
+    transition: background, box-shadow var(--animation-input, 0.2s) ease-in-out;
+    box-shadow: calc(var(--handleoffset) * -1) 0 0 2px rgb(var(--base-100)) inset,
+      0 0 0 2px rgb(var(--base-100)) inset;
+    &:focus-visible {
+      outline: 2px solid rgb(var(--primary-200));
+      outline-offset: 2px;
+    }
+    &:checked,
+    &[checked="true"] {
+      @apply border-opacity-100 bg-opacity-100;
+      box-shadow: var(--handleoffset) 0 0 2px rgb(var(--base-100)) inset,
+        0 0 0 2px rgb(var(--base-100)) inset;
+    }
+  
+    &.w-toggle-primary {
+      &:focus-visible {
+        outline: 2px solid rgb(var(--primary-200));
+        outline-offset: 2px;
+      }
+      &:checked,
+      &[checked="true"] {
+        --chkbg: rgb(var(--primary-200));
+        @apply border-primary-200;
+        @apply border-primary-200 border-opacity-10 bg-primary-200 text-primary-200;
+      }
+    }
+    &.w-toggle-secondary {
+       &:focus-visible {
+        outline: 2px solid rgb(var(--secondary-200));
+        outline-offset: 2px;
+      }
+      &:checked,
+      &[checked="true"] {
+        --chkbg: rgb(var(--secondary-200));
+        @apply border-secondary-200;
+        @apply border-secondary-200 border-opacity-10 bg-secondary-200 text-secondary-200;
+      }
+    }
+    &.w-toggle-success {
+        &:focus-visible {
+        outline: 2px solid rgb(var(--success-200));
+        outline-offset: 2px;
+      }
+      &:checked,
+      &[checked="true"] {
+        --chkbg: rgb(var(--success-200));
+        @apply border-success-200;
+        @apply border-success-200 border-opacity-10 bg-success-200 text-success-200;
+      }
+    }
+    &.w-toggle-danger {
+         &:focus-visible {
+        outline: 2px solid rgb(var(--danger-200));
+        outline-offset: 2px;
+      }
+      &:checked,
+      &[checked="true"] {
+        --chkbg: rgb(var(--danger-200));
+        @apply border-danger-200;
+        @apply border-danger-200 border-opacity-10 bg-danger-200 text-danger-200;
+      }
+    }
+    &.w-toggle-warning {
+        &:focus-visible {
+        outline: 2px solid rgb(var(--warning-200));
+        outline-offset: 2px;
+      }
+      &:checked,
+      &[checked="true"] {
+        --chkbg: rgb(var(--warning-200));
+        @apply border-warning-200;
+        @apply border-warning-200 border-opacity-10 bg-warning-200 text-warning-200;
+      }
+    }
+  }

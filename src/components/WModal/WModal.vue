@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref, onBeforeUnmount, watch, onBeforeMount, nextTick } from "vue";
+import { defineComponent, ref, onBeforeUnmount, watch, nextTick } from "vue";
 import './modal.css'
 export default defineComponent({
     name: "WModal",

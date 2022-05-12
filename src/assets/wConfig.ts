@@ -6,7 +6,7 @@ import utilities from '../styles/utilities'
 
 export default {
   preflight: {
-    safelist: "button a ul li",
+    safelist: "button a ul li input",
   },
   theme: {
     colors: {
@@ -33,7 +33,7 @@ export default {
   
   plugins: [
     plugin(({ addUtilities, addComponents }) => {
-      addComponents([theme])
+      addComponents(theme)
       addUtilities(utilities)
     }),
   ]
