@@ -76,4 +76,8 @@
         @apply border-warning-200 border-opacity-10 bg-warning-200 text-warning-200;
       }
     }
+
+    &:disabled {
+        @apply cursor-not-allowed;
+    }
   }

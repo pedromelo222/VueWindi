@@ -34,6 +34,11 @@ export default defineComponent({
         return ["xs", "sm", "md", "lg", "xl"].includes(value);
       },
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
   }
 });
 </script>
@@ -41,6 +46,7 @@ export default defineComponent({
     <input
       type="checkbox"
       :checked="checked"
+      :disabled="disabled"
       :class="[`peer w-toggle`, `w-toggle-${color}`, `w-toggle-${size}`]"
     /> 
 </template>

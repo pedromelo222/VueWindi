@@ -162,16 +162,17 @@
           class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
         >
           <WToggle checked />
-          <WToggle color="secondary" />
-          <WToggle color="success" />
-          <WToggle color="warning" />
-          <WToggle color="danger" />
+          <WToggle checked color="secondary" />
+          <WToggle checked color="success" />
+          <WToggle checked color="warning" />
+          <WToggle checked color="danger" />
 
           <WToggle checked size="xs" />
           <WToggle checked size="sm" />
           <WToggle checked />
           <WToggle checked size="lg" />
 
+         <WToggle disabled />
           <div class="flex flex-col w-32">
             <label
               class="cursor-pointer flex select-none content-center py-2 px-1 justify-between"
