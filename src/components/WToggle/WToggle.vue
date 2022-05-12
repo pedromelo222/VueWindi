@@ -9,10 +9,6 @@ export default defineComponent({
       default: false,
       required: false,
     },
-    label: {
-        type: String,
-        required: false
-    },
     color: {
       type: String,
       default: "primary",
