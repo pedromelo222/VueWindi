@@ -53,14 +53,17 @@ export default defineComponent({
         @click="toggle" >
             <slot name="trigger" :active="isActive"></slot>
         </div>
-        <transition enter-active-class="transition duration-150 ease-out"
-            enter-from-class="transform scale-95 opacity-0" enter-to-class="transform scale-100 opacity-100"
-            leave-active-class="transition duration-75 ease-in" leave-from-class="transform scale-100 opacity-100"
+        <transition 
+        enter-active-class="transition duration-150 ease-out"
+            enter-from-class="transform scale-95 opacity-0" 
+            enter-to-class="transform scale-100 opacity-100"
+            leave-active-class="transition duration-75 ease-in" 
+            leave-from-class="transform scale-100 opacity-100"
             leave-to-class="transform scale-95 opacity-0">
             <div 
              v-show="isActive"
              :class="[
-                'w-dropdown-menu p-1',
+                'w-dropdown-menu',
                 `w-dropdown-${placement}`
             ]">
                 <slot></slot>

@@ -3,7 +3,7 @@
 }
 
 .w-dropdown-menu {
-    @apply absolute block z-20 ;
+    @apply absolute block z-20 p-1;
 
     &.w-dropdown-bottom-start {
         @apply left-0 ;
@@ -20,4 +20,24 @@
     &.w-dropdown-top-end {
         @apply bottom-full right-0 ;
     }    
+
+    &.w-transition-enter-active {
+        @apply transition duration-150 ease-out;
+    }
+    &.w-transition-enter-from {
+        @apply transform scale-95 opacity-0;
+    }
+    &.w-transition-enter-to {
+        @apply transform scale-100 opacity-100;
+    }
+    &.w-transition-leave-active {
+        @apply transition duration-75 ease-in;
+    }
+    &.w-transition-leave-from {
+        @apply transform scale-100 opacity-100;
+    }
+    &.w-transition-leave-to {
+        @apply transform scale-100 opacity-100;
+    }
+
 }
