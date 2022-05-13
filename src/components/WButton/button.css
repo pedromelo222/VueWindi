@@ -150,18 +150,26 @@
     &.w-btn-circle {
       @apply rounded-full w-8 !p-0;
     }
+    .w-icon-loading {
+      @apply h-3 w-3 mr-1; 
+    }
   }
   &.w-btn-sm {
     @apply h-10  px-3 text-sm;
     &.w-btn-circle {
       @apply rounded-full w-10 !p-0;
     }
+    .w-icon-loading {
+      @apply h-4 w-4 mr-2; 
+    }
   }
   &.w-btn-md {
     @apply h-12 px-4 text-sm;
-
     &.w-btn-circle {
       @apply rounded-full w-12 !p-0;
+    }
+    .w-icon-loading {
+      @apply h-5 w-5 -ml-1 mr-2; 
     }
   }
   &.w-btn-lg {
@@ -169,12 +177,21 @@
     &.w-btn-circle {
       @apply rounded-full w-14 !p-0;
     }
+    .w-icon-loading {
+      @apply h-6 w-6 -ml-1 mr-3; 
+    }
   }
   &.w-btn-xl {
     @apply h-16 px-6 text-xl;
     &.w-btn-circle {
       @apply rounded-full w-16 !p-0;
     }
+    .w-icon-loading {
+      @apply h-7 w-7 -ml-1 mr-3; 
+    }
+  }
+  .w-icon-loading {
+    @apply animate-spin;      
   }
 }
 
