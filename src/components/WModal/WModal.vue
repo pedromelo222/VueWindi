@@ -105,11 +105,11 @@ export default defineComponent({
     </transition>
     <transition name="w-modal-bounce" appear>
         <div v-if="isShow" @click.self="clickOutside" class="w-modal-background"
-            :class="[outside ? '' : 'pointer-events-none']">
+            :class="[outside ? '' : 'w-modal-outside']">
             <div  class="w-modal-box"
                 :class="[`w-modal-${size}`]">
                 <button v-show="closeBtn" @click="dismiss" class="w-modal-btn-close w-btn">
-                    <svg class="h-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path d="M289.94 256l95-95A24 24 0 0 0 351 127l-95 95l-95-95a24 24 0 0 0-34 34l95 95l-95 95a24 24 0 1 0 34 34l95-95l95 95a24 24 0 0 0 34-34z" fill="currentColor"></path></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path d="M289.94 256l95-95A24 24 0 0 0 351 127l-95 95l-95-95a24 24 0 0 0-34 34l95 95l-95 95a24 24 0 1 0 34 34l95-95l95 95a24 24 0 0 0 34-34z" fill="currentColor"></path></svg>
                 </button>
                 <div class="w-modal-inner-box" :class="[`w-modal-${size}`]">
                     <h2 v-show="$slots.header" class="w-modal-header">

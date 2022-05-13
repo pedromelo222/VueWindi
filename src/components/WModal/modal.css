@@ -13,6 +13,10 @@
     @apply fixed inset-0  z-50 flex place-content-center h-full;
 }
 
+.w-modal-outside{
+    @apply  pointer-events-none;
+}
+
 .w-modal-box {
     @apply relative pointer-events-auto bg-base-100 m-auto w-full mx-4 rounded-$rounded-box shadow-xl overflow-hidden;
 }
@@ -81,4 +85,7 @@
 
 .w-modal-btn-close {
     @apply rounded-$rounded-btn h-8 w-8 flex items-center justify-center absolute bg-gray-500 hover:bg-opacity-30 bg-opacity-20 top-2 right-2;
+    svg {
+        @apply h-5;
+    }
 }
