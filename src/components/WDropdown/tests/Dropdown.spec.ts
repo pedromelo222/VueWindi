@@ -80,6 +80,8 @@ describe("WDropdown", () => {
     expect(wrapper.find(".w-dropdown-menu").isVisible()).toBe(true);
     await wrapper.find("button").trigger("click");
     expect(wrapper.find(".w-dropdown-menu").isVisible()).toBe(false);
+
+    wrapper.unmount();
   });
 
   it("hoverable with any trigger element", async () => {
