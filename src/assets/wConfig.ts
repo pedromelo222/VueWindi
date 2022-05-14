@@ -1,8 +1,12 @@
 import colors from "windicss/colors";
 import plugin from 'windicss/plugin'
-import theme from '../styles/base'
+import base from '../styles/base'
 import configColors from '../styles/config'
 import utilities from '../styles/utilities'
+import { getTheme } from './generateTheme'
+
+
+
 
 export default {
   preflight: {
@@ -32,8 +36,9 @@ export default {
   },
   
   plugins: [
-    plugin(({ addUtilities, addComponents }) => {
-      addComponents(theme)
+    plugin(({ addUtilities, addBase }) => {
+      addBase(base)
+      addBase(getTheme())
       addUtilities(utilities)
     }),
   ]

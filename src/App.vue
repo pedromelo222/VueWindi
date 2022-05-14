@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased text-vuewindi-text pb-10">
+  <div class="antialiased text-base-text pb-10">
     <nav
       class="flex sticky top-0 z-40 flex-none py-3 mx-auto w-full border-b bg-base-100"
     >
@@ -42,7 +42,7 @@
             target="_blank"
             variant="transparent"
             color="secondary"
-            class="stroke-vuewindi-text"
+            class="stroke-base-text"
           >
             <svg
               class="h-5"
@@ -65,7 +65,7 @@
               <WButton
                 variant="transparent"
                 color="secondary"
-                class="stroke-vuewindi-text"
+                class="stroke-base-text"
               >
                 <svg
                   class="h-5.4"
@@ -105,7 +105,7 @@
             variant="transparent"
             color="secondary"
             @click="dark = !dark"
-            class="fill-vuewindi-text"
+            class="fill-base-text"
           >
             <svg
               v-show="!dark"
@@ -485,7 +485,7 @@
           class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
         >
           <WButton variant="default" color="primary">Primary </WButton>
-          <WButton loading> Button </WButton>
+          <WButton loading> Loading </WButton>
           <WButton pills> Button pills </WButton>
           <WButton disabled> Disabled </WButton>
           <WButton

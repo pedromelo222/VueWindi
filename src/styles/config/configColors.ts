@@ -30,10 +30,6 @@ export default {
     100: varToRgba("--base-100"),
     200: varToRgba("--base-200"),
     300: varToRgba("--base-300"),
-  },
-  vuewindi: {
-    bg: varToRgba("--vuewindi-bg"),
-    bc: varToRgba("--vuewindi-bc"),
-    text: varToRgba("--vuewindi-text"),
+    text: varToRgba("--base-text")
   },
 };

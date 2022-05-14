@@ -1,3 +1,3 @@
-import theme from './theme'
+import base from './base'
 
-export default theme 
+export default base

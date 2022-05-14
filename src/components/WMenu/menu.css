@@ -10,7 +10,7 @@
     }
   
     li .disabled {
-      @apply cursor-not-allowed pointer-events-none text-vuewindi-text text-opacity-20 hover: bg-white/0;
+      @apply cursor-not-allowed pointer-events-none text-base-text text-opacity-20 hover: bg-white/0;
   
     }
   
@@ -19,7 +19,7 @@
     }
   
     li > *:not(.disabled) {
-      @apply flex items-center gap-3 hover:bg-black/7 dark:hover:bg-white/7 w-full text-left transition duration-200 ease-in-out text-vuewindi-text;
+      @apply flex items-center gap-3 hover:bg-black/7 dark:hover:bg-white/7 w-full text-left transition duration-200 ease-in-out text-base-text;
   
       &:active {
         @apply  !bg-primary-200 text-white;
