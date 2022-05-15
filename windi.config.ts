@@ -1,5 +1,5 @@
 import { defineConfig } from "windicss/helpers";
-import  vueWindi  from "./src/assets/wConfig";
+import  vueWindi  from "./src/assets";
 
 
 

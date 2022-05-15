@@ -1,4 +1,3 @@
-import colors from "windicss/colors";
 import plugin from "windicss/plugin";
 import base from "../styles/base";
 import configColors from "../styles/config";
@@ -10,15 +9,19 @@ const vueWindi = plugin(
     addBase(base);
     addBase(getTheme());
     addUtilities(utilities);
-  },{
+  },
+  {
+    preflight: {
+      safelist: "button a ul li input",
+    },
     theme: {
       extend: {
-        colors: theme =>  ({
-          ...configColors
-        })
-      }
-    }
-  });
-  
+        colors: (theme) => ({
+          ...configColors,
+        }),
+      },
+    },
+  }
+);
 
 export default vueWindi;
