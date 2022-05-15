@@ -1,4 +1,5 @@
 import { varToRgba } from "../functions";
+import colors from 'windicss/colors'
 
 export default {
   primary: {
@@ -32,4 +33,6 @@ export default {
     300: varToRgba("--base-300"),
     text: varToRgba("--base-text")
   },
+  white: colors.white,
+  black: colors.black, 
 };
