@@ -1,1 +1,3 @@
-export { default as wConfig } from './wConfig'
+import vueWindi from './wConfig'
+
+export default vueWindi  

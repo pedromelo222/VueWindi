@@ -1,12 +1,12 @@
 import { defineConfig } from "windicss/helpers";
-import wConfig from "./src/assets/wConfig";
+import  vueWindi  from "./src/assets/wConfig";
+
+
 
 export default defineConfig({
-  darkMode: "class", // or 'media' ,
-  attributify: true,
+  darkMode: "class", 
 
-  presets: [wConfig],
-
+  plugins: [vueWindi],
   vueWindi: {
     themes: [
       {
