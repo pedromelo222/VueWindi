@@ -1,3 +1,3 @@
-import vueWindi from './wConfig'
+import vueWindi from './vueWindiPlugin'
 
 export default vueWindi  
