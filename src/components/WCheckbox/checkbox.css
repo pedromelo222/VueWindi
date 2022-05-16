@@ -3,7 +3,7 @@
      --chkbg: var(--primary-200);
     @apply h-6 w-6 cursor-pointer appearance-none border border-gray-500 border-opacity-20 rounded-$rounded-btn;
     &:focus-visible {
-      outline: 2px solid hsl(215 28% 17%);
+      outline: 2px solid rgb(var(--chkbg));
       outline-offset: 2px;
     }
     &:checked,
@@ -22,7 +22,7 @@
       --chkfg: 0 0% 100%;
       @apply border-primary-200 hover:border-primary-200;
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
@@ -35,7 +35,7 @@
       --chkfg: 0 0% 100%;
       @apply border-secondary-200 hover:border-secondary-200;
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
@@ -47,7 +47,7 @@
       --chkfg: 0 0% 100%;
       @apply border-success-200 hover:border-success-200;
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
@@ -59,7 +59,7 @@
       --chkfg: 0 0% 100%;
       @apply border-warning-200 hover:border-warning-200;
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
@@ -71,7 +71,7 @@
       --chkfg: 0 0% 100%;
       @apply border-danger-200 hover:border-danger-200;
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
