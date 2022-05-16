@@ -54,12 +54,12 @@ export default defineComponent({
             <slot name="trigger" :active="isActive"></slot>
         </div>
         <transition 
-        enter-active-class="transition duration-150 ease-out"
-            enter-from-class="transform scale-95 opacity-0" 
-            enter-to-class="transform scale-100 opacity-100"
-            leave-active-class="transition duration-75 ease-in" 
-            leave-from-class="transform scale-100 opacity-100"
-            leave-to-class="transform scale-95 opacity-0">
+        enter-active-class="w-transition-enter-active"
+            enter-from-class="w-transition-enter-from" 
+            enter-to-class="w-transition-enter-to"
+            leave-active-class="w-transition-leave-active" 
+            leave-from-class="w-transition-leave-from"
+            leave-to-class="w-transition-leave-to">
             <div 
              v-show="isActive"
              :class="[
