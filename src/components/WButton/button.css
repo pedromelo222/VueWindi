@@ -4,6 +4,9 @@
   animation: btnpop 0.25s ease-out; 
 
   &.w-btn-primary {
+    &:focus-visible {
+      @apply outline-primary-200;
+    }
     &.w-btn-default {
       @apply bg-primary-200 text-white hover:bg-primary-300 shadow-sm;
       &.w-btn-active {
@@ -30,6 +33,9 @@
     }
   }
   &.w-btn-secondary {
+    &:focus-visible {
+      @apply outline-secondary-200;
+    }
     &.w-btn-default {
       @apply bg-secondary-200 text-white hover:bg-secondary-300 shadow-sm;
       &.w-btn-active {
@@ -57,6 +63,9 @@
     
   }
   &.w-btn-success {
+    &:focus-visible {
+      @apply outline-success-200;
+    }
     &.w-btn-default {
       @apply bg-success-200 text-white hover:bg-success-300 shadow-sm;
       &.w-btn-active {
@@ -84,6 +93,9 @@
    
   }
   &.w-btn-danger {
+    &:focus-visible {
+      @apply outline-danger-200;
+    }
     &.w-btn-default {
       @apply bg-danger-200 text-white hover:bg-danger-300 shadow-sm;
       &.w-btn-active {
@@ -110,6 +122,9 @@
     }
   }
   &.w-btn-warning {
+    &:focus-visible {
+      @apply outline-warning-200;
+    }
     &.w-btn-default {
       @apply bg-warning-200 text-white hover:bg-warning-300 shadow-sm;      
       &.w-btn-active {
