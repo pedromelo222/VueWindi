@@ -1,0 +1,80 @@
+
+.w-form-control {
+    @apply flex flex-col;
+  }
+  .w-label {
+    @apply flex select-none align-center justify-between py-2 px-1;
+  }
+  .w-label-text {
+    @apply text-sm
+  }
+  
+  .w-input {
+    @apply border-0 border-base-gray-300 bg-base-100 rounded-$rounded-btn transition duration-200 
+    ease-in-out h-12 px-4 text-sm leading-loose;
+  
+    &:focus {
+      outline: 2px solid rgb(var(--base-gray-300));
+      outline-offset: 2px;
+    }
+  
+    &.w-input-bordered {
+      @apply border-1 border-opacity-60;
+    }
+  
+    &.w-input-ghost {
+      @apply bg-base-100/0;
+    }
+  
+    &.w-input-xs {
+      @apply leading-relaxed;
+    }
+  
+    &.w-input-sm {
+      @apply leading-8;
+    }
+  
+    &.w-input-md {
+      @apply leading-loose;
+    }
+  
+    &.w-input-lg {
+      @apply leading-loose;
+    }
+  
+    &.w-input-primary {
+      @apply border-primary-200;
+      &:focus {
+        outline: 2px solid rgb(var(--primary-200));
+        outline-offset: 2px;
+      }
+    }
+    &.w-input-secondary {
+      @apply border-secondary-200;
+      &:focus {
+        outline: 2px solid rgb(var(--secondary-200));
+        outline-offset: 2px;
+      }
+    }
+    &.w-input-success {
+      @apply border-success-200;
+      &:focus {
+        outline: 2px solid rgb(var(--success-200));
+        outline-offset: 2px;
+      }
+    }
+    &.w-input-warning {
+      @apply border-warning-200;
+      &:focus {
+        outline: 2px solid rgb(var(--warning-200));
+        outline-offset: 2px;
+      }
+    }
+    &.w-input-danger {
+      @apply border-danger-200;
+      &:focus {
+        outline: 2px solid rgb(var(--danger-200));
+        outline-offset: 2px;
+      }
+    }
+  }
