@@ -181,12 +181,5 @@ export default {
     "rounded-box": "1rem",
     "rounded-btn": "0.5rem",
     "rounded-badge": "1.9rem",   
-  },
-  ".dark": {
-    "base-100": "#181818",
-    "base-200": "#151414",
-    "base-300": "#0f0f0f",
-    "vuewindi-text": "243, 244, 246",
-    "color-scheme": "dark",
-  },
+  } 
 };
