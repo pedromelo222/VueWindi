@@ -33,6 +33,15 @@ export default {
     300: varToRgba("--base-300"),
     text: varToRgba("--base-text")
   },
+  'base-gray': {
+    100: varToRgba("--base-gray-100"),
+    200: varToRgba("--base-gray-200"),
+    300: varToRgba("--base-gray-300"),
+    400: varToRgba("--base-gray-400"),
+    500: varToRgba("--base-gray-500"),
+    600: varToRgba("--base-gray-600"),
+    700: varToRgba("--base-gray-700"),
+  },
   white: colors.white,
-  black: colors.black, 
+  black: colors.black
 };

@@ -1,7 +1,7 @@
 .w-checkbox {
     --chkfg: 0 0% 100%;
      --chkbg: var(--primary-200);
-    @apply h-6 w-6 cursor-pointer appearance-none border border-gray-500 border-opacity-20 rounded-$rounded-btn;
+    @apply h-6 w-6 cursor-pointer appearance-none border border-base-gray-500 border-opacity-20 rounded-$rounded-btn;
     &:focus-visible {
       outline: 2px solid rgb(var(--chkbg));
       outline-offset: 2px;
@@ -80,7 +80,7 @@
     }
   
     &:disabled {
-      @apply cursor-not-allowed border-white/0 bg-gray-400 opacity-20;
+      @apply cursor-not-allowed border-white/0 bg-base-gray-400 opacity-20;
     }
   }
   
