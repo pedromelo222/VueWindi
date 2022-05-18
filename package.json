@@ -51,6 +51,6 @@
     "vitepress": "^0.22.3",
     "vitest": "^0.10.0",
     "vue-tsc": "^0.34.9",
-    "windicss": "^3.5.3"
+    "windicss": "^3.5.4"
   }
 }
