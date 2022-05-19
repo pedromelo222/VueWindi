@@ -25,7 +25,7 @@
     "emitDeclarationOnly": true,
     "declarationDir": "./dist/types",
     "isolatedModules": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
 
   "references": [
