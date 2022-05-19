@@ -157,14 +157,13 @@
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
-    
         <h2 class="font-semibold text-sm mt-10">Input component</h2>
         <div
           class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
         >
           <WInput placeholder="Type here..." />
           <WInput :bordered="false" placeholder="Bordered=false here..." />
-           <WInput :bordered="false" ghost placeholder="Ghost here..." />
+          <WInput :bordered="false" ghost placeholder="Ghost here..." />
 
           <div class="flex flex-wrap gap-2 items-center">
             <WInput size="xs" placeholder="Type here..." />
@@ -173,16 +172,34 @@
             <WInput size="lg" placeholder="Type here..." />
           </div>
 
-           <div class="flex flex-wrap gap-2 ">
+          <div class="flex flex-wrap gap-2">
             <WInput color="primary" placeholder="Type here..." />
             <WInput color="secondary" placeholder="Type here..." />
             <WInput color="success" placeholder="Type here..." />
             <WInput color="warning" placeholder="Type here..." />
-             <WInput color="danger" placeholder="Type here..." />
+            <WInput color="danger" placeholder="Type here..." />
           </div>
 
-            <div class="flex flex-wrap gap-2 ">
-            <WInput label="Your name"  placeholder="With label here..." />
+          <div class="flex w-full">
+              <WInput class="w-full" placeholder="Type here..." />
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <WInput
+              label="Your name"
+              v-model:value="input.default"
+              placeholder="With label here..."
+            />
+            <WInput
+              label="Your name"
+              v-model:value="input.validation"
+              error="The name field is required."
+              placeholder="With validation here..."
+            />
+
+             <WInput disabled label="Disabled" placeholder="Type here..." />
+
+             <WInput disabled label="Disabled" value="disabled with text" />
           </div>
         </div>
         <h2 class="font-semibold text-sm mt-10">Checkbox component</h2>
@@ -633,6 +650,11 @@ const modal = ref({
   noOutside: false,
   headless: false,
   backdropBlur: false,
+});
+
+const input = ref({
+  default: "John Doe",
+  validation: "",
 });
 
 function changeColor(color: string) {

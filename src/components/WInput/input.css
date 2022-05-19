@@ -8,6 +8,10 @@
   .w-label-text {
     @apply text-sm
   }
+
+  .w-input-error{
+    @apply text-danger-200 text-xs mt-2 ml-1;
+  }
   
   .w-input {
     @apply border-0 border-base-gray-300 bg-base-100 rounded-$rounded-btn transition duration-200 
