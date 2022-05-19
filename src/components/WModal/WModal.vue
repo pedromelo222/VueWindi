@@ -105,7 +105,7 @@ export default defineComponent({
     </transition>
     <transition name="w-modal-bounce" appear>
         <div v-if="isShow" @click.self="clickOutside" class="w-modal-background"
-            :class="[outside ? '' : 'w-modal-outside']">
+            :class="[{ 'w-modal-outside' :  !outside}]">
             <div  class="w-modal-box"
                 :class="[`w-modal-${size}`]">
                 <button v-show="closeBtn" @click="dismiss" class="w-modal-btn-close w-btn">
