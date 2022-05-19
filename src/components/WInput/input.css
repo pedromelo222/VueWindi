@@ -11,7 +11,7 @@
   
   .w-input {
     @apply border-0 border-base-gray-300 bg-base-100 rounded-$rounded-btn transition duration-200 
-    ease-in-out h-12 px-4 text-sm leading-loose;
+    ease-in-out h-12 px-4 text-sm leading-loose w-full;
   
     &:focus {
       outline: 2px solid rgb(var(--base-gray-300));
@@ -84,6 +84,10 @@
         outline: 2px solid rgb(var(--danger-200));
         outline-offset: 2px;
       }
+    }
+
+    &:disabled {
+      @apply cursor-not-allowed  bg-opacity-20 text-base-text text-opacity-80 placeholder-base-gray-400/40;
     }
 
   }

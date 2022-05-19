@@ -25,6 +25,11 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
     size: {
       type: String,
       default: "md",
@@ -101,6 +106,7 @@ export default defineComponent({
       :name="name"
       :placeholder="placeholder"
       :type="type"
+      :disabled="disabled"
       v-model="text"
       class="w-input"
       :class="[
