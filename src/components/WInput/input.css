@@ -16,8 +16,8 @@
     &:focus {
       outline: 2px solid rgb(var(--base-gray-300));
       outline-offset: 2px;
-    }
-  
+    }  
+
     &.w-input-bordered {
       @apply border-1 border-opacity-60;
     }
@@ -77,4 +77,13 @@
         outline-offset: 2px;
       }
     }
+
+    &.w-input-error {
+      @apply border-danger-200;
+      &:focus {
+        outline: 2px solid rgb(var(--danger-200));
+        outline-offset: 2px;
+      }
+    }
+
   }

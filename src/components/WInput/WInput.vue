@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import './input.css'
+import { defineComponent, ref, watch } from "vue";
+import "./input.css";
 export default defineComponent({
   name: "WInput",
   props: {
@@ -15,11 +15,15 @@ export default defineComponent({
     type: {
       type: String,
       default: "text",
-      required: false
+      required: false,
     },
     name: {
-       type: String,
-       required: false
+      type: String,
+      required: false,
+    },
+    value: {
+      type: String,
+      required: false,
     },
     size: {
       type: String,
@@ -54,16 +58,36 @@ export default defineComponent({
         ].includes(value);
       },
     },
+    error: {
+      type: String,
+      required: false,
+    },
   },
-  setup(){
-    const inputText = ref<HTMLInputElement | null>(null)
-  
-    const setFocus = () => {
-        inputText.value?.focus();
-    }
+  setup(props, { emit }) {
+    const inputText = ref<HTMLInputElement | null>(null);
+    const isError = ref(props.error || false);
+    const text = ref(props.value);
+    const initialValue = ref<string>("");
 
-    return { setFocus, inputText }
-  }
+    if (props.value && props.error) initialValue.value = props.value;
+
+    const setFocus = () => {
+      inputText.value?.focus();
+    };
+
+    watch(text, (value) => {
+      emit("update:value", text);
+      if (props.error) {
+        if (initialValue.value !== text.value) {
+          isError.value = false;
+        } else {
+          isError.value = true;
+        }
+      }
+    });
+
+    return { setFocus, inputText, text, isError };
+  },
 });
 </script>
 <template>
@@ -76,16 +100,23 @@ export default defineComponent({
       ref="inputText"
       :name="name"
       :placeholder="placeholder"
-      :type="type"  
+      :type="type"
+      v-model="text"
       class="w-input"
       :class="[
         {
           'w-input-bordered': bordered,
           'w-input-ghost': ghost,
+          'w-input-error': isError,
         },
         `w-input-${size}`,
         `w-input-${color}`,
       ]"
     />
+    <div
+      v-if="isError"
+      v-text="error"
+      class="text-danger-200 text-xs mt-2 ml-1"
+    ></div>
   </div>
 </template>
