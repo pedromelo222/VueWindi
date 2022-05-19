@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import './menu.css'
+import { defineComponent } from "vue";
+import "./menu.css";
 export default defineComponent({
   name: "WMenu",
   props: {
@@ -41,21 +41,37 @@ export default defineComponent({
       required: false,
     },
   },
-  setup(props, { slots }){    
-   return {slots}    
-  }
-})
+  setup(props, { slots }) {
+    return { slots };
+  },
+});
 </script>
 <template>
-  <ul :class="[
-    'w-menu',
-    compact ? (typeof compact === 'string' ? `w-compact-${compact}` : 'w-compact') : '',
-    horizontal ? (typeof horizontal === 'string' ? `w-horizontal-${horizontal}` : 'w-horizontal') : '',
-    rounded ? 'w-rounded' : '',
-    padding ? 'w-padding' : '',
-    hoverBorder ? 'w-hover-border' : '',
-  ]"> 
-    <li v-if="slots.default" v-for="slot in slots.default()" class="w-menu-item">
+  <ul
+    :class="[
+      'w-menu',
+      compact
+        ? typeof compact === 'string'
+          ? `w-compact-${compact}`
+          : 'w-compact'
+        : '',
+      horizontal
+        ? typeof horizontal === 'string'
+          ? `w-horizontal-${horizontal}`
+          : 'w-horizontal'
+        : '',
+      {
+        'w-rounded': rounded,
+        'w-padding': padding,
+        'w-hover-border': hoverBorder,
+      },
+    ]"
+  >
+    <li
+      v-if="slots.default"
+      v-for="slot in slots.default()"
+      class="w-menu-item"
+    >
       <component :is="slot" />
     </li>
   </ul>
