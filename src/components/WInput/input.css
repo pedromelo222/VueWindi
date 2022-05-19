@@ -9,7 +9,7 @@
     @apply text-sm
   }
 
-  .w-input-error{
+  .w-input-warning{
     @apply text-danger-200 text-xs mt-2 ml-1;
   }
   

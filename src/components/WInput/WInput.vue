@@ -122,7 +122,7 @@ export default defineComponent({
     <div
       v-if="isError"
       v-text="error"
-      class="w-input-error"
+      class="w-input-warning"
     ></div>
   </div>
 </template>
