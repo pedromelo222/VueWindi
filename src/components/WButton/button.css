@@ -1,7 +1,7 @@
 .w-btn:not(.w-btn-clean) {
   @apply font-semibold rounded-$rounded-btn inline-flex items-center justify-center select-none transition duration-200 transform active:(animate-none hover:scale-95 focus:scale-95) outline-offset-2;
-   /* animation does not take effect in @apply and is not being scanned/extracted */
-  animation: btnpop 0.25s ease-out; 
+  /* animation does not take effect in @apply and is not being scanned/extracted */
+  animation: btnpop 0.25s ease-out;
 
   &.w-btn-primary {
     &:focus-visible {
@@ -60,7 +60,6 @@
         @apply underline;
       }
     }
-    
   }
   &.w-btn-success {
     &:focus-visible {
@@ -90,7 +89,6 @@
         @apply underline;
       }
     }
-   
   }
   &.w-btn-danger {
     &:focus-visible {
@@ -126,7 +124,7 @@
       @apply outline-warning-200;
     }
     &.w-btn-default {
-      @apply bg-warning-200 text-white hover:bg-warning-300 shadow-sm;      
+      @apply bg-warning-200 text-white hover:bg-warning-300 shadow-sm;
       &.w-btn-active {
         @apply bg-warning-300;
       }
@@ -149,7 +147,6 @@
         @apply underline;
       }
     }
-   
   }
   &.w-btn-disabled {
     @apply cursor-not-allowed pointer-events-none !bg-opacity-70 border-opacity-50 text-opacity-80;
@@ -166,7 +163,7 @@
       @apply rounded-full w-8 !p-0;
     }
     .w-icon-loading {
-      @apply h-3 w-3 mr-1; 
+      @apply h-3 w-3 mr-1;
     }
   }
   &.w-btn-sm {
@@ -175,7 +172,7 @@
       @apply rounded-full w-10 !p-0;
     }
     .w-icon-loading {
-      @apply h-4 w-4 mr-2; 
+      @apply h-4 w-4 mr-2;
     }
   }
   &.w-btn-md {
@@ -184,7 +181,7 @@
       @apply rounded-full w-12 !p-0;
     }
     .w-icon-loading {
-      @apply h-5 w-5 -ml-1 mr-2; 
+      @apply h-5 w-5 -ml-1 mr-2;
     }
   }
   &.w-btn-lg {
@@ -193,7 +190,7 @@
       @apply rounded-full w-14 !p-0;
     }
     .w-icon-loading {
-      @apply h-6 w-6 -ml-1 mr-3; 
+      @apply h-6 w-6 -ml-1 mr-3;
     }
   }
   &.w-btn-xl {
@@ -202,12 +199,12 @@
       @apply rounded-full w-16 !p-0;
     }
     .w-icon-loading {
-      @apply h-7 w-7 -ml-1 mr-3; 
+      @apply h-7 w-7 -ml-1 mr-3;
     }
   }
   .w-icon-loading {
     -webkit-animation: spin 1s linear infinite;
-    animation: spin 1s linear infinite;   
+    animation: spin 1s linear infinite;
   }
   .w-icon-circle {
     @apply opacity-25;
@@ -215,37 +212,100 @@
   .w-icon-path {
     @apply opacity-75;
   }
-
+ 
+  //responsive sm:()
+  &.w-btn-sm-xs {
+    @apply sm:w-btn-xs;
+  }
+  &.w-btn-sm-sm {
+    @apply sm:w-btn-sm;
+  }
+  &.w-btn-sm-md {
+    @apply sm:w-btn-md;
+  }
+  &.w-btn-sm-lg {
+    @apply sm:w-btn-lg;
+  }
+  &.w-btn-sm-xl {
+    @apply sm:w-btn-xl;
+  }
+  //responsive md:()
+  &.w-btn-md-xs {
+    @apply md:w-btn-xs;
+  }
+  &.w-btn-md-sm {
+    @apply md:w-btn-sm;
+  }
+  &.w-btn-md-md {
+    @apply md:w-btn-md;
+  }
+  &.w-btn-md-lg {
+    @apply md:w-btn-lg;
+  }
+  &.w-btn-md-xl {
+    @apply md:w-btn-xl;
+  }
+  //responsive lg:()
+  &.w-btn-lg-xs {
+    @apply lg:w-btn-xs;
+  }
+  &.w-btn-lg-sm {
+    @apply lg:w-btn-sm;
+  }
+  &.w-btn-lg-md {
+    @apply lg:w-btn-md;
+  }
+  &.w-btn-lg-lg {
+    @apply lg:w-btn-lg;
+  }
+  &.w-btn-lg-xl {
+    @apply lg:w-btn-xl;
+  }
+  //responsive xl:()
+  &.w-btn-xl-xs {
+    @apply xl:w-btn-xs;
+  }
+  &.w-btn-xl-sm {
+    @apply xl:w-btn-sm;
+  }
+  &.w-btn-xl-md {
+    @apply xl:w-btn-md;
+  }
+  &.w-btn-xl-lg {
+    @apply xl:w-btn-lg;
+  }
+  &.w-btn-xl-xl {
+    @apply xl:w-btn-xl;
+  }
 }
-@keyframes btnpop{
-    0% {
-      transform: scale(0.95);
-    }
-    40% {
-      transform: scale(1.02);
-    }
-    100% {
-      transform: scale(1);
-    }
+@keyframes btnpop {
+  0% {
+    transform: scale(0.95);
   }
-  @keyframes spin {
-    from {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+  40% {
+    transform: scale(1.02);
   }
-  @-webkit-keyframes spin {
-    from {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+  100% {
+    transform: scale(1);
   }
-  
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, type PropType, computed } from "vue";
+import { defineComponent, type PropType, computed, ref } from "vue";
 import "./button.css";
 export default defineComponent({
   name: "WButton",
@@ -82,6 +82,26 @@ export default defineComponent({
       type: Boolean,
       default: false,
       required: false,
+    },   
+    //responsive sm
+    sm: {
+      type: String,
+      required: false,
+    },
+    //responsive md
+    md: {
+      type: String,
+      required: false,
+    },
+    //responsive lg
+    lg: {
+      type: String,
+      required: false,
+    },
+    //responsive xl
+    xl: {
+      type: String,
+      required: false,
     },
   },
   setup(props) {
@@ -92,7 +112,18 @@ export default defineComponent({
       return null;
     });
 
-    return { computedType };
+    const responsive = computed(() => { 
+      const rp = ref("w-btn-");
+      if (props.sm) rp.value = `${rp.value}sm-${props.sm}`;
+      else if (props.md) rp.value = `${rp.value}md-${props.md}`;
+      else if (props.lg) rp.value = `${rp.value}lg-${props.lg}`;
+      else if (props.xl) rp.value = `${rp.value}xl-${props.xl}`;
+      else return null;
+      
+      return rp.value;
+    });
+
+    return { computedType, responsive };
   },
 });
 </script>
@@ -106,6 +137,7 @@ export default defineComponent({
       `w-btn-${color}`,
       `w-btn-${variant}`,
       `w-btn-${size}`,
+      responsive ?? responsive,
       {
         'w-btn-pills': pills,
         'w-btn-disabled': disabled,
