@@ -18,7 +18,7 @@
       @apply border-l-4 border-white/0 hover: (border-primary-200);
     }
   
-    li > *:not(.disabled) {
+    li > *:not(.disabled, .menu-title) {
       @apply flex items-center gap-3 hover:bg-black/7 dark:hover:bg-white/7 w-full text-left transition duration-200 ease-in-out text-base-text;
   
       &:active {
@@ -182,5 +182,11 @@
   
     &.w-horizontal-xl>:where(li:last-child)>:where(*:not(ul)) {
       @apply xl: (border-tl-unset border-tr-inherit border-br-inherit border-bl-unset);
+    }
+
+    .menu-title{
+      //  @apply font-semibold !text-sm text-gray-400/70 leading-normal !py-4;
+      @apply py-1 !text-xs font-bold text-gray-600 text-opacity-70 dark:text-opacity-100;
+      
     }
   }

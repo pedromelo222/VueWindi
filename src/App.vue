@@ -157,6 +157,14 @@
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
+
+      
+        
+      
+
+
+
+
         <h2 class="font-semibold text-sm mt-10">Input component</h2>
         <div
           class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
@@ -479,6 +487,14 @@
               </svg>
             </WButton>
           </WMenu>
+               <WMenu padding>
+            <span class="menu-title">Category</span>
+            <WButton menu-item>Item 1</WButton>
+            <WButton menu-item>Item 2</WButton>
+             <span class="menu-title">Other Category</span>
+            <WButton menu-item>Item 3</WButton>
+            <WButton menu-item>Item 4</WButton>
+          </WMenu>
         </div>
 
         <h2 class="font-semibold text-sm mt-10">Dropdown component</h2>
@@ -622,6 +638,12 @@
           <WButton size="lg">Large </WButton>
           <WButton size="xl">Extra-large </WButton>
         </div>
+        <h2 class="font-semibold text-sm mt-10 mb-4">Responsive</h2>
+ <div
+          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+        >
+          <WButton size="sm" md="lg">Responsive</WButton>
+          </div>
       </div>
     </div>
     <div></div>
