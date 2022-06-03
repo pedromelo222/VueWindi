@@ -18,7 +18,7 @@
       "require": "./dist/vue-windi.umd.js"
     },
     "./css": "./dist/style.css",
-    "./plugin":  "./src/plugin/index.ts"   
+    "./plugin": "./src/plugin/index.ts"
   },
   "scripts": {
     "dev": "vite",
@@ -33,7 +33,6 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "@vueuse/core": "^8.5.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
