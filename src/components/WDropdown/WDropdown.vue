@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref, nextTick } from 'vue'
-import { onClickOutside } from '@vueuse/core'
+import { useClickOutside } from '../../composables/useClickOutside'
 import './dropdown.css'
 export default defineComponent({
     name: "WDropdown",
@@ -24,45 +24,35 @@ export default defineComponent({
         const isActive = ref(false)
 
         function toggle() {
-            if(!props.hover)
+            if (!props.hover)
                 isActive.value = !isActive.value;
         }
-        function mouseEnter(){          
-              if (props.hover) 
-                isActive.value = true;     
+        function mouseEnter() {
+            if (props.hover)
+                isActive.value = true;
         }
-        function mouseLeave(){
-             if (props.hover) 
-                isActive.value = false;   
-        }   
-        onClickOutside(dropdownRef, () => { 
-            if(isActive.value)
-                   isActive.value = false   
-         })
+        function mouseLeave() {
+            if (props.hover)
+                isActive.value = false;
+        }
+        useClickOutside(dropdownRef, () => {
+            if (isActive.value)
+                isActive.value = false
+        })
         return { isActive, dropdownRef, toggle, mouseEnter, mouseLeave }
     }
 })
 </script>
 <template>
-    <div 
-    @mouseenter="mouseEnter" 
-    @mouseleave="mouseLeave" 
-    @pointerenter="mouseEnter"    
-    ref="dropdownRef" class="w-dropdown">
-        <div class="w-dropdown-trigger" 
-        @click="toggle" >
+    <div @mouseenter="mouseEnter" @mouseleave="mouseLeave" @pointerenter="mouseEnter" ref="dropdownRef"
+        class="w-dropdown">
+        <div class="w-dropdown-trigger" @click="toggle">
             <slot name="trigger" :active="isActive"></slot>
         </div>
-        <transition 
-        enter-active-class="w-transition-enter-active"
-            enter-from-class="w-transition-enter-from" 
-            enter-to-class="w-transition-enter-to"
-            leave-active-class="w-transition-leave-active" 
-            leave-from-class="w-transition-leave-from"
-            leave-to-class="w-transition-leave-to">
-            <div 
-             v-show="isActive"
-             :class="[
+        <transition enter-active-class="w-transition-enter-active" enter-from-class="w-transition-enter-from"
+            enter-to-class="w-transition-enter-to" leave-active-class="w-transition-leave-active"
+            leave-from-class="w-transition-leave-from" leave-to-class="w-transition-leave-to">
+            <div v-show="isActive" :class="[
                 'w-dropdown-menu',
                 `w-dropdown-${placement}`
             ]">
