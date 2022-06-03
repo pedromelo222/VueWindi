@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref, nextTick } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useClickOutside } from '../../composables/useClickOutside'
 import './dropdown.css'
 export default defineComponent({
