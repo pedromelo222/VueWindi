@@ -1,3 +1,3 @@
 import vueWindi from './vueWindiPlugin'
 
-export default vueWindi  
+export default vueWindi

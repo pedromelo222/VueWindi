@@ -1,9 +1,8 @@
-import { mount } from "@vue/test-utils";
-import WInput from "../WInput.vue";
+import { mount } from '@vue/test-utils'
+import WInput from '../WInput.vue'
 
-describe("WInput", () => {
-  it("should work with import on demand", () => {
-    mount(WInput);
-  });
-
-});
+describe('WInput', () => {
+  it('should work with import on demand', () => {
+    mount(WInput)
+  })
+})

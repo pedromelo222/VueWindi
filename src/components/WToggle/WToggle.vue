@@ -1,8 +1,8 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 import './toggle.css'
 export default defineComponent({
-  name: "WToggle",
+  name: 'WToggle',
   props: {
     checked: {
       type: Boolean,
@@ -11,38 +11,39 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: "primary",
+      default: 'primary',
       validator: (value: string) => {
         return [
-          "primary",
-          "secondary",
-          "success",
-          "danger",
-          "warning",
-        ].includes(value);
+          'primary',
+          'secondary',
+          'success',
+          'danger',
+          'warning',
+        ].includes(value)
       },
     },
     size: {
       type: String,
-      default: "md",
+      default: 'md',
       required: false,
       validator: (value: string) => {
-        return ["xs", "sm", "md", "lg", "xl"].includes(value);
+        return ['xs', 'sm', 'md', 'lg', 'xl'].includes(value)
       },
     },
     disabled: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
-  }
-});
+  },
+})
 </script>
+
 <template>
-    <input
-      type="checkbox"
-      :checked="checked"
-      :disabled="disabled"
-      :class="[`peer w-toggle`, `w-toggle-${color}`, `w-toggle-${size}`]"
-    /> 
+  <input
+    type="checkbox"
+    :checked="checked"
+    :disabled="disabled"
+    class="peer w-toggle" :class="[`w-toggle-${color}`, `w-toggle-${size}`]"
+  >
 </template>

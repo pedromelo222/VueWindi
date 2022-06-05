@@ -1,33 +1,33 @@
 <script lang="ts">
-import { defineComponent, type PropType, computed, ref } from "vue";
-import "./button.css";
+import { type PropType, computed, defineComponent, ref } from 'vue'
+import './button.css'
 export default defineComponent({
-  name: "WButton",
+  name: 'WButton',
   props: {
     tag: {
       type: String,
-      default: "button",
+      default: 'button',
       required: false,
     },
     color: {
       type: String,
-      default: "primary",
+      default: 'primary',
       validator: (value: string) => {
         return [
-          "primary",
-          "secondary",
-          "success",
-          "danger",
-          "warning",
-        ].includes(value);
+          'primary',
+          'secondary',
+          'success',
+          'danger',
+          'warning',
+        ].includes(value)
       },
     },
     type: {
-      type: String as PropType<"button" | "submit" | "reset">,
-      default: "button",
+      type: String as PropType<'button' | 'submit' | 'reset'>,
+      default: 'button',
       required: false,
       validator: (value: string) => {
-        return ["button", "submit", "reset"].includes(value);
+        return ['button', 'submit', 'reset'].includes(value)
       },
     },
     loading: {
@@ -42,18 +42,18 @@ export default defineComponent({
     },
     size: {
       type: String,
-      default: "md",
+      default: 'md',
       required: false,
       validator: (value: string) => {
-        return ["xs", "sm", "md", "lg", "xl"].includes(value);
+        return ['xs', 'sm', 'md', 'lg', 'xl'].includes(value)
       },
     },
     variant: {
       type: String,
-      default: "default",
+      default: 'default',
       required: false,
       validator: (value: string) => {
-        return ["default", "outline", "transparent", "link"].includes(value);
+        return ['default', 'outline', 'transparent', 'link'].includes(value)
       },
     },
     pills: {
@@ -71,34 +71,34 @@ export default defineComponent({
       default: false,
       required: false,
     },
-    //remove all styles from button
+    // remove all styles from button
     clean: {
       type: Boolean,
       default: false,
       required: false,
     },
-    //remove all styles from button
+    // remove all styles from button
     menuItem: {
       type: Boolean,
       default: false,
       required: false,
-    },   
-    //responsive sm
+    },
+    // responsive sm
     sm: {
       type: String,
       required: false,
     },
-    //responsive md
+    // responsive md
     md: {
       type: String,
       required: false,
     },
-    //responsive lg
+    // responsive lg
     lg: {
       type: String,
       required: false,
     },
-    //responsive xl
+    // responsive xl
     xl: {
       type: String,
       required: false,
@@ -106,34 +106,38 @@ export default defineComponent({
   },
   setup(props) {
     const computedType = computed(() => {
-      if (props.tag === "input" || props.tag === "button") {
-        return props.type;
-      }
-      return null;
-    });
+      if (props.tag === 'input' || props.tag === 'button')
+        return props.type
 
-    const responsive = computed(() => { 
-      const rp = ref("w-btn-");
-      if (props.sm) rp.value = `${rp.value}sm-${props.sm}`;
-      else if (props.md) rp.value = `${rp.value}md-${props.md}`;
-      else if (props.lg) rp.value = `${rp.value}lg-${props.lg}`;
-      else if (props.xl) rp.value = `${rp.value}xl-${props.xl}`;
-      else return null;
-      
-      return rp.value;
-    });
+      return null
+    })
 
-    return { computedType, responsive };
+    const responsive = computed(() => {
+      const rp = ref('w-btn-')
+      if (props.sm)
+        rp.value = `${rp.value}sm-${props.sm}`
+      else if (props.md)
+        rp.value = `${rp.value}md-${props.md}`
+      else if (props.lg)
+        rp.value = `${rp.value}lg-${props.lg}`
+      else if (props.xl)
+        rp.value = `${rp.value}xl-${props.xl}`
+      else return null
+
+      return rp.value
+    })
+
+    return { computedType, responsive }
   },
-});
+})
 </script>
+
 <template>
   <component
     :is="tag"
     :disabled="disabled || loading"
     :type="computedType"
-    :class="[
-      'w-btn',
+    class="w-btn" :class="[
       `w-btn-${color}`,
       `w-btn-${variant}`,
       `w-btn-${size}`,
@@ -163,13 +167,13 @@ export default defineComponent({
         r="10"
         stroke="currentColor"
         stroke-width="4"
-      ></circle>
+      />
       <path
         class="w-icon-path"
         fill="currentColor"
         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-      ></path>
+      />
     </svg>
-    <slot></slot>
+    <slot />
   </component>
 </template>

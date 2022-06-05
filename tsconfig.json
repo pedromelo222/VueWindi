@@ -2,8 +2,8 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "env.d.ts",
-     "src/**/*", 
-     "src/**/*.vue",
+    "src/**/*",
+    "src/**/*.vue",
     "src/types/index.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
@@ -33,5 +33,5 @@
       "path": "./tsconfig.vite-config.json"
     }
   ]
-  
+
 }

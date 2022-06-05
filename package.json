@@ -2,6 +2,17 @@
   "name": "vue-windi",
   "version": "0.2.0",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/vue-windi.umd.js",
+      "import": "./dist/vue-windi.es.js"
+    },
+    "./css": "./dist/style.css",
+    "./plugin": "./src/plugin/index.ts"
+  },
+  "main": "./dist/vue-windi.umd.js",
+  "module": "./dist/vue-windi.es.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist",
     "src/plugin",
@@ -9,17 +20,6 @@
     "src/styles",
     "plugin.d.ts"
   ],
-  "types": "./dist/types/index.d.ts",
-  "main": "./dist/vue-windi.umd.js",
-  "module": "./dist/vue-windi.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/vue-windi.es.js",
-      "require": "./dist/vue-windi.umd.js"
-    },
-    "./css": "./dist/style.css",
-    "./plugin": "./src/plugin/index.ts"
-  },
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist && vite build && vue-tsc",

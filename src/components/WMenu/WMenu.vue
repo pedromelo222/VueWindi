@@ -1,40 +1,40 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import "./menu.css";
+import { defineComponent } from 'vue'
+import './menu.css'
 export default defineComponent({
-  name: "WMenu",
+  name: 'WMenu',
   props: {
-    //Menu compact if set true or responsive
+    // Menu compact if set true or responsive
     compact: {
       type: [Boolean, String],
       default: false,
       required: false,
       validator: (value: boolean | string) => {
-        return ["sm", "md", "lg", "xl", true, false].includes(value);
+        return ['sm', 'md', 'lg', 'xl', true, false].includes(value)
       },
     },
-    //Menu horizontal if set true or responsive
+    // Menu horizontal if set true or responsive
     horizontal: {
       type: [Boolean, String],
       default: false,
       required: false,
       validator: (value: boolean | string) => {
-        return ["sm", "md", "lg", "xl", true, false].includes(value);
+        return ['sm', 'md', 'lg', 'xl', true, false].includes(value)
       },
     },
-    //Menu with rounded borders
+    // Menu with rounded borders
     rounded: {
       type: Boolean,
       default: false,
       required: false,
     },
-    //Menu with padding and list with rounded border
+    // Menu with padding and list with rounded border
     padding: {
       type: Boolean,
       default: false,
       required: false,
     },
-    //List with left border colored on hover
+    // List with left border colored on hover
     hoverBorder: {
       type: Boolean,
       default: false,
@@ -42,14 +42,14 @@ export default defineComponent({
     },
   },
   setup(props, { slots }) {
-    return { slots };
+    return { slots }
   },
-});
+})
 </script>
+
 <template>
   <ul
-    :class="[
-      'w-menu',
+    class="w-menu" :class="[
       compact
         ? typeof compact === 'string'
           ? `w-compact-${compact}`
@@ -67,12 +67,14 @@ export default defineComponent({
       },
     ]"
   >
-    <li
-      v-if="slots.default"
-      v-for="slot in slots.default()"
-      class="w-menu-item"
-    >
-      <component :is="slot" />
-    </li>
+    <template v-if="slots.default">
+      <li
+        v-for="(slot, key) in slots.default()"
+        :key="key"
+        class="w-menu-item"
+      >
+        <component :is="slot" v-if="slots.default" />
+      </li>
+    </template>
   </ul>
 </template>

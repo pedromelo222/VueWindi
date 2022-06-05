@@ -1,8 +1,8 @@
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
-import "./input.css";
+import { defineComponent, ref, watch } from 'vue'
+import './input.css'
 export default defineComponent({
-  name: "WInput",
+  name: 'WInput',
   props: {
     label: {
       type: String,
@@ -14,7 +14,7 @@ export default defineComponent({
     },
     type: {
       type: String,
-      default: "text",
+      default: 'text',
       required: false,
     },
     name: {
@@ -28,14 +28,14 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     size: {
       type: String,
-      default: "md",
+      default: 'md',
       required: false,
       validator: (value: string) => {
-        return ["xs", "sm", "md", "lg"].includes(value);
+        return ['xs', 'sm', 'md', 'lg'].includes(value)
       },
     },
     bordered: {
@@ -50,17 +50,17 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: "neutral",
+      default: 'neutral',
       required: false,
       validator: (value: string) => {
         return [
-          "neutral",
-          "primary",
-          "secondary",
-          "success",
-          "danger",
-          "warning",
-        ].includes(value);
+          'neutral',
+          'primary',
+          'secondary',
+          'success',
+          'danger',
+          'warning',
+        ].includes(value)
       },
     },
     error: {
@@ -68,33 +68,35 @@ export default defineComponent({
       required: false,
     },
   },
+  emits: ['update:value'],
   setup(props, { emit }) {
-    const inputText = ref<HTMLInputElement | null>(null);
-    const isError = ref(props.error || false);
-    const text = ref(props.value);
-    const initialValue = ref<string>("");
+    const inputText = ref<HTMLInputElement | null>(null)
+    const isError = ref(props.error || false)
+    const text = ref(props.value)
+    const initialValue = ref<string>('')
 
-    if (props.value && props.error) initialValue.value = props.value;
+    if (props.value && props.error)
+      initialValue.value = props.value
 
     const setFocus = () => {
-      inputText.value?.focus();
-    };
+      inputText.value?.focus()
+    }
 
-    watch(text, (value) => {
-      emit("update:value", text);
+    watch(text, () => {
+      emit('update:value', text)
       if (props.error) {
-        if (initialValue.value !== text.value) {
-          isError.value = false;
-        } else {
-          isError.value = true;
-        }
+        if (initialValue.value !== text.value)
+          isError.value = false
+        else
+          isError.value = true
       }
-    });
+    })
 
-    return { setFocus, inputText, text, isError };
+    return { setFocus, inputText, text, isError }
   },
-});
+})
 </script>
+
 <template>
   <div class="w-form-control">
     <label v-if="label" class="w-label" @click="setFocus">
@@ -103,11 +105,11 @@ export default defineComponent({
 
     <input
       ref="inputText"
+      v-model="text"
       :name="name"
       :placeholder="placeholder"
       :type="type"
       :disabled="disabled"
-      v-model="text"
       class="w-input"
       :class="[
         {
@@ -118,11 +120,11 @@ export default defineComponent({
         `w-input-${size}`,
         `w-input-${color}`,
       ]"
-    />
+    >
     <div
       v-if="isError"
-      v-text="error"
       class="w-validation-text"
-    ></div>
+      v-text="error"
+    />
   </div>
 </template>
