@@ -1,73 +1,118 @@
-import fs from 'fs'
-import path from 'path'
-import { hexToRgb } from '../styles/functions'
-import { themes } from '../styles/theme'
+import { brighten, hexToRgb, mostReadable } from '../styles/functions'
+import { baseTheme, colorNames, themes } from '../styles/theme'
+import { getConfig, isObjKey } from './functions'
 
-const DEFAULT_THEME = 'blue'
+type Themes = string[] | string
 
-const defaultConfigNames = [
-  'windi.config.js',
-  'windi.config.ts',
-  'windicss.config.js',
-  'windicss.config.ts',
-]
-
-// function to check if given string is keyof given object
-function isObjKey<T>(key: PropertyKey, obj: T): key is keyof T {
-  return key in obj
+interface VueWindiConfig {
+  themes: Themes
 }
 
-// check if include default key for get rgba from hex
-function keyIncludeDefault(key: string) {
-  return (
-    key.includes('primary')
-    || key.includes('secondary')
-    || key.includes('success')
-    || key.includes('danger')
-    || key.includes('warning')
-    || key.includes('base')
-  )
+interface Theme { [key: string]: string }
+
+interface GeneratedTheme { [key: string]: { [key: string]: string } }
+
+const defaultTheme = 'blue'
+
+/**
+   * check if given key include in theme default color names
+   *
+   * @param key
+   */
+const keyIncludeDefault = (key: string) => {
+  for (const name of colorNames) {
+    if (key.includes(name))
+      return true
+  }
+  return false
 }
 
-const getConfigPath = () => {
-  let configPath = null
-  let configFilePath: string | undefined
-
-  for (const name of defaultConfigNames) {
-    configPath = path.resolve(process.cwd(), name)
-    if (fs.existsSync(configPath)) {
-      configFilePath = configPath
-      break
+/**
+ *  Override theme vars for defined theme or base theme if they exist
+ * @param themes
+ * @param setTheme
+ */
+const overrideTheme = (themes: Themes, setTheme: Theme) => {
+  for (const definedItem of themes) {
+    if (typeof definedItem === 'object') {
+      for (const definedKey in definedItem as any) {
+        // if this key exists in defined theme or baseTheme then replace value
+        if (isObjKey(definedKey as string, setTheme) || baseTheme.includes(definedKey))
+          setTheme[definedKey] = definedItem[definedKey]
+      }
     }
   }
-  if (!configFilePath)
-    throw new Error('windi.config file not found')
-
-  return configFilePath
+  return setTheme
 }
 
-const resolveConfig = (configPath: string) => {
-  return require(configPath)
-}
-
-const getTheme = () => {
-  const themePath = getConfigPath()
-  const getTheme = resolveConfig(themePath).default.vueWindi
-
-  let setTheme: { [key: string]: string } = {}
-  const generatedLight: { [key: string]: string } = {}
-  const generatedDark: { [key: string]: string } = {}
-
-  const otherThemes = []
-
-  // if no vuewindi config defined set default theme `DEFAULT_THEME`
-  if (getTheme === undefined || getTheme.themes === undefined) {
-    setTheme = themes[DEFAULT_THEME]
+// generate missing colors from theme
+const generateMissingColors = (setTheme: Theme) => {
+  const difference = colorNames.filter(name => !Object.keys(setTheme).includes(name))
+  for (const key in difference) {
+    const difName = difference[key]
+    if (difName.includes('focus')) {
+      const index = Object.keys(setTheme).find(name => name.includes(difName.replace('-focus', '')))
+      const color = setTheme[index as keyof typeof setTheme]
+      setTheme[difName] = brighten(color, -10)
+    }
+    if (difName.includes('content')) {
+      const index = Object.keys(setTheme).find(name => name.includes(difName.replace('-content', '')))
+      const color = setTheme[index as keyof typeof setTheme]
+      setTheme[difName] = mostReadable(color)
+    }
+    if (difName.includes('base-200' || 'dark-base-200')) {
+      const index = Object.keys(setTheme).find(name => name.includes(difName.replace('-200', '')))
+      const color = setTheme[index as keyof typeof setTheme]
+      setTheme[difName] = brighten(color, -5)
+    }
+    if (difName.includes('base-300' || 'dark-base-300')) {
+      const index = Object.keys(setTheme).find(name => name.includes(difName.replace('-300', '')))
+      const color = setTheme[index as keyof typeof setTheme]
+      setTheme[difName] = brighten(color, -10)
+    }
   }
-  else {
-    let definedTheme
+  return setTheme
+}
+
+// generate theme with rgb colors and separate light from dark
+const generateTheme = (theme: Theme) => {
+  const generatedTheme: GeneratedTheme = { light: {}, dark: {} }
+  const themeColor = Object.assign({}, theme)
+  for (const key in themeColor) {
+    if (keyIncludeDefault(key))
+      themeColor[key] = hexToRgb(theme[key])
+    // separate light colors  from dark
+    if (key.includes('dark'))
+      generatedTheme.dark[`--${key.replace('dark-', '')}`] = themeColor[key]
+    else
+      generatedTheme.light[`--${key}`] = themeColor[key]
+  }
+
+  return generatedTheme
+}
+
+/**
+ * @returns formated theme using default theme with out whitout user configuration
+ *
+ */
+function getTheme() {
+  const vueWindiConfig: VueWindiConfig = getConfig()
+
+  let setTheme: Theme = {}
+  let generatedTheme: GeneratedTheme = { light: {}, dark: {} }
+  const otherThemes = []
+  // include other themes
+  const generatedOthers: { [key: string]: { [key: string]: string } } = {}
+
+  //  if no vuewindi config defined in `windi.config` then defaultTheme is set
+  if (vueWindiConfig === undefined || vueWindiConfig.themes === undefined)
+    setTheme = themes[defaultTheme]
+
+  // if vuewindi config is set in `windi.config`
+  if (Object.keys(setTheme).length === 0) {
+    let definedTheme: string | null = null
     // get first theme defined
-    for (const theme of getTheme.themes) {
+    for (const theme of vueWindiConfig.themes) {
       if (typeof theme == 'string') {
         if (!definedTheme)
           definedTheme = theme
@@ -77,83 +122,38 @@ const getTheme = () => {
     }
     // check if defined theme is keyof `themes`
     if (!isObjKey(definedTheme as string, themes))
-      definedTheme = DEFAULT_THEME
+      definedTheme = defaultTheme
 
     setTheme = themes[definedTheme as keyof typeof themes]
   }
 
   // replace theme vars for defined theme vars if they exist
-  if (getTheme !== undefined && getTheme.themes !== undefined) {
-    for (const definedItem of getTheme.themes) {
-      // console.log( definedItem)
-      if (typeof definedItem == 'object') {
-        // console.log( definedItem)
-        for (const definedKey in definedItem) {
-          if (Object.prototype.hasOwnProperty.call(definedItem, definedKey)) {
-            // if this key exists in defined theme then change value
-            if (isObjKey(definedKey as string, setTheme))
-              setTheme[definedKey] = definedItem[definedKey]
-          }
-        }
-      }
-    }
-  }
+  if (vueWindiConfig !== undefined && vueWindiConfig.themes !== undefined)
+    setTheme = overrideTheme(vueWindiConfig.themes, setTheme)
 
-  // generate theme with rgb colors and separate light from dark
-  for (const key in setTheme) {
-    if (Object.prototype.hasOwnProperty.call(setTheme, key)) {
-      if (keyIncludeDefault(key))
-        setTheme[key] = hexToRgb(setTheme[key])
+  setTheme = generateMissingColors(setTheme)
+  generatedTheme = generateTheme(setTheme)
 
-      // separate light colors  from dark
-      if (key.includes('dark'))
-        generatedDark[`--${key.replace('dark-', '')}`] = setTheme[key]
-      else
-        generatedLight[`--${key}`] = setTheme[key]
-    }
-  }
-
-  // include other themes
-  const generatedOthers: { [key: string]: { [key: string]: string } } = {}
-
-  for (let i = 0; i < otherThemes.length; i++) {
-    const temporaryTheme: { [key: string]: { [key: string]: string } } = {}
-    const theme = otherThemes[i]
+  for (const theme of otherThemes) {
+    const tempTheme: { [key: string]: { [key: string]: string } } = {}
     // check if other theme is present in VueWindi themes
     if (isObjKey(theme, themes)) {
-      temporaryTheme[theme] = themes[theme]
-      generatedOthers[`.theme-${theme}`] = {}
-      generatedOthers[`.dark.theme-${theme}`] = {}
+      tempTheme[theme] = generateMissingColors(themes[theme])
 
-      for (const key in temporaryTheme[theme]) {
-        if (Object.prototype.hasOwnProperty.call(temporaryTheme[theme], key)) {
-          if (keyIncludeDefault(key)) {
-            // separate light colors  from dark
-            if (key.includes('dark')) {
-              generatedOthers[`.dark.theme-${theme}`][
-                `--${key.replace('dark-', '')}`
-              ] = hexToRgb(temporaryTheme[theme][key])
-            }
-            else {
-              generatedOthers[`.theme-${theme}`][`--${key}`] = hexToRgb(
-                temporaryTheme[theme][key],
-              )
-            }
-          }
-          else {
-            generatedOthers[`.theme-${theme}`][`--${key}`]
-              = temporaryTheme[theme][key]
-          }
-        }
-      }
+      let tempGenerated: GeneratedTheme = {}
+
+      tempGenerated = generateTheme(tempTheme[theme])
+      generatedOthers[`.theme-${theme}`] = tempGenerated.light
+      generatedOthers[`.dark.theme-${theme}`] = tempGenerated.dark
     }
   }
 
   return {
-    ':root': generatedLight,
-    '.dark': generatedDark,
+    ':root': generatedTheme.light,
+    '.dark': generatedTheme.dark,
     ...generatedOthers,
   }
 }
 
 export { getTheme }
+

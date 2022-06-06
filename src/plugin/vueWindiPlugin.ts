@@ -2,14 +2,13 @@ import plugin from 'windicss/plugin'
 import base from '../styles/base'
 import configColors from '../styles/config'
 import utilities from '../styles/utilities'
-// import { getTheme } from './generateTheme'
-import { getThemeNew } from './generateThemeNew'
+import { getTheme } from './generateTheme'
 
 const vueWindi = plugin(
   ({ addUtilities, addBase }) => {
     addBase(base)
     // addBase(getTheme())
-    addBase(getThemeNew())
+    addBase(getTheme())
     addUtilities(utilities)
   },
   {
