@@ -5,28 +5,28 @@
 
   &.w-btn-primary {
     &:focus-visible {
-      @apply outline-primary-200;
+      @apply outline-primary;
     }
     &.w-btn-default {
-      @apply bg-primary-200 text-white hover:bg-primary-300 shadow-sm;
+      @apply bg-primary text-primary-content hover:bg-primary-focus shadow-sm;
       &.w-btn-active {
-        @apply bg-primary-300;
+        @apply bg-primary-focus;
       }
     }
     &.w-btn-outline {
-      @apply text-primary-200 hover:(bg-primary-200 text-white) border-2 border-primary-200;
+      @apply text-primary hover:(bg-primary text-primary-content) border-2 border-primary;
       &.w-btn-active {
-        @apply bg-primary-200 text-white;
+        @apply bg-primary text-primary-content;
       }
     }
     &.w-btn-transparent {
-      @apply text-primary-200 hover:(bg-primary-200/10);
+      @apply text-primary hover:(bg-primary/10);
       &.w-btn-active {
-        @apply bg-primary-200/10;
+        @apply bg-primary/10;
       }
     }
     &.w-btn-link {
-      @apply text-primary-200 hover:underline;
+      @apply text-primary hover:underline;
       &.w-btn-active {
         @apply underline;
       }
@@ -34,28 +34,28 @@
   }
   &.w-btn-secondary {
     &:focus-visible {
-      @apply outline-secondary-200;
+      @apply outline-secondary;
     }
     &.w-btn-default {
-      @apply bg-secondary-200 text-white hover:bg-secondary-300 shadow-sm;
+      @apply bg-secondary text-secondary-content hover:bg-secondary-focus shadow-sm;
       &.w-btn-active {
-        @apply bg-secondary-300;
+        @apply bg-secondary-focus;
       }
     }
     &.w-btn-outline {
-      @apply text-secondary-200 hover:(bg-secondary-200 text-white) border-2 border-secondary-200;
+      @apply text-secondary hover:(bg-secondary text-secondary-content) border-2 border-secondary;
       &.w-btn-active {
-        @apply bg-secondary-200 text-white;
+        @apply bg-secondary text-secondary-content;
       }
     }
     &.w-btn-transparent {
-      @apply text-secondary-200 hover:(bg-secondary-200/10);
+      @apply text-secondary hover:(bg-secondary/10);
       &.w-btn-active {
-        @apply bg-secondary-200/10;
+        @apply bg-secondary/10;
       }
     }
     &.w-btn-link {
-      @apply text-secondary-200 hover:underline;
+      @apply text-secondary hover:underline;
       &.w-btn-active {
         @apply underline;
       }
@@ -63,28 +63,28 @@
   }
   &.w-btn-success {
     &:focus-visible {
-      @apply outline-success-200;
+      @apply outline-success;
     }
     &.w-btn-default {
-      @apply bg-success-200 text-white hover:bg-success-300 shadow-sm;
+      @apply bg-success text-success-content hover:bg-success-focus shadow-sm;
       &.w-btn-active {
-        @apply bg-success-300;
+        @apply bg-success-focus;
       }
     }
     &.w-btn-outline {
-      @apply text-success-200 hover:(bg-success-200 text-white) border-2 border-success-200;
+      @apply text-success hover:(bg-success text-success-content) border-2 border-success;
       &.w-btn-active {
-        @apply bg-success-200 text-white;
+        @apply bg-success text-success-content;
       }
     }
     &.w-btn-transparent {
-      @apply text-success-200 hover:(bg-success-200/10);
+      @apply text-success hover:(bg-success/10);
       &.w-btn-active {
-        @apply bg-success-200/10;
+        @apply bg-success/10;
       }
     }
     &.w-btn-link {
-      @apply text-success-200 hover:underline;
+      @apply text-success hover:underline;
       &.w-btn-active {
         @apply underline;
       }
@@ -92,28 +92,28 @@
   }
   &.w-btn-danger {
     &:focus-visible {
-      @apply outline-danger-200;
+      @apply outline-danger;
     }
     &.w-btn-default {
-      @apply bg-danger-200 text-white hover:bg-danger-300 shadow-sm;
+      @apply bg-danger text-danger-content hover:bg-danger-focus shadow-sm;
       &.w-btn-active {
-        @apply bg-danger-300;
+        @apply bg-danger-focus;
       }
     }
     &.w-btn-outline {
-      @apply text-danger-200 hover:(bg-danger-200 text-white) border-2 border-danger-200;
+      @apply text-danger hover:(bg-danger text-danger-content) border-2 border-danger;
       &.w-btn-active {
-        @apply bg-danger-200 text-white;
+        @apply bg-danger text-danger-content;
       }
     }
     &.w-btn-transparent {
-      @apply text-danger-200 hover:(bg-danger-200/10);
+      @apply text-danger hover:(bg-danger/10);
       &.w-btn-active {
-        @apply bg-danger-200/10;
+        @apply bg-danger/10;
       }
     }
     &.w-btn-link {
-      @apply text-danger-200 hover:underline;
+      @apply text-danger hover:underline;
       &.w-btn-active {
         @apply underline;
       }
@@ -121,28 +121,28 @@
   }
   &.w-btn-warning {
     &:focus-visible {
-      @apply outline-warning-200;
+      @apply outline-warning;
     }
     &.w-btn-default {
-      @apply bg-warning-200 text-white hover:bg-warning-300 shadow-sm;
+      @apply bg-warning text-warning-content hover:bg-warning-focus shadow-sm;
       &.w-btn-active {
-        @apply bg-warning-300;
+        @apply bg-warning-focus;
       }
     }
     &.w-btn-outline {
-      @apply text-warning-200 hover:(bg-warning-200 text-white) border-2 border-warning-200;
+      @apply text-warning hover:(bg-warning text-warning-content) border-2 border-warning;
       &.w-btn-active {
-        @apply bg-warning-200 text-white;
+        @apply bg-warning text-warning-content;
       }
     }
     &.w-btn-transparent {
-      @apply text-warning-200 hover:(bg-warning-200/10);
+      @apply text-warning hover:(bg-warning/10);
       &.w-btn-active {
-        @apply bg-warning-200/10;
+        @apply bg-warning/10;
       }
     }
     &.w-btn-link {
-      @apply text-warning-200 hover:underline;
+      @apply text-warning hover:underline;
       &.w-btn-active {
         @apply underline;
       }

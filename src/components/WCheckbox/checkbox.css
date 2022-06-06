@@ -1,6 +1,6 @@
 .w-checkbox {
-    --chkfg: 0 0% 100%;
-     --chkbg: var(--primary-200);
+    --chkfg: var(--primary-content);
+     --chkbg: var(--primary);
     @apply h-6 w-6 cursor-pointer appearance-none border border-base-gray-500 border-opacity-20 rounded-$rounded-btn;
     &:focus-visible {
       outline: 2px solid rgb(var(--chkbg));
@@ -13,69 +13,75 @@
       linear-gradient(-45deg, transparent 65%,rgb(var(--chkbg)) 65.99%), 
       linear-gradient(45deg, transparent 75%,rgb(var(--chkbg)) 75.99%), 
       linear-gradient(-45deg,rgb(var(--chkbg)) 40%, transparent 40.99%), 
-      linear-gradient(45deg,rgb(var(--chkbg)) 30%, hsl(var(--chkfg)) 30.99%, hsl(var(--chkfg)) 40%, transparent 40.99%), 
-      linear-gradient(-45deg, hsl(var(--chkfg)) 50%,rgb(var(--chkbg)) 50.99%);
+      linear-gradient(45deg,
+        rgb(var(--chkbg)) 30%, 
+        rgb(var(--chkfg)) 30.99%, 
+        rgb(var(--chkfg)) 40%, 
+        transparent 40.99%), 
+      linear-gradient(-45deg, 
+      rgb(var(--chkfg)) 50%,
+      rgb(var(--chkbg)) 50.99%);
     }
   
     &.w-checkbox-primary {
-      --chkbg: var(--primary-200);
-      --chkfg: 0 0% 100%;
-      @apply border-primary-200 hover:border-primary-200;
+      --chkbg: var(--primary);
+      --chkfg: var(--primary-content);
+      @apply border-primary hover:border-primary;
       &:focus-visible {
         outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
-        @apply border-primary-200 bg-primary-200 text-primary-200;
+        @apply border-primary bg-primary text-primary;
       }
     }
   
       &.w-checkbox-secondary {
-      --chkbg:  var(--secondary-200);
-      --chkfg: 0 0% 100%;
-      @apply border-secondary-200 hover:border-secondary-200;
+      --chkbg:  var(--secondary);
+      --chkfg: var(--secondary-content);
+      @apply border-secondary hover:border-secondary;
       &:focus-visible {
         outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
-        @apply border-secondary-200 bg-secondary-200 text-secondary-200;
+        @apply border-secondary bg-secondary text-secondary;
       }
     }
       &.w-checkbox-success {
-        --chkbg:  var(--success-200);
-      --chkfg: 0 0% 100%;
-      @apply border-success-200 hover:border-success-200;
+        --chkbg:  var(--success);
+      --chkfg: var(--success-content);
+      @apply border-success hover:border-success;
       &:focus-visible {
         outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
-        @apply border-success-200 bg-success-200 text-success-200;
+        @apply border-success bg-success text-success;
       }
     }
       &.w-checkbox-warning {
-       --chkbg:  var(--warning-200);
-      --chkfg: 0 0% 100%;
-      @apply border-warning-200 hover:border-warning-200;
+       --chkbg:  var(--warning);
+      --chkfg:var(--warning-content);
+      @apply border-warning hover:border-warning;
       &:focus-visible {
         outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
-        @apply border-warning-200 bg-warning-200 text-warning-200;
+        @apply border-warning bg-warning text-warning;
       }
     }
         &.w-checkbox-danger {
-      --chkbg:  var(--danger-200);
-      --chkfg: 0 0% 100%;
-      @apply border-danger-200 hover:border-danger-200;
+      --chkbg:  var(--danger);
+      --chkfg: var(--danger-content);
+      @apply border-danger hover:border-danger;
       &:focus-visible {
         outline: 2px solid rgb(var(--chkbg));
       }
       &:checked,
       &[checked="true"] {
-        @apply border-danger-200 bg-danger-200 text-danger-200;
+        @apply border-danger bg-danger text-danger;
       }
     }
   

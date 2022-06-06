@@ -1,3 +1,4 @@
 import themes from './themes'
+import { baseTheme, colorNames } from './defaultTheme'
 
-export default themes
+export { themes, baseTheme, colorNames }

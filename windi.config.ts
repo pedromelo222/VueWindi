@@ -13,7 +13,7 @@ export default defineConfig({
       },
       'blue',
       'teal',
-      'rose',
+      'dracula',
       'violet',
       'orange',
     ],

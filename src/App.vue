@@ -52,7 +52,7 @@ export default {
 </script>
 
 <template>
-  <div class="antialiased text-base-text pb-10">
+  <div class="antialiased text-base-content pb-10">
     <nav
       class="flex sticky top-0 z-40 flex-none py-3 mx-auto w-full border-b bg-base-100"
     >
@@ -62,7 +62,7 @@ export default {
         <div class="flex">
           <svg
             viewBox="0.587 0.608 126.313 123.526"
-            class="h-7 mr-3 fill-primary-100"
+            class="h-7 mr-3 fill-primary"
             xmlns="http://www.w3.org/2000/svg"
           >
             <rect
@@ -93,7 +93,7 @@ export default {
             target="_blank"
             variant="transparent"
             color="secondary"
-            class="stroke-base-text"
+            class="stroke-base-content"
           >
             <svg
               class="h-5"
@@ -116,7 +116,7 @@ export default {
               <WButton
                 variant="transparent"
                 color="secondary"
-                class="stroke-base-text"
+                class="stroke-base-content"
               >
                 <svg
                   class="h-5.4"
@@ -141,7 +141,7 @@ export default {
               <WButton menu-item @click="changeColor('theme-teal')">
                 <span class="rounded-full bg-teal-700 h-7 w-7" />
               </WButton>
-              <WButton menu-item @click="changeColor('theme-rose')">
+              <WButton menu-item @click="changeColor('theme-dracula')">
                 <span class="rounded-full bg-rose-700 h-7 w-7" />
               </WButton>
               <WButton menu-item @click="changeColor('theme-violet')">
@@ -156,7 +156,7 @@ export default {
           <WButton
             variant="transparent"
             color="secondary"
-            class="fill-base-text"
+            class="fill-base-content"
             @click="dark = !dark"
           >
             <svg
@@ -209,11 +209,125 @@ export default {
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
+        <div>
+          <h2 class="font-semibold text-sm mt-10">
+            Colors
+          </h2>
+          <div
+            class="box-component"
+          >
+            <div class="flex flex-wrap gap-2">
+              <div>
+                <div class="h-15 w-30 bg-neutral flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-neutral-content text-sm">
+                    neutral
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-neutral flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-neutral-content text-sm">
+                    neutral-focus
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-15 w-30 bg-primary flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-primary-content text-sm">
+                    primary
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-primary flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-primary-content text-sm">
+                    primary-focus
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-15 w-30 bg-secondary flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-secondary-content text-sm">
+                    secondary
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-secondary flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-secondary-content text-sm">
+                    secondary-focus
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-15 w-30 bg-accent flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-accent-content text-sm">
+                    accent
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-accent flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-accent-content text-sm">
+                    accent-focus
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-15 w-30 bg-success flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-success-content text-sm">
+                    success
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-success flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-success-content text-sm">
+                    success-focus
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-15 w-30 bg-danger flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-danger-content text-sm">
+                    danger
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-danger flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-danger-content text-sm">
+                    danger-focus
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-15 w-30 bg-warning flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-warning-content text-sm">
+                    warning
+                  </div>
+                </div>
+                <div class="h-20 w-30 bg-warning flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-warning-content text-sm">
+                    warning-focus
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div>
+                <div class="h-10 w-30 bg-base-100 flex justify-center items-center rounded-t-$rounded-btn">
+                  <div class="text-base-content text-sm">
+                    base-100
+                  </div>
+                </div>
+                <div class="h-10 w-30 bg-base-200 flex justify-center items-center">
+                  <div class="text-base-content  text-sm">
+                    base-200
+                  </div>
+                </div>
+                <div class="h-10 w-30 bg-base-300 flex justify-center items-center rounded-b-$rounded-btn">
+                  <div class="text-base-content  text-sm">
+                    base-300
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <h2 class="font-semibold text-sm mt-10">
           Input component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WInput placeholder="Type here..." />
           <WInput :bordered="false" placeholder="Bordered=false here..." />
@@ -260,7 +374,7 @@ export default {
           Checkbox component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WCheckbox checked />
           <WCheckbox checked color="secondary" />
@@ -278,7 +392,7 @@ export default {
           Toggle component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WToggle checked />
           <WToggle checked color="secondary" />
@@ -306,7 +420,7 @@ export default {
           Modal component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton @click="modal.small = true">
             Modal sm
@@ -416,8 +530,8 @@ export default {
             </template>
           </WModal>
           <WModal v-model:active="modal.headless">
-            <div class="bg-primary-200 px-6 py-14 text-center">
-              <h1 class="text-2xl font-bold text-white">
+            <div class="bg-primary px-6 py-14 text-center">
+              <h1 class="text-2xl font-bold text-primary-content">
                 My own modal
               </h1>
             </div>
@@ -444,7 +558,7 @@ export default {
           Menu component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <!-- default -->
           <WMenu>
@@ -671,7 +785,7 @@ export default {
           Dropdown component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WDropdown hover>
             <template #trigger="{ active }">
@@ -739,7 +853,7 @@ export default {
           Button component
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton variant="default" color="primary">
             Primary
@@ -796,7 +910,7 @@ export default {
           Outline
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton color="primary" variant="outline">
             Primary
@@ -818,7 +932,7 @@ export default {
           Transparent
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton variant="transparent">
             Primary
@@ -840,7 +954,7 @@ export default {
           Colors
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton color="primary">
             Primary
@@ -862,7 +976,7 @@ export default {
           Link
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton color="primary" variant="link">
             Primary
@@ -884,7 +998,7 @@ export default {
           Sizes
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton size="xs">
             Extra-small
@@ -904,7 +1018,7 @@ export default {
           Responsive
         </h2>
         <div
-          class="flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1"
+          class="box-component"
         >
           <WButton size="sm" md="lg">
             Responsive
@@ -915,3 +1029,13 @@ export default {
     <div />
   </div>
 </template>
+
+<style>
+.box-component {
+ @apply flex flex-wrap items-center gap-3 bg-gray-300/10 dark:bg-gray-300/3 p-4 rounded-$rounded-box mt-2 border-1 ;
+}
+
+.theme-dracula * {
+ @apply border-base-200/60 dark:border-base-100;
+}
+</style>

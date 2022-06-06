@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { hexToRgb } from '../styles/functions'
-import themes from '../styles/theme'
+import { themes } from '../styles/theme'
 
 const DEFAULT_THEME = 'blue'
 

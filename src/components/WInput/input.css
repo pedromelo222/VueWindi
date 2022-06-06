@@ -10,7 +10,7 @@
   }
 
   .w-validation-text{
-    @apply text-danger-200 text-xs mt-2 ml-1;
+    @apply text-danger text-xs mt-2 ml-1;
   }
   
   .w-input {
@@ -47,45 +47,45 @@
     }
   
     &.w-input-primary {
-      @apply border-primary-200;
+      @apply !border-primary;
       &:focus {
-        outline: 2px solid rgb(var(--primary-200));
+        outline: 2px solid rgb(var(--primary));
         outline-offset: 2px;
       }
     }
     &.w-input-secondary {
-      @apply border-secondary-200;
+      @apply !border-secondary;
       &:focus {
-        outline: 2px solid rgb(var(--secondary-200));
+        outline: 2px solid rgb(var(--secondary));
         outline-offset: 2px;
       }
     }
     &.w-input-success {
-      @apply border-success-200;
+      @apply !border-success;
       &:focus {
-        outline: 2px solid rgb(var(--success-200));
+        outline: 2px solid rgb(var(--success));
         outline-offset: 2px;
       }
     }
     &.w-input-warning {
-      @apply border-warning-200;
+      @apply !border-warning;
       &:focus {
-        outline: 2px solid rgb(var(--warning-200));
+        outline: 2px solid rgb(var(--warning));
         outline-offset: 2px;
       }
     }
     &.w-input-danger {
-      @apply border-danger-200;
+      @apply !border-danger;
       &:focus {
-        outline: 2px solid rgb(var(--danger-200));
+        outline: 2px solid rgb(var(--danger));
         outline-offset: 2px;
       }
     }
 
     &.w-input-error {
-      @apply border-danger-200;
+      @apply !border-danger;
       &:focus {
-        outline: 2px solid rgb(var(--danger-200));
+        outline: 2px solid rgb(var(--danger));
         outline-offset: 2px;
       }
     }

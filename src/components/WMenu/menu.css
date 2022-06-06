@@ -15,14 +15,14 @@
     }
   
     &.w-hover-border li>* {
-      @apply border-l-4 border-white/0 hover: (border-primary-200);
+      @apply border-l-4 border-white/0 hover: (border-primary);
     }
   
     li > *:not(.disabled, .menu-title) {
       @apply flex items-center gap-3 hover:bg-black/7 dark:hover:bg-white/7 w-full text-left transition duration-200 ease-in-out text-base-text;
   
       &:active {
-        @apply  !bg-primary-200 text-white;
+        @apply  !bg-primary text-primary-content;
       }
     }
   
