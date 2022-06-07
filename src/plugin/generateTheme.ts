@@ -95,8 +95,8 @@ const generateTheme = (theme: Theme) => {
  * @returns formated theme using default theme with out whitout user configuration
  *
  */
-function getTheme() {
-  const vueWindiConfig: VueWindiConfig = getConfig()
+async function getTheme() {
+  const vueWindiConfig: VueWindiConfig = await getConfig()
 
   let setTheme: Theme = {}
   let generatedTheme: GeneratedTheme = { light: {}, dark: {} }

@@ -5,10 +5,9 @@ import utilities from '../styles/utilities'
 import { getTheme } from './generateTheme'
 
 const vueWindi = plugin(
-  ({ addUtilities, addBase }) => {
+  async ({ addUtilities, addBase }) => {
     addBase(base)
-    // addBase(getTheme())
-    addBase(getTheme())
+    addBase(await getTheme())
     addUtilities(utilities)
   },
   {

@@ -30,10 +30,11 @@ const getConfigPath = () => {
  *
  * @returns The vueWindi user configuration
  */
-function getConfig() {
+async function getConfig() {
   const themePath = getConfigPath()
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  return require(themePath).default.vueWindi
+  const config = await import(themePath)
+
+  return config.default.vueWindi
 }
 
 /**
