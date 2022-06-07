@@ -144,7 +144,7 @@ export default {
               <WButton menu-item @click="changeColor('theme-dracula')">
                 <span class="rounded-full bg-rose-700 h-7 w-7" />
               </WButton>
-              <WButton menu-item @click="changeColor('theme-violet')">
+              <WButton menu-item @click="changeColor('theme-nord')">
                 <span class="rounded-full bg-violet-700 h-7 w-7" />
               </WButton>
               <WButton menu-item @click="changeColor('theme-orange')">
@@ -1036,6 +1036,14 @@ export default {
 }
 
 .theme-dracula * {
- @apply border-base-200/60 dark:border-base-100;
+ @apply border-base-200/60 ;
+}
+
+.theme-nord div {
+ @apply border-base-300;
+}
+
+.theme-nord.dark * {
+ @apply border-base-200/60;
 }
 </style>
