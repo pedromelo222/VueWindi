@@ -12,7 +12,7 @@ interface Theme { [key: string]: string }
 
 interface GeneratedTheme { [key: string]: { [key: string]: string } }
 
-const defaultTheme = 'blue'
+const defaultTheme = 'vuewindi'
 
 /**
    * check if given key include in theme default color names

@@ -1,5 +1,5 @@
 export default {
-  blue: {
+  vuewindi: {
     'neutral': '#3d4451',
     'neutral-content': '#ffffff',
     'primary': '#1d4ed8',

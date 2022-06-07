@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [vueWindi],
   vueWindi: {
     themes: [
-      'blue',
+      'vuewindi',
       'teal',
       'dracula',
       'nord',
