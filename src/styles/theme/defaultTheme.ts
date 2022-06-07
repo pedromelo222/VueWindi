@@ -88,6 +88,13 @@ const colorNames = [
   'dark-base-100',
   'dark-base-200',
   'dark-base-300',
+  'dark-base-content',
 ]
 
-export { baseTheme, colorNames }
+// styleNames is used for testing purpose
+const styleNames = [
+  'rounded-box',
+  'rounded-btn',
+  'rounded-badge',
+]
+export { baseTheme, colorNames, styleNames }
