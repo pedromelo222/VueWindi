@@ -1,8 +1,9 @@
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const scrollbarWidth = ref<number>(0)
+const isScrollHidden = ref(false)
 
-const useHideScroll = () => {
+function useHideScroll() {
   onMounted(() => {
     nextTick(() => {
       scrollbarWidth.value = window.innerWidth - document.body.scrollWidth
@@ -10,14 +11,13 @@ const useHideScroll = () => {
   })
 
   const showScroll = () => {
-    setTimeout(() => {
-      document.body.style.overflowY = ''
-      document.body.style.paddingRight = ''
-    }, 300)
+    isScrollHidden.value = false
+    document.body.style.overflowY = ''
+    document.body.style.paddingRight = ''
   }
 
   const hideScroll = () => {
-    // function to hide scrollbar (mobile devices have scrollbarWidth < 0)
+    isScrollHidden.value = true
     document.body.style.overflowY = 'hidden'
     if (scrollbarWidth.value > 0)
       document.body.style.paddingRight = `${scrollbarWidth.value}px`
@@ -27,7 +27,7 @@ const useHideScroll = () => {
     showScroll()
   })
 
-  return { showScroll, hideScroll }
+  return { showScroll, hideScroll, isScrollHidden }
 }
 
 export { useHideScroll }

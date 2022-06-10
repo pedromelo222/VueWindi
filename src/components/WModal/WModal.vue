@@ -6,7 +6,7 @@ import {
   ref,
   watch,
 } from 'vue'
-import { useHideScroll } from '../../composables/hide-scrollbar'
+import { useHideScroll } from '../../composables/useHideScroll'
 import './modal.css'
 export default defineComponent({
   name: 'WModal',
@@ -78,7 +78,9 @@ export default defineComponent({
       }
       else {
         isShow.value = false
-        showScroll()
+        setTimeout(() => {
+          showScroll()
+        }, 250)
       }
     },
     )
