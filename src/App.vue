@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import {
   WButton,
+  WButtonGroup,
   WCheckbox,
   WDropdown,
   WInput,
@@ -209,6 +210,53 @@ export default {
     </nav>
     <div class="container max-w-6xl m-auto mt-10 p-4 lg:p-0">
       <div class="">
+        <h2 class="font-semibold text-sm mt-10">
+          Button Group component
+        </h2>
+        <div
+          class="box-component"
+        >
+          <WButtonGroup>
+            <WButton color="primary">
+              1
+            </WButton>
+            <WButton color="primary">
+              2
+            </WButton>
+            <WButton color="primary" active>
+              3
+            </WButton>
+            <WButton color="primary">
+              5
+            </WButton>
+          </WButtonGroup>
+
+          <WButtonGroup>
+            <WButton variant="outline" color="primary">
+              1
+            </WButton>
+            <WButton variant="outline" color="primary">
+              2
+            </WButton>
+            <WButton variant="outline" color="primary">
+              3
+            </WButton>
+            <WButton variant="outline" color="primary">
+              4
+            </WButton>
+          </WButtonGroup>
+          <WButtonGroup>
+            <WButton variant="transparent" color="primary">
+              1
+            </WButton>
+            <WButton variant="transparent" color="primary">
+              2
+            </WButton>
+            <WButton variant="transparent" color="primary">
+              3
+            </WButton>
+          </WButtonGroup>
+        </div>
         <div>
           <h2 class="font-semibold text-sm mt-10">
             Colors

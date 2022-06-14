@@ -1,0 +1,16 @@
+.w-btn-group {
+    .w-btn:first-child {
+        @apply rounded-r-none;
+    }
+    .w-btn:not(:first-child) {
+        &.w-btn-outline {
+             @apply border-l-0;
+        }
+    }
+    .w-btn:not(:first-child):not(:last-child) {
+        @apply rounded-none;
+    }
+    .w-btn:last-child {
+        @apply rounded-l-none;
+    }
+}

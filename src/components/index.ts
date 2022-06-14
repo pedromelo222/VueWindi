@@ -5,6 +5,7 @@ import WModal from './WModal'
 import WToggle from './WToggle'
 import WCheckbox from './WCheckbox'
 import WInput from './WInput'
+import WButtonGroup from './WButtonGroup'
 
-export { WButton, WDropdown, WMenu, WModal, WToggle, WCheckbox, WInput }
+export { WButton, WDropdown, WMenu, WModal, WToggle, WCheckbox, WInput, WButtonGroup }
 
